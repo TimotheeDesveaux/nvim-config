@@ -2,8 +2,6 @@
 nnoremap <silent> <leader> :silent WhichKey '<Space>'<CR>
 vnoremap <silent> <leader> :silent <c-u> :silent WhichKeyVisual '<Space>'<CR>
 
-set timeoutlen=300
-
 " Create map to add keys to
 let g:which_key_map =  {}
 
@@ -39,13 +37,9 @@ let g:which_key_map.f = {
             \ 'g' : "git files",
             \ 'r' : "grep",
             \ 'b' : "buffers",
-            \}
-
-" Markdown
-autocmd FileType markdown let g:which_key_map.m = {
-            \'name' : 'markdown',
-            \ 'p' : "to pdf",
-            \ 'v' : "visualize",
+            \ 'm' : 'bookmarks',
+            \ 'c' : 'colorscheme',
+            \ 'h' : 'history'
             \}
 
 " NERDCommenter
@@ -57,8 +51,22 @@ let g:which_key_map.c = {
             \ 's' : "sexy",
             \ 'n' : "nested",
             \ '$' : "to end of line",
-            \ 'm' : "minimal",
+            \ 'm' : "minimal"
             \ }
+
+" Session (from dashboard)
+let g:which_key_map.s = {
+            \ 'name' : 'Session',
+            \ 's' : 'save',
+            \ 'l' : 'load'
+            \ }
+
+" Markdown
+autocmd FileType markdown let g:which_key_map.m = {
+            \'name' : 'markdown',
+            \ 'p' : "to pdf",
+            \ 'v' : "visualize",
+            \}
 
 " Register which key map
 call which_key#register('<Space>', "g:which_key_map")
