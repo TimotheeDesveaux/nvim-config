@@ -64,12 +64,12 @@ require('treesitter')
 require('colorscheme')
 require('dashboard')
 require('autopairs')
+require('whichkey')
 vim.cmd('source ~/.config/nvim/vimscript/telescope.vim')
 vim.cmd('source ~/.config/nvim/vimscript/completion.vim')
 vim.cmd('source ~/.config/nvim/vimscript/nerdcommenter.vim')
 vim.cmd('source ~/.config/nvim/vimscript/clang-format.vim')
 vim.cmd('source ~/.config/nvim/vimscript/lightline.vim')
-vim.cmd('source ~/.config/nvim/vimscript/which-key.vim')
 
 -- LSP --
 require('lsp.clangd-ls')

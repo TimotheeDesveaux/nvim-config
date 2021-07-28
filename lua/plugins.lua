@@ -45,13 +45,13 @@ return require('packer').startup(function(use)
     -- https://github.com/RRethy/vim-hexokinase
     use {'rrethy/vim-hexokinase', run = 'make hexokinase' }
 
-    -- https://github.com/dag/vim-fish
-    use 'dag/vim-fish'
-
     -- https://github.com/glepnir/dashboard-nvim
     use 'glepnir/dashboard-nvim'
 
-    -- https://github.com/liuchengxu/vim-which-key
-     use 'liuchengxu/vim-which-key'
+    -- https://github.com/folke/which-key.nvim
+     use 'folke/which-key.nvim'
+
+    -- https://github.com/dag/vim-fish
+    use 'dag/vim-fish'
 
 end)
