@@ -6,8 +6,8 @@ return require('packer').startup(function(use)
     -- https://github.com/nvim-treesitter/nvim-treesitter
     use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
 
-    -- https://github.com/ayu-theme/ayu-vim
-    use 'ayu-theme/ayu-vim'
+    -- https://github.com/folke/tokyonight.nvim
+    use 'folke/tokyonight.nvim'
 
     -- https://github.com/nvim-telescope/telescope.nvim
     use {
