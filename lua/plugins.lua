@@ -27,8 +27,8 @@ return require('packer').startup(function(use)
        requires = {'steelsojka/completion-buffers'}
     }
 
-    -- https://github.com/jiangmiao/auto-pairs
-    use 'jiangmiao/auto-pairs'
+    -- https://github.com/windwp/nvim-autopairs
+    use 'windwp/nvim-autopairs'
 
     -- https://github.com/tpope/vim-surround
     use 'tpope/vim-surround'
