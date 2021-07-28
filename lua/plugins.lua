@@ -21,11 +21,8 @@ return require('packer').startup(function(use)
     -- https://github.com/glepnir/lspsaga.nvim
     use 'glepnir/lspsaga.nvim'
 
-    -- https://github.com/nvim-lua/completion-nvim
-     use {
-        'nvim-lua/completion-nvim',
-       requires = {'steelsojka/completion-buffers'}
-    }
+    -- https://github.com/hrsh7th/nvim-compe
+    use 'hrsh7th/nvim-compe'
 
     -- https://github.com/windwp/nvim-autopairs
     use 'windwp/nvim-autopairs'
