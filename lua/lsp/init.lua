@@ -38,6 +38,3 @@ local servers = { "pyright", "clangd" }
 for _, lsp in ipairs(servers) do
     require('lspconfig')[lsp].setup { on_attach = documentHighlight }
 end
-
--- TODO: find a way to remove this
-vim.cmd("autocmd FileType * lua require('vim.lsp.diagnostic')._define_default_signs_and_highlights()")
