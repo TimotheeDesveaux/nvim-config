@@ -37,6 +37,13 @@ vim.o.signcolumn = "yes"
 vim.o.pumheight = 20
 vim.o.completeopt = "menuone,noselect"
 
+-- Miscellaneous --
+vim.o.mouse = "a"
+vim.o.clipboard = "unnamedplus"
+vim.o.updatetime = 300
+vim.o.timeoutlen = 300
+vim.o.shortmess = vim.o.shortmess .. 'c'
+
 -- Mappings --
 vim.g.mapleader = " "
 vim.api.nvim_set_keymap('n', 'Y', 'y$', { noremap = true })
@@ -50,13 +57,6 @@ vim.cmd(
 autocmd FileType markdown nnoremap <buffer> <leader>mp :silent !pandoc % -o %:r.pdf<CR>
 autocmd FileType markdown nnoremap <buffer> <leader>mv :silent !zathura %:r.pdf &<CR>
 ]])
-
--- Miscellaneous --
-vim.o.mouse = "a"
-vim.o.clipboard = "unnamedplus"
-vim.o.updatetime = 300
-vim.o.timeoutlen = 300
-vim.o.shortmess = vim.o.shortmess .. 'c'
 
 -- Plugins --
 require('plugins')
