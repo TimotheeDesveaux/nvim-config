@@ -36,8 +36,11 @@ return require('packer').startup(function(use)
     -- https://github.com/rhysd/vim-clang-format
     use 'rhysd/vim-clang-format'
 
-    -- https://github.com/itchyny/lightline.vim
-    use 'itchyny/lightline.vim'
+    -- https://github.com/hoob3rt/lualine.nvim
+    use {
+        'hoob3rt/lualine.nvim',
+        requires = {'kyazdani42/nvim-web-devicons', opt = true}
+    }
 
     -- https://github.com/RRethy/vim-hexokinase
     use {'rrethy/vim-hexokinase', run = 'make hexokinase' }
@@ -46,7 +49,7 @@ return require('packer').startup(function(use)
     use 'glepnir/dashboard-nvim'
 
     -- https://github.com/folke/which-key.nvim
-     use 'folke/which-key.nvim'
+    use 'folke/which-key.nvim'
 
     -- https://github.com/dag/vim-fish
     use 'dag/vim-fish'

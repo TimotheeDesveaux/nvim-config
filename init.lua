@@ -67,9 +67,9 @@ require('dashboard')
 require('whichkey')
 require('telescope')
 require('autopairs')
+require('statusline')
 vim.cmd('source ~/.config/nvim/vimscript/nerdcommenter.vim')
 vim.cmd('source ~/.config/nvim/vimscript/clang-format.vim')
-vim.cmd('source ~/.config/nvim/vimscript/lightline.vim')
 
 -- LSP --
 require('lsp.clangd-ls')
