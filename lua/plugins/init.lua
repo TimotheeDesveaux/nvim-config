@@ -69,7 +69,7 @@ return require('packer').startup(function(use)
     use {
         'rhysd/vim-clang-format',
         config = function()
-            vim.cmd('source ~/.config/nvim/vimscript/clang-format.vim')
+            require('plugins.clang-format')
         end
     }
 
