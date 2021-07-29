@@ -61,7 +61,7 @@ return require('packer').startup(function(use)
     use {
         'preservim/nerdcommenter',
         config = function()
-            vim.cmd('source ~/.config/nvim/vimscript/nerdcommenter.vim')
+            require('plugins.nerdcommenter')
         end
     }
 
