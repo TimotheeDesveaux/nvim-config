@@ -60,16 +60,6 @@ vim.o.shortmess = vim.o.shortmess .. 'c'
 
 -- Plugins --
 require('plugins')
-require('treesitter')
-require('completion')
-require('colorscheme')
-require('dashboard')
-require('whichkey')
-require('telescope')
-require('autopairs')
-require('statusline')
-vim.cmd('source ~/.config/nvim/vimscript/nerdcommenter.vim')
-vim.cmd('source ~/.config/nvim/vimscript/clang-format.vim')
 
 -- LSP --
 require('lsp.clangd-ls')
