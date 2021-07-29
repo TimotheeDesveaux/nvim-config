@@ -62,7 +62,4 @@ vim.o.shortmess = vim.o.shortmess .. 'c'
 require('plugins')
 
 -- LSP --
-require('lsp.clangd-ls')
-require('lsp.python-ls')
-require('lsp.lua-ls')
 require('lsp')

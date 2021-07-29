@@ -11,6 +11,7 @@ require("which-key").register({
         j = "next diagnostic",
         k = "previous diagnostic",
         a = "action",
+        s = "signature"
     },
     f = {
         name = "fuzzy finder (telescope)",

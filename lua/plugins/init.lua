@@ -8,7 +8,7 @@ return require('packer').startup(function(use)
         'nvim-treesitter/nvim-treesitter',
         run = ':TSUpdate',
         config = function()
-            require('treesitter')
+            require('plugins.treesitter')
         end
     }
 
@@ -16,7 +16,7 @@ return require('packer').startup(function(use)
     use {
         'folke/tokyonight.nvim',
         config = function()
-            require('colorscheme')
+            require('plugins.colorscheme')
         end
     }
 
@@ -28,7 +28,7 @@ return require('packer').startup(function(use)
             {'nvim-lua/plenary.nvim'}
         },
         config = function()
-            require('telescope')
+            require('plugins.telescope')
         end
     }
 
@@ -42,7 +42,7 @@ return require('packer').startup(function(use)
     use {
         'hrsh7th/nvim-compe',
         config = function()
-            require('completion')
+            require('plugins.completion')
         end
     }
 
@@ -50,7 +50,7 @@ return require('packer').startup(function(use)
     use {
         'windwp/nvim-autopairs',
         config = function()
-            require('autopairs')
+            require('plugins.autopairs')
         end
     }
 
@@ -78,7 +78,7 @@ return require('packer').startup(function(use)
         'hoob3rt/lualine.nvim',
         requires = { 'kyazdani42/nvim-web-devicons', opt = true },
         config = function()
-            require('statusline')
+            require('plugins.statusline')
         end
     }
 
@@ -92,7 +92,7 @@ return require('packer').startup(function(use)
     use {
         'glepnir/dashboard-nvim',
         config = function()
-            require('dashboard')
+            require('plugins.dashboard')
         end
     }
 
@@ -100,7 +100,7 @@ return require('packer').startup(function(use)
     use {
         'folke/which-key.nvim',
         config = function()
-            require('whichkey')
+            require('plugins.which-key')
         end
     }
 

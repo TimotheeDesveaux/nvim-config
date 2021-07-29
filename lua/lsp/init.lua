@@ -1,3 +1,7 @@
+require('lsp.clangd-ls')
+require('lsp.python-ls')
+require('lsp.lua-ls')
+
 -- Mappings.
 local opts = { noremap=true, silent=true }
 vim.api.nvim_set_keymap('n', '<leader>lD', '<Cmd>lua vim.lsp.buf.declaration()<CR>', opts)
@@ -10,6 +14,7 @@ vim.api.nvim_set_keymap('n', '<leader>la', '<cmd>lua require(\'lspsaga.codeactio
 vim.api.nvim_set_keymap('n', '<leader>lr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
 vim.api.nvim_set_keymap('n', '<leader>lk', '<cmd>lua require(\'lspsaga.diagnostic\').lsp_jump_diagnostic_prev()<CR>', opts)
 vim.api.nvim_set_keymap('n', '<leader>lj', '<cmd>lua require(\'lspsaga.diagnostic\').lsp_jump_diagnostic_next()<CR>', opts)
+vim.api.nvim_set_keymap('n', '<leader>ls', '<cmd>lua require(\'lspsaga.signaturehelp\').signature_help()<CR>', opts)
 
 vim.cmd(
 [[
@@ -39,6 +44,7 @@ for _, lsp in ipairs(servers) do
     require('lspconfig')[lsp].setup { on_attach = documentHighlight }
 end
 
+-- Diagnostics symbols
 require('lspsaga').init_lsp_saga {
     error_sign = "",
     warn_sign = "",
