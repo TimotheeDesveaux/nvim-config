@@ -3,18 +3,19 @@ require('lsp.python-ls')
 require('lsp.lua-ls')
 
 -- Mappings.
+local util = require('utils')
 local opts = { noremap=true, silent=true }
-vim.api.nvim_set_keymap('n', '<leader>lD', '<Cmd>lua vim.lsp.buf.declaration()<CR>', opts)
-vim.api.nvim_set_keymap('n', '<leader>ld', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
-vim.api.nvim_set_keymap('n', 'K', '<cmd>lua require(\'lspsaga.hover\').render_hover_doc()<CR>', opts)
-vim.api.nvim_set_keymap('n', '<leader>li', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
-vim.api.nvim_set_keymap('n', '<leader>ly', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
-vim.api.nvim_set_keymap('n', '<leader>ln', '<cmd>lua require(\'lspsaga.rename\').rename()<CR>', opts)
-vim.api.nvim_set_keymap('n', '<leader>la', '<cmd>lua require(\'lspsaga.codeaction\').code_action()<CR>', opts)
-vim.api.nvim_set_keymap('n', '<leader>lr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
-vim.api.nvim_set_keymap('n', '<leader>lk', '<cmd>lua require(\'lspsaga.diagnostic\').lsp_jump_diagnostic_prev()<CR>', opts)
-vim.api.nvim_set_keymap('n', '<leader>lj', '<cmd>lua require(\'lspsaga.diagnostic\').lsp_jump_diagnostic_next()<CR>', opts)
-vim.api.nvim_set_keymap('n', '<leader>ls', '<cmd>lua require(\'lspsaga.signaturehelp\').signature_help()<CR>', opts)
+util.nmap('<leader>lD', '<Cmd>lua vim.lsp.buf.declaration()<CR>', opts)
+util.nmap('<leader>ld', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
+util.nmap('K', '<cmd>lua require(\'lspsaga.hover\').render_hover_doc()<CR>', opts)
+util.nmap('<leader>li', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
+util.nmap('<leader>ly', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
+util.nmap('<leader>ln', '<cmd>lua require(\'lspsaga.rename\').rename()<CR>', opts)
+util.nmap('<leader>la', '<cmd>lua require(\'lspsaga.codeaction\').code_action()<CR>', opts)
+util.nmap('<leader>lr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
+util.nmap('<leader>lk', '<cmd>lua require(\'lspsaga.diagnostic\').lsp_jump_diagnostic_prev()<CR>', opts)
+util.nmap('<leader>lj', '<cmd>lua require(\'lspsaga.diagnostic\').lsp_jump_diagnostic_next()<CR>', opts)
+util.nmap('<leader>ls', '<cmd>lua require(\'lspsaga.signaturehelp\').signature_help()<CR>', opts)
 
 vim.cmd(
 [[

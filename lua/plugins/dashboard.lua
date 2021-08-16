@@ -8,5 +8,7 @@ vim.g.dashboard_custom_shortcut = {
     last_session       = 'SPC s l',
     new_file           = 'SPC c n',
 }
-vim.api.nvim_set_keymap('n', '<leader>ss' ,':<C-u>SessionSave<CR>', { noremap = true })
-vim.api.nvim_set_keymap('n', '<leader>sl' ,':<C-u>SessionLoad<CR>', { noremap = true })
+
+local util = require('utils')
+util.nnoremap('<leader>ss' ,':<C-u>SessionSave<CR>')
+util.nnoremap('<leader>sl' ,':<C-u>SessionLoad<CR>')

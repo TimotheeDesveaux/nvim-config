@@ -4,6 +4,8 @@
 -- | | | \ V /| | | | | | | | | (__
 -- |_| |_|\_/ |_|_| |_| |_|_|  \___|
 
+local util = require('utils')
+
 -- Indentation --
 vim.o.tabstop = 8
 vim.o.shiftwidth = 4
@@ -46,12 +48,12 @@ vim.o.shortmess = vim.o.shortmess .. 'c'
 
 -- Mappings --
 vim.g.mapleader = " "
-vim.api.nvim_set_keymap('n', 'Y', 'y$', { noremap = true })
-vim.api.nvim_set_keymap('n', 'j', 'gj', { noremap = true })
-vim.api.nvim_set_keymap('n', 'k', 'gk', { noremap = true })
-vim.api.nvim_set_keymap('n', '<leader><leader>', ':e #<CR>', { noremap = true })
-vim.api.nvim_set_keymap('v', 'J', ':m \'>+1<CR>gv=gv', { noremap = true })
-vim.api.nvim_set_keymap('v', 'K', ':m \'<-2<CR>gv=gv', { noremap = true })
+util.nnoremap('Y', 'y$')
+util.nnoremap('j', 'gj')
+util.nnoremap('k', 'gk')
+util.nnoremap('<leader><leader>', ':e #<CR>')
+util.vnoremap('J', ':m \'>+1<CR>gv=gv')
+util.vnoremap('K', ':m \'<-2<CR>gv=gv')
 vim.cmd(
 [[
 autocmd FileType markdown nnoremap <buffer> <leader>mp :silent !pandoc % -o %:r.pdf<CR>

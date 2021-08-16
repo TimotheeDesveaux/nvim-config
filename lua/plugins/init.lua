@@ -104,7 +104,4 @@ return require('packer').startup(function(use)
         end
     }
 
-    -- https://github.com/dag/vim-fish
-    use 'dag/vim-fish'
-
 end)
