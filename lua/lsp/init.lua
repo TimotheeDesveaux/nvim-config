@@ -1,6 +1,7 @@
 require('lsp.clangd-ls')
 require('lsp.python-ls')
 require('lsp.lua-ls')
+require('lsp.bash-ls')
 
 -- Mappings.
 local util = require('utils')
