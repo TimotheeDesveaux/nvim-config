@@ -24,8 +24,8 @@ return require('packer').startup(function(use)
     use {
         'nvim-telescope/telescope.nvim',
         requires = {
-            {'nvim-lua/popup.nvim'},
-            {'nvim-lua/plenary.nvim'}
+            'nvim-lua/popup.nvim',
+            'nvim-lua/plenary.nvim'
         },
         config = function()
             require('plugins.telescope')
@@ -38,9 +38,15 @@ return require('packer').startup(function(use)
     -- https://github.com/glepnir/lspsaga.nvim
     use 'glepnir/lspsaga.nvim'
 
-    -- https://github.com/hrsh7th/nvim-compe
+    -- https://github.com/hrsh7th/nvim-cmp
     use {
-        'hrsh7th/nvim-compe',
+        'hrsh7th/nvim-cmp',
+        requires = {
+            "hrsh7th/cmp-nvim-lsp",
+            "hrsh7th/cmp-path",
+            "hrsh7th/cmp-buffer",
+            "hrsh7th/cmp-calc"
+        },
         config = function()
             require('plugins.completion')
         end
