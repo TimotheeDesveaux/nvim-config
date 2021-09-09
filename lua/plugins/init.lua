@@ -111,7 +111,12 @@ return require('packer').startup(function(use)
     }
 
     -- https://github.com/lukas-reineke/indent-blankline.nvim
-    use 'lukas-reineke/indent-blankline.nvim'
+    use {
+        'lukas-reineke/indent-blankline.nvim',
+        config = function()
+            require('plugins.indent-blankline')
+        end
+    }
 
     -- https://github.com/kyazdani42/nvim-tree.lua
     use {
