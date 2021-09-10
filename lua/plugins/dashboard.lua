@@ -9,6 +9,15 @@ vim.g.dashboard_custom_shortcut = {
     new_file           = 'SPC c n',
 }
 
+vim.g.dashboard_custom_header = {
+    ' ███╗   ██╗ ███████╗ ██████╗  ██╗   ██╗ ██╗ ███╗   ███╗',
+    ' ████╗  ██║ ██╔════╝██╔═══██╗ ██║   ██║ ██║ ████╗ ████║',
+    ' ██╔██╗ ██║ █████╗  ██║   ██║ ██║   ██║ ██║ ██╔████╔██║',
+    ' ██║╚██╗██║ ██╔══╝  ██║   ██║ ╚██╗ ██╔╝ ██║ ██║╚██╔╝██║',
+    ' ██║ ╚████║ ███████╗╚██████╔╝  ╚████╔╝  ██║ ██║ ╚═╝ ██║',
+    ' ╚═╝  ╚═══╝ ╚══════╝ ╚═════╝    ╚═══╝   ╚═╝ ╚═╝     ╚═╝',
+}
+
 local util = require('utils')
 util.nnoremap('<leader>ss' ,':<C-u>SessionSave<CR>')
 util.nnoremap('<leader>sl' ,':<C-u>SessionLoad<CR>')
