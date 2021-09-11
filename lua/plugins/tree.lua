@@ -1,3 +1,5 @@
+local util = require('utils')
+
 vim.g.nvim_tree_gitignore = 1
 vim.g.nvim_tree_auto_close = 1
 vim.g.nvim_tree_git_hl = 1
@@ -7,3 +9,5 @@ vim.g.nvim_tree_show_icons = {
     files = 1,
     folder_arrows = 1
 }
+
+util.nmap('<leader>tt', ':NvimTreeToggle<CR>')

@@ -5,22 +5,27 @@ local map = function(mode, key, cmd, opts)
 end
 
 function M.map(key, cmd, opts)
+    opts = opts or {}
     return map('', key, cmd, opts)
 end
 
 function M.nmap(key, cmd, opts)
+    opts = opts or {}
     return map('n', key, cmd, opts)
 end
 
 function M.vmap(key, cmd, opts)
+    opts = opts or {}
     return map('v', key, cmd, opts)
 end
 
 function M.imap(key, cmd, opts)
+    opts = opts or {}
     return map('i', key, cmd, opts)
 end
 
 function M.smap(key, cmd, opts)
+    opts = opts or {}
     return map('s', key, cmd, opts)
 end
 
