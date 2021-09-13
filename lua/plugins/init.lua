@@ -38,14 +38,24 @@ return require('packer').startup(function(use)
     -- https://github.com/glepnir/lspsaga.nvim
     use 'glepnir/lspsaga.nvim'
 
+    -- https://github.com/L3MON4D3/LuaSnip
+    use {
+        'L3MON4D3/LuaSnip',
+        requires = 'rafamadriz/friendly-snippets',
+        config = function ()
+            require('plugins.snippets')
+        end
+    }
+
     -- https://github.com/hrsh7th/nvim-cmp
     use {
         'hrsh7th/nvim-cmp',
         requires = {
-            "hrsh7th/cmp-nvim-lsp",
-            "hrsh7th/cmp-path",
-            "hrsh7th/cmp-buffer",
-            "hrsh7th/cmp-calc"
+            'hrsh7th/cmp-nvim-lsp',
+            'hrsh7th/cmp-path',
+            'saadparwaiz1/cmp_luasnip',
+            'hrsh7th/cmp-buffer',
+            'hrsh7th/cmp-calc'
         },
         config = function()
             require('plugins.completion')
