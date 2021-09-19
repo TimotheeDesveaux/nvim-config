@@ -136,4 +136,12 @@ return require('packer').startup(function(use)
         end
     }
 
+    -- https://github.com/windwp/nvim-projectconfig
+    use {
+        'windwp/nvim-projectconfig',
+        config = function ()
+            require('plugins.projectconfig')
+        end
+    }
+
 end)
