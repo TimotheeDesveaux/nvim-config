@@ -4,7 +4,6 @@
 -- | | | \ V /| | | | | | | | | (__
 -- |_| |_|\_/ |_|_| |_| |_|_|  \___|
 
-local util = require('utils')
 
 -- Indentation --
 vim.o.tabstop = 8
@@ -47,18 +46,7 @@ vim.o.timeoutlen = 300
 vim.o.shortmess = vim.o.shortmess .. 'c'
 
 -- Mappings --
-vim.g.mapleader = " "
-util.nnoremap('Y', 'y$')
-util.nnoremap('j', 'gj')
-util.nnoremap('k', 'gk')
-util.nnoremap('<leader><leader>', ':e #<CR>')
-util.vnoremap('J', ':m \'>+1<CR>gv=gv')
-util.vnoremap('K', ':m \'<-2<CR>gv=gv')
-vim.cmd(
-[[
-autocmd FileType markdown nnoremap <buffer> <leader>mp :silent !pandoc % -o %:r.pdf<CR>
-autocmd FileType markdown nnoremap <buffer> <leader>mv :silent !zathura %:r.pdf &<CR>
-]])
+require('mappings')
 
 -- Plugins --
 require('plugins')
