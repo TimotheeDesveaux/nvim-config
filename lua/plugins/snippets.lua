@@ -8,8 +8,8 @@ luasnip.config.set_config({
 
 require("luasnip/loaders/from_vscode").load()
 
-util.smap('<A-l>', '<cmd>lua require(\'luasnip\').jump(1)<CR>', {silent = true})
-util.imap('<A-l>', '<cmd>lua require(\'luasnip\').jump(1)<CR>', {silent = true})
+util.smap('<C-l>', '<cmd>lua require(\'luasnip\').jump(1)<CR>', {silent = true})
+util.imap('<C-l>', '<cmd>lua require(\'luasnip\').jump(1)<CR>', {silent = true})
 
-util.smap('<A-h>', '<cmd>lua require(\'luasnip\').jump(-1)<CR>', {silent = true})
-util.imap('<A-h>', '<cmd>lua require(\'luasnip\').jump(-1)<CR>', {silent = true})
+util.smap('<C-h>', '<cmd>lua require(\'luasnip\').jump(-1)<CR>', {silent = true})
+util.imap('<C-h>', '<cmd>lua require(\'luasnip\').jump(-1)<CR>', {silent = true})
