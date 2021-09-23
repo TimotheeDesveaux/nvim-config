@@ -5,31 +5,45 @@ require('lsp.bash-ls')
 
 -- Mappings.
 local util = require('utils')
-local opts = { noremap=true, silent=true }
+local opts = {
+    noremap = true,
+    silent = true
+}
 util.nmap('<leader>lD', '<Cmd>lua vim.lsp.buf.declaration()<CR>', opts)
 util.nmap('<leader>ld', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
-util.nmap('K', '<cmd>lua require(\'lspsaga.hover\').render_hover_doc()<CR>', opts)
+util.nmap('K', '<cmd>lua require(\'lspsaga.hover\').render_hover_doc()<CR>',
+          opts)
 util.nmap('<leader>li', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
 util.nmap('<leader>ly', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
-util.nmap('<leader>ln', '<cmd>lua require(\'lspsaga.rename\').rename()<CR>', opts)
-util.nmap('<leader>la', '<cmd>lua require(\'lspsaga.codeaction\').code_action()<CR>', opts)
+util.nmap('<leader>ln', '<cmd>lua require(\'lspsaga.rename\').rename()<CR>',
+          opts)
+util.nmap('<leader>la',
+          '<cmd>lua require(\'lspsaga.codeaction\').code_action()<CR>', opts)
 util.nmap('<leader>lr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
-util.nmap('<leader>lk', '<cmd>lua require(\'lspsaga.diagnostic\').lsp_jump_diagnostic_prev()<CR>', opts)
-util.nmap('<leader>lj', '<cmd>lua require(\'lspsaga.diagnostic\').lsp_jump_diagnostic_next()<CR>', opts)
-util.nmap('<leader>ls', '<cmd>lua require(\'lspsaga.signaturehelp\').signature_help()<CR>', opts)
-util.nmap('<C-f>', '<cmd>lua require(\'lspsaga.action\').smart_scroll_with_saga(1)<CR>', opts)
-util.nmap('<C-b>', '<cmd>lua require(\'lspsaga.action\').smart_scroll_with_saga(-1)<CR>', opts)
+util.nmap('<leader>lk',
+          '<cmd>lua require(\'lspsaga.diagnostic\').lsp_jump_diagnostic_prev()<CR>',
+          opts)
+util.nmap('<leader>lj',
+          '<cmd>lua require(\'lspsaga.diagnostic\').lsp_jump_diagnostic_next()<CR>',
+          opts)
+util.nmap('<leader>ls',
+          '<cmd>lua require(\'lspsaga.signaturehelp\').signature_help()<CR>',
+          opts)
+util.nmap('<C-f>',
+          '<cmd>lua require(\'lspsaga.action\').smart_scroll_with_saga(1)<CR>',
+          opts)
+util.nmap('<C-b>',
+          '<cmd>lua require(\'lspsaga.action\').smart_scroll_with_saga(-1)<CR>',
+          opts)
 
-vim.cmd(
-[[
+vim.cmd [[
 autocmd CursorHold * lua require('lspsaga.diagnostic').show_cursor_diagnostics()
-]])
+]]
 
 local function documentHighlight(client)
     -- Set autocommands conditional on server_capabilities
     if client.resolved_capabilities.document_highlight then
-        vim.api.nvim_exec(
-        [[
+        vim.cmd [[
         hi LspReferenceRead cterm=bold ctermbg=red guibg=#404040
         hi LspReferenceText cterm=bold ctermbg=red guibg=#404040
         hi LspReferenceWrite cterm=bold ctermbg=red guibg=#404040
@@ -38,14 +52,16 @@ local function documentHighlight(client)
         autocmd CursorHold <buffer> lua vim.lsp.buf.document_highlight()
         autocmd CursorMoved <buffer> lua vim.lsp.buf.clear_references()
         augroup END
-        ]], false)
+        ]]
     end
 end
 
 -- sumneko_lua does not work for some reason
-local servers = { "pyright", "clangd" }
+local servers = {"pyright", "clangd"}
 for _, lsp in ipairs(servers) do
-    require('lspconfig')[lsp].setup { on_attach = documentHighlight }
+    require('lspconfig')[lsp].setup {
+        on_attach = documentHighlight
+    }
 end
 
 -- Diagnostics symbols

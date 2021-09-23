@@ -37,11 +37,13 @@ require("which-key").register({
     m = {
         name = "markdown",
         p = "to pdf",
-        v = "visualize",
+        v = "visualize"
     },
     s = {
         name = "Session",
         s = "save",
         l = "load"
-    },
-}, { prefix = "<leader>"})
+    }
+}, {
+    prefix = "<leader>"
+})

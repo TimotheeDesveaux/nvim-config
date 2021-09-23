@@ -30,23 +30,33 @@ function M.smap(key, cmd, opts)
 end
 
 function M.noremap(key, cmd)
-    return map('', key, cmd, { noremap = true })
+    return map('', key, cmd, {
+        noremap = true
+    })
 end
 
 function M.nnoremap(key, cmd)
-    return map('n', key, cmd, { noremap = true })
+    return map('n', key, cmd, {
+        noremap = true
+    })
 end
 
 function M.vnoremap(key, cmd)
-    return map('v', key, cmd, { noremap = true })
+    return map('v', key, cmd, {
+        noremap = true
+    })
 end
 
 function M.inoremap(key, cmd)
-    return map('i', key, cmd, { noremap = true })
+    return map('i', key, cmd, {
+        noremap = true
+    })
 end
 
 function M.snoremap(key, cmd)
-    return map('s', key, cmd, { noremap = true })
+    return map('s', key, cmd, {
+        noremap = true
+    })
 end
 
 return M
