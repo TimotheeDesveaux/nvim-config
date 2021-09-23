@@ -133,7 +133,8 @@ return require('packer').startup(function(use)
         'windwp/nvim-projectconfig',
         config = function ()
             require('plugins.projectconfig')
-        end
+        end,
+        after = 'dashboard-nvim'
     }
 
     -- https://github.com/lukas-reineke/format.nvim
