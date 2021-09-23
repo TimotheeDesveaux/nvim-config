@@ -81,14 +81,6 @@ return require('packer').startup(function(use)
         end
     }
 
-    -- https://github.com/rhysd/vim-clang-format
-    use {
-        'rhysd/vim-clang-format',
-        config = function()
-            require('plugins.clang-format')
-        end
-    }
-
     -- https://github.com/hoob3rt/lualine.nvim
     use {
         'hoob3rt/lualine.nvim',
@@ -141,6 +133,14 @@ return require('packer').startup(function(use)
         'windwp/nvim-projectconfig',
         config = function ()
             require('plugins.projectconfig')
+        end
+    }
+
+    -- https://github.com/lukas-reineke/format.nvim
+    use {
+        'lukas-reineke/format.nvim',
+        config = function()
+            require('plugins.formatter')
         end
     }
 
