@@ -4,4 +4,4 @@ require("nvim-autopairs.completion.cmp").setup {
     auto_select = false -- automatically select the first item
 }
 
-require('nvim-autopairs').setup()
+require("nvim-autopairs").setup()

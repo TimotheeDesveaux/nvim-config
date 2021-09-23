@@ -1,4 +1,4 @@
-local util = require('utils')
+local util = require("utils")
 
 vim.g.nvim_tree_gitignore = 1
 vim.g.nvim_tree_auto_close = 1
@@ -11,4 +11,4 @@ vim.g.nvim_tree_show_icons = {
     folder_arrows = 1
 }
 
-util.nmap('<leader>tt', ':NvimTreeToggle<CR>')
+util.nmap("<leader>tt", ":NvimTreeToggle<CR>")

@@ -1,1 +1,1 @@
-require('nvim-projectconfig').load_project_config()
+require("nvim-projectconfig").load_project_config()

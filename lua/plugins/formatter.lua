@@ -1,4 +1,4 @@
-require('format').setup {
+require("format").setup {
     ["*"] = {
         {
             cmd = {"sed -i 's/[ \t]*$//'"} -- remove trailing whitespace
@@ -21,7 +21,7 @@ require('format').setup {
     },
     lua = {
         {
-            cmd = {"lua-format -i"}
+            cmd = {"lua-format --single-quote-to-double-quote -i"}
         }
     }
 }

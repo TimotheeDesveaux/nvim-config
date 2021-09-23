@@ -19,12 +19,12 @@ require("which-key").register({
         g = "git files",
         r = "grep",
         b = "buffers",
-        m = 'bookmarks',
-        c = 'colorscheme',
-        h = 'history'
+        m = "bookmarks",
+        c = "colorscheme",
+        h = "history"
     },
     c = {
-        name = 'NERDCommenter',
+        name = "NERDCommenter",
         c = "comment",
         i = "invert",
         u = "uncomment",

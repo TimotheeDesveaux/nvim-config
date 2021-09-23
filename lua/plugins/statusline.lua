@@ -1,7 +1,7 @@
-require('lualine').setup {
+require("lualine").setup {
     options = {
-        theme = 'tokyonight',
-        section_separators = {'', ''},
-        component_separators = {'', ''}
+        theme = "tokyonight",
+        section_separators = {"", ""},
+        component_separators = {"", ""}
     }
 }

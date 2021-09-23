@@ -2,7 +2,7 @@
 vim.o.tabstop = 8
 vim.o.shiftwidth = 4
 vim.o.expandtab = true
-vim.cmd('autocmd Filetype make setlocal noexpandtab shiftwidth=8')
+vim.cmd("autocmd Filetype make setlocal noexpandtab shiftwidth=8")
 
 -- Search --
 vim.o.ignorecase = true
@@ -14,7 +14,7 @@ vim.o.autowrite = true
 vim.o.backup = false
 vim.o.swapfile = false
 vim.o.hidden = true
-vim.cmd('autocmd BufEnter *.ll set filetype=lex')
+vim.cmd("autocmd BufEnter *.ll set filetype=lex")
 
 -- Interface --
 vim.o.termguicolors = true
@@ -36,13 +36,13 @@ vim.o.mouse = "a"
 vim.o.clipboard = "unnamedplus"
 vim.o.updatetime = 300
 vim.o.timeoutlen = 300
-vim.o.shortmess = vim.o.shortmess .. 'c'
+vim.o.shortmess = vim.o.shortmess .. "c"
 
 -- Mappings --
-require('mappings')
+require("mappings")
 
 -- Plugins --
-require('plugins')
+require("plugins")
 
 -- LSP --
-require('lsp')
+require("lsp")
