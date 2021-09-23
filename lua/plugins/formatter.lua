@@ -1,16 +1,29 @@
 require('format').setup {
     ["*"] = {
-        {cmd = {"sed -i 's/[ \t]*$//'"}} -- remove trailing whitespace
+        {
+            cmd = {"sed -i 's/[ \t]*$//'"} -- remove trailing whitespace
+        }
     },
     python = {
-        {cmd = {"black"}}
+        {
+            cmd = {"black"}
+        }
     },
     c = {
-        {cmd = {"clang-format -i"}}
+        {
+            cmd = {"clang-format -i"}
+        }
     },
     cpp = {
-        {cmd = {"clang-format -i"}}
+        {
+            cmd = {"clang-format -i"}
+        }
     },
+    lua = {
+        {
+            cmd = {"lua-format -i"}
+        }
+    }
 }
 
 vim.cmd [[
