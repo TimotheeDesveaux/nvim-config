@@ -23,6 +23,21 @@ require("format").setup {
         {
             cmd = {"lua-format --single-quote-to-double-quote -i"}
         }
+    },
+    javascript = {
+        {
+            cmd = {"prettier -w"}
+        }
+    },
+    html = {
+        {
+            cmd = {"prettier -w"}
+        }
+    },
+    css = {
+        {
+            cmd = {"prettier -w"}
+        }
     }
 }
 

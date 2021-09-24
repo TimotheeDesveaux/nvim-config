@@ -4,6 +4,8 @@ require("lsp.lua")
 require("lsp.bash")
 require("lsp.docker")
 require("lsp.javascript")
+require("lsp.html")
+require("lsp.css")
 require("lsp.vue")
 
 -- Mappings.
