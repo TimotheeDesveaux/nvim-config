@@ -2,6 +2,9 @@ require("lsp.clangd-ls")
 require("lsp.python-ls")
 require("lsp.lua-ls")
 require("lsp.bash-ls")
+require("lsp.docker-ls")
+require("lsp.javascript-ls")
+require("lsp.vue-ls")
 
 -- Mappings.
 local util = require("utils")
