@@ -23,8 +23,9 @@ git clone --depth 1 https://github.com/wbthomason/packer.nvim\
 * Lua: [sumneko_lua](https://github.com/sumneko/lua-language-server)
     ```bash
     # clone project
-    git clone https://github.com/sumneko/lua-language-server <nvim_data>
-    cd lua-language-server
+    [ -d ~/.local/share/nvim/lspinstall ] || mkdir ~/.local/share/nvim/lspinstall
+    git clone https://github.com/sumneko/lua-language-server ~/.local/share/nvim/lspinstall
+    cd ~/.local/share/nvim/lspinstall/lua-language-server
     git submodule update --init --recursive
 
     # build project
