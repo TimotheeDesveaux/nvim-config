@@ -42,30 +42,6 @@ vim.cmd [[
 autocmd CursorHold * lua require('lspsaga.diagnostic').show_cursor_diagnostics()
 ]]
 
-local function documentHighlight(client)
-    -- Set autocommands conditional on server_capabilities
-    if client.resolved_capabilities.document_highlight then
-        vim.cmd [[
-        hi LspReferenceRead cterm=bold ctermbg=red guibg=#404040
-        hi LspReferenceText cterm=bold ctermbg=red guibg=#404040
-        hi LspReferenceWrite cterm=bold ctermbg=red guibg=#404040
-        augroup lsp_document_highlight
-        autocmd! * <buffer>
-        autocmd CursorHold <buffer> lua vim.lsp.buf.document_highlight()
-        autocmd CursorMoved <buffer> lua vim.lsp.buf.clear_references()
-        augroup END
-        ]]
-    end
-end
-
--- sumneko_lua does not work for some reason
-local servers = {"pyright", "clangd"}
-for _, lsp in ipairs(servers) do
-    require("lspconfig")[lsp].setup {
-        on_attach = documentHighlight
-    }
-end
-
 -- Diagnostics symbols
 require("lspsaga").init_lsp_saga {
     error_sign = "",
