@@ -30,6 +30,7 @@ vim.o.splitright = true
 vim.o.signcolumn = "yes"
 vim.o.pumheight = 20
 vim.o.completeopt = "menuone,noselect"
+vim.o.wrap = false
 
 -- Miscellaneous --
 vim.o.mouse = "a"

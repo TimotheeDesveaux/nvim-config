@@ -2,8 +2,6 @@ local util = require("utils")
 
 vim.g.mapleader = " "
 util.nnoremap("Y", "y$")
-util.nnoremap("j", "gj")
-util.nnoremap("k", "gk")
 util.nnoremap("<leader><leader>", ":e #<CR>")
 util.vnoremap("J", ":m '>+1<CR>gv=gv")
 util.vnoremap("K", ":m '<-2<CR>gv=gv")
