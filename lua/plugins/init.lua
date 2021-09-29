@@ -145,4 +145,13 @@ return require("packer").startup(function(use)
         end
     }
 
+    -- https://github.com/akinsho/bufferline.nvim",
+    use {
+        "akinsho/bufferline.nvim",
+        requires = "kyazdani42/nvim-web-devicons",
+        config = function()
+            require("plugins.tabs")
+        end
+    }
+
 end)
