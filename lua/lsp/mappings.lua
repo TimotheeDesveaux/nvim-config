@@ -1,6 +1,6 @@
 local M = {}
 
-function M.setup(client, bufnr)
+function M.setup(bufnr)
     local opts = {
         noremap = true,
         silent = true
