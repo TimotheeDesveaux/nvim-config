@@ -23,7 +23,14 @@ return require("packer").startup(function(use)
     -- https://github.com/nvim-telescope/telescope.nvim
     use {
         "nvim-telescope/telescope.nvim",
-        requires = {"nvim-lua/popup.nvim", "nvim-lua/plenary.nvim"},
+        requires = {
+            {"nvim-lua/popup.nvim"},
+            {"nvim-lua/plenary.nvim"},
+            {
+                "kyazdani42/nvim-web-devicons",
+                opt = true
+            }
+        },
         config = function()
             require("plugins.telescope")
         end
