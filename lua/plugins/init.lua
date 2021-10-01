@@ -33,7 +33,8 @@ return require("packer").startup(function(use)
         },
         config = function()
             require("plugins.telescope")
-        end
+        end,
+        after = "which-key.nvim"
     }
 
     -- https://github.com/neovim/nvim-lspconfig
@@ -81,8 +82,9 @@ return require("packer").startup(function(use)
     use {
         "preservim/nerdcommenter",
         config = function()
-            require("plugins.nerdcommenter")
-        end
+            require("plugins.comments")
+        end,
+        after = "which-key.nvim"
     }
 
     -- https://github.com/hoob3rt/lualine.nvim
@@ -115,7 +117,7 @@ return require("packer").startup(function(use)
     use {
         "folke/which-key.nvim",
         config = function()
-            require("plugins.which-key")
+            require("mappings")
         end
     }
 
@@ -132,7 +134,8 @@ return require("packer").startup(function(use)
         "kyazdani42/nvim-tree.lua",
         config = function()
             require("plugins.tree")
-        end
+        end,
+        after = "which-key.nvim"
     }
 
     -- https://github.com/windwp/nvim-projectconfig

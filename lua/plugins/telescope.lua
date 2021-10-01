@@ -1,9 +1,15 @@
-local util = require("utils")
+local wk = require("which-key")
 
-util.nnoremap("<leader>ff", "<cmd>Telescope find_files<cr>")
-util.nnoremap("<leader>fg", "<cmd>Telescope git_files<cr>")
-util.nnoremap("<leader>fr", "<cmd>Telescope live_grep<cr>")
-util.nnoremap("<leader>fb", "<cmd>Telescope buffers<cr>")
-util.nnoremap("<leader>fm", "<cmd>Telescope marks<cr>")
-util.nnoremap("<leader>fc", "<cmd>Telescope colorscheme<cr>")
-util.nnoremap("<leader>fh", "<cmd>Telescope oldfiles<cr>")
+wk.register({
+    name = "fuzzy finder (telescope)",
+    f = {"<cmd>Telescope find_files<cr>", "files"},
+    g = {"<cmd>Telescope git_files<cr>", "git files"},
+    r = {"<cmd>Telescope live_grep<cr>", "grep"},
+    b = {"<cmd>Telescope buffers<cr>", "buffers"},
+    m = {"<cmd>Telescope marks<cr>", "bookmarks"},
+    c = {"<cmd>Telescope colorscheme<cr>", "colorscheme"},
+    h = {"<cmd>Telescope oldfiles<cr>", "history"}
+}, {
+    prefix = "<leader>f",
+    noremap = true
+})

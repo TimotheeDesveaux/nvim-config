@@ -39,9 +39,6 @@ vim.o.updatetime = 300
 vim.o.timeoutlen = 300
 vim.o.shortmess = vim.o.shortmess .. "c"
 
--- Mappings --
-require("mappings")
-
 -- Plugins --
 require("plugins")
 

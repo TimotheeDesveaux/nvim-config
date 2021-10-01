@@ -1,4 +1,4 @@
-local util = require("utils")
+local wk = require("which-key")
 
 vim.g.nvim_tree_gitignore = 1
 vim.g.nvim_tree_quit_on_open = 1
@@ -14,4 +14,12 @@ require("nvim-tree").setup {
     auto_close = true
 }
 
-util.nmap("<leader>tt", ":NvimTreeToggle<CR>")
+wk.register({
+    name = "tree",
+    t = {":NvimTreeToggle<CR>", "toggle"},
+    f = {":NvimTreeFocus<CR>", "focus"},
+    r = {":NvimTreeRefresh<CR>", "refresh"},
+    o = {":NvimTreeFindFile<CR>", "find opened file"}
+}, {
+    prefix = "<leader>t"
+})

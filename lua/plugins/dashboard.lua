@@ -1,5 +1,3 @@
-local util = require("utils")
-
 vim.g.dashboard_default_executive = "telescope"
 vim.g.dashboard_custom_shortcut = {
     book_marks = "SPC f m",
@@ -23,6 +21,3 @@ vim.g.dashboard_custom_header = {
     "",
     ""
 }
-
-util.nnoremap("<leader>ss", ":<C-u>SessionSave<CR>")
-util.nnoremap("<leader>sl", ":<C-u>SessionLoad<CR>")
