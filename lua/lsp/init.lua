@@ -3,6 +3,9 @@ require("lsp.saga")
 local function on_attach(client, bufnr)
     require("lsp.mappings").setup(bufnr)
     require("lsp.highlight").setup(client)
+    require("lsp_signature").on_attach {
+        hint_prefix = " "
+    }
 
     vim.cmd [[
         autocmd CursorHold * lua require('lspsaga.diagnostic').show_cursor_diagnostics()
@@ -12,7 +15,6 @@ end
 local sumneko_config = require("lsp.sumneko")
 
 local servers = {
-    clangd = {},
     pyright = {},
     sumneko_lua = sumneko_config,
     bashls = {},
@@ -26,7 +28,6 @@ local servers = {
 local capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp
                                                                      .protocol
                                                                      .make_client_capabilities())
-capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 local lspconfig = require("lspconfig")
 for server, config in pairs(servers) do
@@ -35,3 +36,9 @@ for server, config in pairs(servers) do
         capabilities = capabilities
     }, config))
 end
+
+capabilities.textDocument.completion.completionItem.snippetSupport = false
+lspconfig.clangd.setup {
+    on_attach = on_attach,
+    capabilities = capabilities
+}

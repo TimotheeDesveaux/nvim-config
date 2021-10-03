@@ -43,6 +43,9 @@ return require("packer").startup(function(use)
     -- https://github.com/glepnir/lspsaga.nvim
     use "glepnir/lspsaga.nvim"
 
+    -- https://github.com/ray-x/lsp_signature.nvim
+    use "ray-x/lsp_signature.nvim"
+
     -- https://github.com/L3MON4D3/LuaSnip
     use {
         "L3MON4D3/LuaSnip",
