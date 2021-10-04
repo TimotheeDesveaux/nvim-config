@@ -5,6 +5,10 @@ vim.g.mapleader = " "
 util.nnoremap("Y", "y$")
 util.vnoremap("J", ":m '>+1<CR>gv=gv")
 util.vnoremap("K", ":m '<-2<CR>gv=gv")
+util.nnoremap("<C-k>", "<C-w>k")
+util.nnoremap("<C-l>", "<C-w>l")
+util.nnoremap("<C-j>", "<C-w>j")
+util.nnoremap("<C-h>", "<C-w>h")
 
 wk.register({
     ["<leader>"] = {":e #<CR>", "previous file"},
