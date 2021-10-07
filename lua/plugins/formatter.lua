@@ -29,6 +29,11 @@ require("format").setup {
             cmd = {"prettier -w"}
         }
     },
+    typescript = {
+        {
+            cmd = {"prettier -w"}
+        }
+    },
     html = {
         {
             cmd = {"prettier -w"}
