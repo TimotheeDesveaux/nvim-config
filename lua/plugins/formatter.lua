@@ -21,7 +21,7 @@ require("format").setup {
     },
     lua = {
         {
-            cmd = {"lua-format --single-quote-to-double-quote -i"}
+            cmd = {"lua-format -i"}
         }
     },
     javascript = {
