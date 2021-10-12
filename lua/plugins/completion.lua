@@ -35,27 +35,15 @@ cmp.setup {
         ["<C-Space>"] = cmp.mapping.complete(),
         ["<C-e>"] = cmp.mapping.close(),
         ["<Tab>"] = function(fallback)
-            if vim.fn.pumvisible() == 1 then
-                vim.fn.feedkeys(vim.api.nvim_replace_termcodes("<C-n>", true,
-                                                               true, true), "n")
-            elseif check_back_space() then
-                vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<Tab>",
-                                                                     true, true,
-                                                                     true), "n",
-                                      true)
+            if cmp.visible() then
+                cmp.select_next_item()
             else
                 fallback()
             end
         end,
         ["<S-Tab>"] = function(fallback)
-            if vim.fn.pumvisible() == 1 then
-                vim.fn.feedkeys(vim.api.nvim_replace_termcodes("<C-p>", true,
-                                                               true, true), "n")
-            elseif check_back_space() then
-                vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<S-Tab>",
-                                                                     true, true,
-                                                                     true), "n",
-                                      true)
+            if cmp.visible() then
+                cmp.select_prev_item()
             else
                 fallback()
             end
