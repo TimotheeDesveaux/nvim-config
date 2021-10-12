@@ -9,19 +9,18 @@ vim.g.nvim_tree_show_icons = {
     files = 1,
     folder_arrows = 1
 }
-vim.g.nvim_tree_icons = {
-    lsp = {
-        error = "",
-        warning = "",
-        hint = "",
-        info = ""
-
-    }
-}
 
 require("nvim-tree").setup {
     auto_close = true,
-    lsp_diagnostics = true
+    diagnostics = {
+        enable = false,
+        icons = {
+            error = "",
+            warning = "",
+            hint = "",
+            info = ""
+        }
+    }
 }
 
 wk.register({
