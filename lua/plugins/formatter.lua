@@ -44,6 +44,11 @@ require("format").setup {
             cmd = {"prettier -w"}
         }
     },
+    scss = {
+        {
+            cmd = {"prettier -w"}
+        }
+    },
     vue = {
         {
             cmd = {"prettier -w"}
