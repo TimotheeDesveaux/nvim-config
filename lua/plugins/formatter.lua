@@ -34,6 +34,11 @@ require("format").setup {
             cmd = {"prettier -w"}
         }
     },
+    json = {
+        {
+            cmd = {"prettier -w"}
+        }
+    },
     html = {
         {
             cmd = {"prettier -w"}
@@ -50,6 +55,11 @@ require("format").setup {
         }
     },
     vue = {
+        {
+            cmd = {"prettier -w"}
+        }
+    },
+    yaml = {
         {
             cmd = {"prettier -w"}
         }
