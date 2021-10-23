@@ -14,6 +14,9 @@ cmp.setup {
     },
     sources = {
         {
+            name = "nvim_lua"
+        },
+        {
             name = "nvim_lsp"
         },
         {
@@ -48,5 +51,18 @@ cmp.setup {
                 fallback()
             end
         end
+    },
+    formatting = {
+        format = require("lspkind").cmp_format({
+            with_text = true,
+            menu = {
+                buffer = "[buf]",
+                nvim_lsp = "[LSP]",
+                nvim_lua = "[api]",
+                path = "[path]",
+                luasnip = "[snip]",
+                gh_issues = "[calc]"
+            }
+        })
     }
 }

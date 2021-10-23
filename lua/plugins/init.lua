@@ -40,6 +40,9 @@ return require("packer").startup(function(use)
     -- https://github.com/neovim/nvim-lspconfig
     use "neovim/nvim-lspconfig"
 
+    -- https://github.com/onsails/lspkind-nvim
+    use "onsails/lspkind-nvim"
+
     -- https://github.com/kosayoda/nvim-lightbulb
     use "kosayoda/nvim-lightbulb"
 
@@ -60,6 +63,7 @@ return require("packer").startup(function(use)
         "hrsh7th/nvim-cmp",
         requires = {
             "hrsh7th/cmp-nvim-lsp",
+            "hrsh7th/cmp-nvim-lua",
             "hrsh7th/cmp-path",
             "saadparwaiz1/cmp_luasnip",
             "hrsh7th/cmp-buffer",
