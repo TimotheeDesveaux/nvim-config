@@ -21,8 +21,11 @@ local servers = {
     dockerls = {},
     tsserver = {},
     html = {},
+    emmet_ls = {},
     cssls = {},
-    vuels = {}
+    tailwindcss = {},
+    vuels = {},
+    cmake = {}
 }
 
 local capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp

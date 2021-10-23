@@ -19,6 +19,12 @@
     pacman -S clang
     ```
 
+* Cmake: [cmake-language-server](https://github.com/regen100/cmake-language-server)
+
+    ```bash
+    pip install cmake-language-server
+    ```
+
 * Python: [pyright](https://github.com/microsoft/pyright)
 
     ```bash
@@ -67,6 +73,18 @@
     npm install -g vscode-langservers-extracted
     ```
 
+* Emmet: [emmet-ls](https://github.com/aca/emmet-ls)
+
+    ```bash
+    npm install -g emmet-ls
+    ```
+
+* Tailwindcss: [tailwindcss-intellisense](https://github.com/tailwindlabs/tailwindcss-intellisense)
+
+    ```bash
+    npm install -g @tailwindcss/language-server
+    ```
+
 * Vue: [vetur](https://github.com/vuejs/vetur)
 
     ```bash
@@ -75,16 +93,22 @@
 
 ### Formatters
 
-* Python: [black](https://github.com/psf/black)
-
-    ```bash
-    pip install black
-    ```
-
 * C/C++: [clang-format](https://clang.llvm.org/docs/ClangFormat.html)
 
     ```bash
     pacman -S clang
+    ```
+
+* Cmake: [cmake-format](https://github.com/regen100/cmake-language-server)
+
+    ```bash
+    pip install cmake-language-server
+    ```
+
+* Python: [black](https://github.com/psf/black)
+
+    ```bash
+    pip install black
     ```
 
 * Lua: [LuaFormatter](https://github.com/Koihik/LuaFormatter)
@@ -94,7 +118,7 @@
     luarocks install --server=https://luarocks.org/dev luaformatter
     ```
 
-* Javascript/Typescript/HTML/CSS/Vue: [prettier](https://prettier.io/)
+* Javascript/Typescript/HTML/CSS/SCSS/Vue/JSON/YAML: [prettier](https://prettier.io/)
 
     ```bash
     npm install -g prettier

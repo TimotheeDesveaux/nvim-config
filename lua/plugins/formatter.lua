@@ -19,6 +19,11 @@ require("format").setup {
             cmd = {"clang-format -i"}
         }
     },
+    cmake = {
+        {
+            cmd = {"cmake-format -i"}
+        }
+    },
     lua = {
         {
             cmd = {"lua-format -i"}
