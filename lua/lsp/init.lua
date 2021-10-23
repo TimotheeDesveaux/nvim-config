@@ -1,14 +1,35 @@
-require("lsp.saga")
+local signs = {
+    LspDiagnosticsSignError = "",
+    LspDiagnosticsSignWarning = "",
+    LspDiagnosticsSignHint = "",
+    LspDiagnosticsSignInformation = "",
+    LightBulbSign = ""
+}
+
+for hl, icon in pairs(signs) do
+    vim.fn.sign_define(hl, {
+        text = icon,
+        texthl = hl,
+        numhl = hl
+    })
+end
 
 local function on_attach(client, bufnr)
     require("lsp.mappings").setup(bufnr)
     require("lsp.highlight").setup(client)
-    require("lsp_signature").on_attach {
-        hint_prefix = " "
-    }
+    require("lsp_signature").on_attach({
+        bind = true,
+        handler_opts = {
+            border = "none"
+        },
+        hint_enable = false
+    }, bufnr)
 
     vim.cmd [[
-        autocmd CursorHold * lua require('lspsaga.diagnostic').show_cursor_diagnostics()
+    augroup nvim_lightbulb
+        autocmd! * <buffer>
+        autocmd CursorHold,CursorHoldI <buffer> lua require('nvim-lightbulb').update_lightbulb()
+    augroup END
     ]]
 end
 

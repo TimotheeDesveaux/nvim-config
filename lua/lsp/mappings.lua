@@ -9,38 +9,25 @@ function M.setup(bufnr)
         buffer = bufnr
     }
 
-    util.nmap("K", "<cmd>lua require('lspsaga.hover').render_hover_doc()<CR>",
-              opts)
-    util.nmap("<C-f>",
-              "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(1)<CR>",
-              opts)
-    util.nmap("<C-b>",
-              "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(-1)<CR>",
-              opts)
+    util.nmap("K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
 
     local lsp_keys = {
         name = "lsp",
         D = {"<Cmd>lua vim.lsp.buf.declaration()<CR>", "declaration"},
         d = {"<Cmd>lua vim.lsp.buf.definition()<CR>", "definition"},
         i = {"<Cmd>lua vim.lsp.buf.implementation()<CR>", "implementation"},
-        y = {"<Cmd>lua vim.lsp.buf.type_definition()<CR>", "type defintion"},
+        t = {"<Cmd>lua vim.lsp.buf.type_definition()<CR>", "type defintion"},
         r = {"<cmd>lua vim.lsp.buf.references()<CR>", "references"},
-        n = {"<cmd>lua require('lspsaga.rename').rename()<CR>", "rename"},
-        a = {
-            "<cmd>lua require('lspsaga.codeaction').code_action()<CR>",
-            "action"
-        },
+        n = {"<cmd>lua vim.lsp.buf.rename()<CR>", "rename"},
+        a = {"<cmd>lua vim.lsp.buf.code_action()<CR>", "action"},
         k = {
-            "<cmd>lua require('lspsaga.diagnostic').lsp_jump_diagnostic_prev()<CR>",
+            "<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>",
             "previous diagnostic"
         },
-        j = {
-            "<cmd>lua require('lspsaga.diagnostic').lsp_jump_diagnostic_next()<CR>",
-            "next diagnostic"
-        },
+        j = {"<cmd>lua vim.lsp.diagnostic.goto_next()<CR>", "next diagnostic"},
         s = {
-            "<cmd>lua require('lspsaga.signaturehelp').signature_help()<CR>",
-            "signature"
+            "<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>",
+            "show diagnostics"
         }
     }
 
