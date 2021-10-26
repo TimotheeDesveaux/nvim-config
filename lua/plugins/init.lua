@@ -26,10 +26,7 @@ return require("packer").startup(function(use)
         requires = {
             {"nvim-lua/popup.nvim"},
             {"nvim-lua/plenary.nvim"},
-            {
-                "kyazdani42/nvim-web-devicons",
-                opt = true
-            }
+            {"kyazdani42/nvim-web-devicons"}
         },
         config = function()
             require("plugins.telescope")
@@ -97,10 +94,7 @@ return require("packer").startup(function(use)
     -- https://github.com/hoob3rt/lualine.nvim
     use {
         "hoob3rt/lualine.nvim",
-        requires = {
-            "kyazdani42/nvim-web-devicons",
-            opt = true
-        },
+        requires = {"kyazdani42/nvim-web-devicons"},
         config = function()
             require("plugins.statusline")
         end
@@ -139,6 +133,7 @@ return require("packer").startup(function(use)
     -- https://github.com/kyazdani42/nvim-tree.lua
     use {
         "kyazdani42/nvim-tree.lua",
+        requires = "kyazdani42/nvim-web-devicons",
         config = function()
             require("plugins.tree")
         end,
