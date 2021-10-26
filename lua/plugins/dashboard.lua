@@ -6,7 +6,7 @@ vim.g.dashboard_custom_shortcut = {
     find_history = "SPC f h",
     find_word = "SPC f r",
     last_session = "SPC s l",
-    new_file = "SPC c n"
+    new_file = "SPC c n",
 }
 
 vim.g.dashboard_custom_header = {
@@ -19,5 +19,5 @@ vim.g.dashboard_custom_header = {
     " ██║ ╚████║ ███████╗╚██████╔╝  ╚████╔╝  ██║ ██║ ╚═╝ ██║",
     " ╚═╝  ╚═══╝ ╚══════╝ ╚═════╝    ╚═══╝   ╚═╝ ╚═╝     ╚═╝",
     "",
-    ""
+    "",
 }

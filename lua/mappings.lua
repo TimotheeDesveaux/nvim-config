@@ -11,15 +11,15 @@ util.nnoremap("<C-j>", "<C-w>j")
 util.nnoremap("<C-h>", "<C-w>h")
 
 wk.register({
-    ["<leader>"] = {":e #<CR>", "previous file"},
-    j = {"gT", "previous tab"},
-    k = {"gt", "next tab"}
+    ["<leader>"] = { ":e #<CR>", "previous file" },
+    j = { "gT", "previous tab" },
+    k = { "gt", "next tab" },
 }, {
     prefix = "<leader>",
-    noremap = true
+    noremap = true,
 })
 
-vim.cmd [[
+vim.cmd([[
 autocmd FileType markdown nnoremap <buffer> <leader>mp :silent !pandoc % -o %:r.pdf<CR>
 autocmd FileType markdown nnoremap <buffer> <leader>mv :silent !zathura %:r.pdf &<CR>
-]]
+]])

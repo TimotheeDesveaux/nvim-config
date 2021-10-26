@@ -1,79 +1,79 @@
-require("format").setup {
+require("format").setup({
     ["*"] = {
         {
-            cmd = {"sed -i 's/[ \t]*$//'"} -- remove trailing whitespace
-        }
+            cmd = { "sed -i 's/[ \t]*$//'" }, -- remove trailing whitespace
+        },
     },
     python = {
         {
-            cmd = {"black"}
-        }
+            cmd = { "black" },
+        },
     },
     c = {
         {
-            cmd = {"clang-format -i"}
-        }
+            cmd = { "clang-format -i" },
+        },
     },
     cpp = {
         {
-            cmd = {"clang-format -i"}
-        }
+            cmd = { "clang-format -i" },
+        },
     },
     cmake = {
         {
-            cmd = {"cmake-format -i"}
-        }
+            cmd = { "cmake-format -i" },
+        },
     },
     lua = {
         {
-            cmd = {"lua-format -i"}
-        }
+            cmd = { "stylua" },
+        },
     },
     javascript = {
         {
-            cmd = {"prettier -w"}
-        }
+            cmd = { "prettier -w" },
+        },
     },
     typescript = {
         {
-            cmd = {"prettier -w"}
-        }
+            cmd = { "prettier -w" },
+        },
     },
     json = {
         {
-            cmd = {"prettier -w"}
-        }
+            cmd = { "prettier -w" },
+        },
     },
     html = {
         {
-            cmd = {"prettier -w"}
-        }
+            cmd = { "prettier -w" },
+        },
     },
     css = {
         {
-            cmd = {"prettier -w"}
-        }
+            cmd = { "prettier -w" },
+        },
     },
     scss = {
         {
-            cmd = {"prettier -w"}
-        }
+            cmd = { "prettier -w" },
+        },
     },
     vue = {
         {
-            cmd = {"prettier -w"}
-        }
+            cmd = { "prettier -w" },
+        },
     },
     yaml = {
         {
-            cmd = {"prettier -w"}
-        }
-    }
-}
+            cmd = { "prettier -w" },
+        },
+    },
+})
 
-vim.cmd [[
+vim.cmd([[
 augroup Format
     autocmd!
     autocmd BufWritePost * FormatWrite
 augroup END
-]]
+]])

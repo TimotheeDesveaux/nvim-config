@@ -1,62 +1,61 @@
 return require("packer").startup(function(use)
-
     -- https://github.com/wbthomason/packer.nvim
-    use "wbthomason/packer.nvim"
+    use("wbthomason/packer.nvim")
 
     -- https://github.com/nvim-treesitter/nvim-treesitter
-    use {
+    use({
         "nvim-treesitter/nvim-treesitter",
         run = ":TSUpdate",
         config = function()
             require("plugins.treesitter")
-        end
-    }
+        end,
+    })
 
     -- https://github.com/folke/tokyonight.nvim
-    use {
+    use({
         "folke/tokyonight.nvim",
         config = function()
             require("plugins.colorscheme")
-        end
-    }
+        end,
+    })
 
     -- https://github.com/nvim-telescope/telescope.nvim
-    use {
+    use({
         "nvim-telescope/telescope.nvim",
         requires = {
-            {"nvim-lua/popup.nvim"},
-            {"nvim-lua/plenary.nvim"},
-            {"kyazdani42/nvim-web-devicons"}
+            { "nvim-lua/popup.nvim" },
+            { "nvim-lua/plenary.nvim" },
+            { "kyazdani42/nvim-web-devicons" },
         },
         config = function()
             require("plugins.telescope")
         end,
-        after = "which-key.nvim"
-    }
+        after = "which-key.nvim",
+    })
 
     -- https://github.com/neovim/nvim-lspconfig
-    use "neovim/nvim-lspconfig"
+    use("neovim/nvim-lspconfig")
 
     -- https://github.com/onsails/lspkind-nvim
-    use "onsails/lspkind-nvim"
+    use("onsails/lspkind-nvim")
 
     -- https://github.com/kosayoda/nvim-lightbulb
-    use "kosayoda/nvim-lightbulb"
+    use("kosayoda/nvim-lightbulb")
 
     -- https://github.com/ray-x/lsp_signature.nvim
-    use "ray-x/lsp_signature.nvim"
+    use("ray-x/lsp_signature.nvim")
 
     -- https://github.com/L3MON4D3/LuaSnip
-    use {
+    use({
         "L3MON4D3/LuaSnip",
         requires = "rafamadriz/friendly-snippets",
         config = function()
             require("plugins.snippets")
-        end
-    }
+        end,
+    })
 
     -- https://github.com/hrsh7th/nvim-cmp
-    use {
+    use({
         "hrsh7th/nvim-cmp",
         requires = {
             "hrsh7th/cmp-nvim-lsp",
@@ -64,97 +63,96 @@ return require("packer").startup(function(use)
             "hrsh7th/cmp-path",
             "saadparwaiz1/cmp_luasnip",
             "hrsh7th/cmp-buffer",
-            "hrsh7th/cmp-calc"
+            "hrsh7th/cmp-calc",
         },
         config = function()
             require("plugins.completion")
-        end
-    }
+        end,
+    })
 
     -- https://github.com/windwp/nvim-autopairs
-    use {
+    use({
         "windwp/nvim-autopairs",
         config = function()
             require("plugins.autopairs")
-        end
-    }
+        end,
+    })
 
     -- https://github.com/tpope/vim-surround
-    use "tpope/vim-surround"
+    use("tpope/vim-surround")
 
     -- https://github.com/preservim/nerdcommenter
-    use {
+    use({
         "preservim/nerdcommenter",
         config = function()
             require("plugins.comments")
         end,
-        after = "which-key.nvim"
-    }
+        after = "which-key.nvim",
+    })
 
     -- https://github.com/hoob3rt/lualine.nvim
-    use {
+    use({
         "hoob3rt/lualine.nvim",
-        requires = {"kyazdani42/nvim-web-devicons"},
+        requires = { "kyazdani42/nvim-web-devicons" },
         config = function()
             require("plugins.statusline")
-        end
-    }
+        end,
+    })
 
     -- https://github.com/RRethy/vim-hexokinase
-    use {
+    use({
         "rrethy/vim-hexokinase",
-        run = "make hexokinase"
-    }
+        run = "make hexokinase",
+    })
 
     -- https://github.com/glepnir/dashboard-nvim
-    use {
+    use({
         "glepnir/dashboard-nvim",
         config = function()
             require("plugins.dashboard")
-        end
-    }
+        end,
+    })
 
     -- https://github.com/folke/which-key.nvim
-    use {
+    use({
         "folke/which-key.nvim",
         config = function()
             require("mappings")
-        end
-    }
+        end,
+    })
 
     -- https://github.com/lukas-reineke/indent-blankline.nvim
-    use {
+    use({
         "lukas-reineke/indent-blankline.nvim",
         config = function()
             require("plugins.indent-blankline")
-        end
-    }
+        end,
+    })
 
     -- https://github.com/kyazdani42/nvim-tree.lua
-    use {
+    use({
         "kyazdani42/nvim-tree.lua",
         requires = "kyazdani42/nvim-web-devicons",
         config = function()
             require("plugins.tree")
         end,
-        after = "which-key.nvim"
-    }
+        after = "which-key.nvim",
+    })
 
     -- https://github.com/windwp/nvim-projectconfig
-    use {
+    use({
         "windwp/nvim-projectconfig",
         config = function()
             require("plugins.projectconfig")
         end,
-        after = "dashboard-nvim"
-    }
+        after = "dashboard-nvim",
+    })
 
     -- https://github.com/lukas-reineke/format.nvim
-    use {
+    use({
         "lukas-reineke/format.nvim",
         config = function()
             require("plugins.formatter")
-        end
-    }
-
+        end,
+    })
 end)

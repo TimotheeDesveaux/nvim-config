@@ -17,12 +17,12 @@ local normal_mappings = {
     n = "nested",
     s = "sexy",
     u = "uncomment",
-    y = "yank"
+    y = "yank",
 }
 
 wk.register(normal_mappings, {
     mode = "n",
-    prefix = "<leader>c"
+    prefix = "<leader>c",
 })
 
 local visual_mappings = {
@@ -36,10 +36,10 @@ local visual_mappings = {
     n = "nested",
     s = "sexy",
     u = "uncomment",
-    y = "yank"
+    y = "yank",
 }
 
 wk.register(visual_mappings, {
     mode = "v",
-    prefix = "<leader>c"
+    prefix = "<leader>c",
 })

@@ -7,10 +7,10 @@ vim.g.nvim_tree_show_icons = {
     git = 0,
     folders = 1,
     files = 1,
-    folder_arrows = 1
+    folder_arrows = 1,
 }
 
-require("nvim-tree").setup {
+require("nvim-tree").setup({
     auto_close = true,
     diagnostics = {
         enable = false,
@@ -18,17 +18,17 @@ require("nvim-tree").setup {
             error = "",
             warning = "",
             hint = "",
-            info = ""
-        }
-    }
-}
+            info = "",
+        },
+    },
+})
 
 wk.register({
     name = "tree",
-    t = {":NvimTreeToggle<CR>", "toggle"},
-    f = {":NvimTreeFocus<CR>", "focus"},
-    r = {":NvimTreeRefresh<CR>", "refresh"},
-    o = {":NvimTreeFindFile<CR>", "find opened file"}
+    t = { ":NvimTreeToggle<CR>", "toggle" },
+    f = { ":NvimTreeFocus<CR>", "focus" },
+    r = { ":NvimTreeRefresh<CR>", "refresh" },
+    o = { ":NvimTreeFindFile<CR>", "find opened file" },
 }, {
-    prefix = "<leader>t"
+    prefix = "<leader>t",
 })
