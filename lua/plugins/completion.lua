@@ -15,24 +15,12 @@ cmp.setup({
         end,
     },
     sources = {
-        {
-            name = "nvim_lua",
-        },
-        {
-            name = "nvim_lsp",
-        },
-        {
-            name = "path",
-        },
-        {
-            name = "luasnip",
-        },
-        {
-            name = "buffer",
-        },
-        {
-            name = "calc",
-        },
+        { name = "nvim_lua" },
+        { name = "nvim_lsp" },
+        { name = "path" },
+        { name = "luasnip" },
+        { name = "buffer" },
+        { name = "calc" },
     },
     mapping = {
         ["<C-p>"] = cmp.mapping.select_prev_item(),
