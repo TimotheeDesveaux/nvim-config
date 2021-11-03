@@ -41,6 +41,10 @@ cmp.setup({
                 fallback()
             end
         end,
+        ["<CR>"] = cmp.mapping.confirm({
+            behavior = cmp.ConfirmBehavior.Replace,
+            select = false,
+        }),
     },
     formatting = {
         format = require("lspkind").cmp_format({
