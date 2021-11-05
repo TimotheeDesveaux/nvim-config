@@ -29,7 +29,7 @@ vim.o.splitbelow = true
 vim.o.splitright = true
 vim.o.signcolumn = "yes"
 vim.o.pumheight = 20
-vim.o.completeopt = "menuone,noinsert,noselect"
+vim.o.completeopt = "menu,menuone,noselect"
 vim.o.wrap = false
 
 -- Miscellaneous --
