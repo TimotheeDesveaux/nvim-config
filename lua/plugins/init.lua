@@ -6,6 +6,10 @@ return require("packer").startup(function(use)
     use({
         "nvim-treesitter/nvim-treesitter",
         run = ":TSUpdate",
+        requires = {
+            { "windwp/nvim-ts-autotag" },
+            { "JoosepAlviste/nvim-ts-context-commentstring" },
+        },
         config = function()
             require("plugins.treesitter")
         end,
