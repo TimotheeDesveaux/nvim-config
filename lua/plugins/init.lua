@@ -107,11 +107,11 @@ return require("packer").startup(function(use)
         run = "make hexokinase",
     })
 
-    -- https://github.com/glepnir/dashboard-nvim
+    -- https://github.com/goolord/alpha-nvim
     use({
-        "glepnir/dashboard-nvim",
+        "goolord/alpha-nvim",
         config = function()
-            require("plugins.dashboard")
+            require("plugins.startup")
         end,
     })
 
@@ -147,7 +147,7 @@ return require("packer").startup(function(use)
         config = function()
             require("plugins.projectconfig")
         end,
-        after = "dashboard-nvim",
+        after = "alpha-nvim",
     })
 
     -- https://github.com/lukas-reineke/format.nvim
