@@ -41,6 +41,9 @@ require("format").setup({
     yaml = {
         { cmd = { "prettier -w" } },
     },
+    rust = {
+        { cmd = { "rustfmt" } },
+    },
 })
 
 vim.cmd([[

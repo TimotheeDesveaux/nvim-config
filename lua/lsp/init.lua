@@ -47,6 +47,7 @@ local servers = {
     tailwindcss = {},
     vuels = {},
     cmake = {},
+    rust_analyzer = {},
 }
 
 local capabilities = require("cmp_nvim_lsp").update_capabilities(
