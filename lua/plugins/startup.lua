@@ -18,6 +18,7 @@ dashboard.section.buttons.val = {
     dashboard.button("e", "  > New file", ":ene | startinsert <CR>"),
     dashboard.button("f", "  > Find file", ":Telescope find_files<CR>"),
     dashboard.button("r", "  > Find word", ":Telescope live_grep<CR>"),
+    dashboard.button("t", "פּ  > File explorer", ":NvimTreeOpen<CR>"),
     dashboard.button(
         "s",
         "  > Settings",
