@@ -28,8 +28,17 @@ dashboard.section.buttons.val = {
     dashboard.button("q", "  > Quit NVIM", ":qa<CR>"),
 }
 
-local fortune = require("alpha.fortune")
-dashboard.section.footer.val = fortune()
+local function footer()
+    local total_plugins = #vim.tbl_keys(packer_plugins)
+    local datetime = os.date("%d-%m-%Y  %H:%M:%S")
+    return "┌─ "
+        .. datetime
+        .. " ─┐\n└─  "
+        .. total_plugins
+        .. " plugins in total ─┘"
+end
+
+dashboard.section.footer.val = footer()
 
 -- Send config to alpha
 alpha.setup(dashboard.opts)
