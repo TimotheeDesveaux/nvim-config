@@ -161,4 +161,7 @@ return require("packer").startup(function(use)
             require("plugins.formatter")
         end,
     })
+
+    -- https://github.com/TimUntersberger/neogit
+    use({ "TimUntersberger/neogit", requires = "nvim-lua/plenary.nvim" })
 end)
