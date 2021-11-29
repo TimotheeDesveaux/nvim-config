@@ -6,7 +6,7 @@ local function on_attach(client, bufnr)
     require("lsp_signature").on_attach({
         bind = true,
         handler_opts = {
-            border = "none",
+            border = "rounded",
         },
         hint_enable = false,
     }, bufnr)
