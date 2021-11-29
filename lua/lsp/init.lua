@@ -1,18 +1,4 @@
-local signs = {
-    LspDiagnosticsSignError = "",
-    LspDiagnosticsSignWarning = "",
-    LspDiagnosticsSignHint = "",
-    LspDiagnosticsSignInformation = "",
-    LightBulbSign = "",
-}
-
-for hl, icon in pairs(signs) do
-    vim.fn.sign_define(hl, {
-        text = icon,
-        texthl = hl,
-        numhl = hl,
-    })
-end
+require("lsp.ui")
 
 local function on_attach(client, bufnr)
     require("lsp.mappings").setup(bufnr)
