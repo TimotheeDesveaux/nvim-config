@@ -8,7 +8,6 @@ return require("packer").startup(function(use)
         run = ":TSUpdate",
         requires = {
             { "windwp/nvim-ts-autotag" },
-            { "JoosepAlviste/nvim-ts-context-commentstring" },
         },
         config = function()
             require("plugins.treesitter")
@@ -87,13 +86,12 @@ return require("packer").startup(function(use)
     -- https://github.com/tpope/vim-surround
     use("tpope/vim-surround")
 
-    -- https://github.com/preservim/nerdcommenter
+    -- https://github.com/numToStr/Comment.nvim
     use({
-        "preservim/nerdcommenter",
+        "numToStr/Comment.nvim",
         config = function()
             require("plugins.comments")
         end,
-        after = "which-key.nvim",
     })
 
     -- https://github.com/hoob3rt/lualine.nvim
