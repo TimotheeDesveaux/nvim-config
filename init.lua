@@ -15,6 +15,7 @@ vim.o.backup = false
 vim.o.swapfile = false
 vim.o.hidden = true
 vim.cmd("autocmd BufEnter *.ll set filetype=lex")
+vim.cmd("autocmd BufEnter local.am set filetype=automake")
 
 -- Interface --
 vim.o.termguicolors = true
