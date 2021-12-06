@@ -2,7 +2,6 @@ local util = require("utils")
 local wk = require("which-key")
 
 vim.g.mapleader = " "
-util.nnoremap("Y", "y$")
 util.vnoremap("J", ":m '>+1<CR>gv=gv")
 util.vnoremap("K", ":m '<-2<CR>gv=gv")
 util.nnoremap("<C-k>", "<C-w>k")
