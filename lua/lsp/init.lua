@@ -48,8 +48,10 @@ for server, config in pairs(servers) do
     }, config))
 end
 
-capabilities.textDocument.completion.completionItem.snippetSupport = false
+local clangd_capabilities = vim.deepcopy(capabilities)
+clangd_capabilities.textDocument.completion.completionItem.snippetSupport =
+    false
 lspconfig.clangd.setup({
     on_attach = on_attach,
-    capabilities = capabilities,
+    capabilities = clangd_capabilities,
 })
