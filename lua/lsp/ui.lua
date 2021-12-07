@@ -1,10 +1,10 @@
 local colors = require("tokyonight.colors").setup({ darkFloat = true })
 
 local signs = {
-    LspDiagnosticsSignError = "",
-    LspDiagnosticsSignWarning = "",
-    LspDiagnosticsSignHint = "",
-    LspDiagnosticsSignInformation = "",
+    DiagnosticSignError = "",
+    DiagnosticSignWarn = "",
+    DiagnosticSignHint = "",
+    DiagnosticSignInfo = "",
     LightBulbSign = "",
 }
 
