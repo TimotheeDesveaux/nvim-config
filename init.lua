@@ -1,44 +1,44 @@
 -- Indentation --
-vim.o.tabstop = 8
-vim.o.shiftwidth = 4
-vim.o.expandtab = true
+vim.opt.tabstop = 8
+vim.opt.shiftwidth = 4
+vim.opt.expandtab = true
 vim.cmd("autocmd Filetype make setlocal noexpandtab shiftwidth=8")
 
 -- Search --
-vim.o.ignorecase = true
-vim.o.smartcase = true
-vim.o.hlsearch = false
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
+vim.opt.hlsearch = false
 
 -- File --
-vim.o.autowrite = true
-vim.o.backup = false
-vim.o.swapfile = false
-vim.o.hidden = true
+vim.opt.autowrite = true
+vim.opt.backup = false
+vim.opt.swapfile = false
+vim.opt.hidden = true
 vim.cmd("autocmd BufEnter *.ll set filetype=lex")
 vim.cmd("autocmd BufEnter local.am set filetype=automake")
 
 -- Interface --
-vim.o.termguicolors = true
-vim.o.number = true
-vim.o.colorcolumn = "80"
-vim.o.showmode = false
-vim.o.cursorline = true
-vim.o.scrolloff = 10
-vim.o.list = true
-vim.o.listchars = "tab:»·,trail:¤"
-vim.o.splitbelow = true
-vim.o.splitright = true
-vim.o.signcolumn = "yes"
-vim.o.pumheight = 20
-vim.o.completeopt = "menu,menuone,noselect"
-vim.o.wrap = false
+vim.opt.termguicolors = true
+vim.opt.number = true
+vim.opt.colorcolumn = "80"
+vim.opt.showmode = false
+vim.opt.cursorline = true
+vim.opt.scrolloff = 10
+vim.opt.list = true
+vim.opt.listchars = { tab = "»·", trail = "¤" }
+vim.opt.splitbelow = true
+vim.opt.splitright = true
+vim.opt.signcolumn = "yes"
+vim.opt.pumheight = 20
+vim.opt.completeopt = { "menu", "menuone", "noselect" }
+vim.opt.wrap = false
 
 -- Miscellaneous --
-vim.o.mouse = "a"
-vim.o.clipboard = "unnamedplus"
-vim.o.updatetime = 300
-vim.o.timeoutlen = 300
-vim.o.shortmess = vim.o.shortmess .. "c"
+vim.opt.mouse = "a"
+vim.opt.clipboard = "unnamedplus"
+vim.opt.updatetime = 300
+vim.opt.timeoutlen = 300
+vim.opt.shortmess:append({ c = true })
 
 -- Plugins --
 require("plugins")
