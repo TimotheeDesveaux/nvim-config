@@ -152,9 +152,9 @@ return require("packer").startup(function(use)
         after = "alpha-nvim",
     })
 
-    -- https://github.com/lukas-reineke/format.nvim
+    -- https://github.com/mhartington/formatter.nvim
     use({
-        "lukas-reineke/format.nvim",
+        "mhartington/formatter.nvim",
         config = function()
             require("plugins.formatter")
         end,
