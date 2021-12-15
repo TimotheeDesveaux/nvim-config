@@ -5,16 +5,19 @@ local function prettier()
         exe = "prettier",
         args = {
             "--stdin-filepath",
-            vim.fn.fnameescape(vim.api.nvim_buf_get_name(0)),
+            vim.fn.shellescape(vim.api.nvim_buf_get_name(0)),
         },
         stdin = true,
     }
 end
 
-local function clangformat()
+local function clang_format()
     return {
         exe = "clang-format",
-        args = { "--assume-filename", vim.api.nvim_buf_get_name(0) },
+        args = {
+            "--assume-filename",
+            vim.fn.shellescape(vim.api.nvim_buf_get_name(0)),
+        },
         stdin = true,
         cwd = vim.fn.expand("%:p:h"),
     }
@@ -22,8 +25,8 @@ end
 
 formatter.setup({
     filetype = {
-        c = { clangformat },
-        cpp = { clangformat },
+        c = { clang_format },
+        cpp = { clang_format },
         javascript = { prettier },
         typescript = { prettier },
         json = { prettier },
