@@ -34,19 +34,7 @@
 * Lua: [sumneko_lua](https://github.com/sumneko/lua-language-server)
 
     ```bash
-    # clone project
-    [ -d ~/.local/share/nvim/lspinstall ]\
-        || mkdir ~/.local/share/nvim/lspinstall
-    git clone https://github.com/sumneko/lua-language-server\
-        ~/.local/share/nvim/lspinstall
-    cd ~/.local/share/nvim/lspinstall/lua-language-server
-    git submodule update --init --recursive
-
-    # build project
-    cd 3rd/luamake
-    ./compile/install.sh
-    cd ../..
-    ./3rd/luamake/luamake rebuild
+    pacman -S lua-language-server
     ```
 
 * Bash: [bashls](https://github.com/bash-lsp/bash-language-server)
