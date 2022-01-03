@@ -21,13 +21,17 @@ function M.setup(bufnr)
         n = { "<cmd>lua vim.lsp.buf.rename()<CR>", "rename" },
         a = { "<cmd>lua vim.lsp.buf.code_action()<CR>", "action" },
         k = {
-            "<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>",
+            "<cmd>lua vim.diagnostic.goto_prev()<CR>",
             "previous diagnostic",
         },
-        j = { "<cmd>lua vim.lsp.diagnostic.goto_next()<CR>", "next diagnostic" },
+        j = { "<cmd>lua vim.diagnostic.goto_next()<CR>", "next diagnostic" },
         s = {
-            "<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>",
-            "show diagnostics",
+            "<cmd>lua vim.diagnostic.open_float({ scope = 'cursor' })<CR>",
+            "show cursor diagnostic",
+        },
+        S = {
+            "<cmd>lua vim.diagnostic.open_float({ scope = 'line' })<CR>",
+            "show line diagnostics",
         },
     }
 
