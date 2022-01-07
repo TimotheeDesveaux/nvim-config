@@ -13,6 +13,12 @@
 
 ### Lsp Servers
 
+* Bash: [bashls](https://github.com/bash-lsp/bash-language-server)
+
+    ```bash
+    npm install -g bash-language-server
+    ```
+
 * C/C++: [clangd](https://clangd.llvm.org/)
 
     ```bash
@@ -25,34 +31,16 @@
     pip install cmake-language-server
     ```
 
-* Python: [pyright](https://github.com/microsoft/pyright)
-
-    ```bash
-    npm install -g pyright
-    ```
-
-* Lua: [sumneko_lua](https://github.com/sumneko/lua-language-server)
-
-    ```bash
-    pacman -S lua-language-server
-    ```
-
-* Bash: [bashls](https://github.com/bash-lsp/bash-language-server)
-
-    ```bash
-    npm install -g bash-language-server
-    ```
-
 * Docker: [dockerls](https://github.com/rcjsuen/dockerfile-language-server-nodejs)
 
     ```bash
     npm install -g dockerfile-language-server-nodejs
     ```
 
-* Javascript/Typescript: [tsserver](https://github.com/typescript-language-server/typescript-language-server)
+* Emmet: [emmet-ls](https://github.com/aca/emmet-ls)
 
     ```bash
-    npm install -g typescript typescript-language-server
+    npm install -g emmet-ls
     ```
 
 * HTML/CSS: [vscode-langservers-extracted](https://github.com/hrsh7th/vscode-langservers-extracted)
@@ -61,10 +49,28 @@
     npm install -g vscode-langservers-extracted
     ```
 
-* Emmet: [emmet-ls](https://github.com/aca/emmet-ls)
+* Javascript/Typescript: [tsserver](https://github.com/typescript-language-server/typescript-language-server)
 
     ```bash
-    npm install -g emmet-ls
+    npm install -g typescript typescript-language-server
+    ```
+
+* Lua: [sumneko_lua](https://github.com/sumneko/lua-language-server)
+
+    ```bash
+    pacman -S lua-language-server
+    ```
+
+* Python: [pyright](https://github.com/microsoft/pyright)
+
+    ```bash
+    npm install -g pyright
+    ```
+
+* Rust: [rust-analyser](https://github.com/rust-analyzer/rust-analyzer)
+
+    ```bash
+    pacman -S rust-analyser
     ```
 
 * Tailwindcss: [tailwindcss-intellisense](https://github.com/tailwindlabs/tailwindcss-intellisense)
@@ -93,23 +99,28 @@
     pip install cmake-language-server
     ```
 
+* Javascript/Typescript/HTML/CSS/SCSS/Vue/JSON/YAML: [prettier](https://prettier.io/)
+
+    ```bash
+    npm install -g prettier
+    ```
+
+* Lua: [LuaFormatter](https://github.com/Koihik/LuaFormatter)
+
+    ```bash
+    cargo install stylua
+    ```
+
 * Python: [black](https://github.com/psf/black)
 
     ```bash
     pip install black
     ```
 
-* Lua: [LuaFormatter](https://github.com/Koihik/LuaFormatter)
+* Rust: [rustfmt](https://github.com/rust-lang/rustfmt)
 
     ```bash
-    pacman -S luarocks
-    luarocks install --server=https://luarocks.org/dev luaformatter
-    ```
-
-* Javascript/Typescript/HTML/CSS/SCSS/Vue/JSON/YAML: [prettier](https://prettier.io/)
-
-    ```bash
-    npm install -g prettier
+    pacman -S rust
     ```
 
 ### Other
@@ -123,7 +134,7 @@
 * Pdf viewer: [zathura](https://pwmt.org/projects/zathura/)
 
     ```bash
-    pacman -S zathura zathura-mupdf
+    pacman -S zathura zathura-pdf-mupdf
     ```
 
 * Some patched font: [NerdFont](https://www.nerdfonts.com/)
