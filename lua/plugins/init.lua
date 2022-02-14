@@ -103,10 +103,12 @@ return require("packer").startup(function(use)
         end,
     })
 
-    -- https://github.com/RRethy/vim-hexokinase
+    -- https://github.com/norcalli/nvim-colorizer.lua
     use({
-        "rrethy/vim-hexokinase",
-        run = "make hexokinase",
+        "norcalli/nvim-colorizer.lua",
+        config = function()
+            require("plugins.colorizer")
+        end,
     })
 
     -- https://github.com/goolord/alpha-nvim
@@ -168,6 +170,6 @@ return require("packer").startup(function(use)
         "stevearc/dressing.nvim",
         config = function()
             require("plugins.dressing")
-        end
+        end,
     })
 end)
