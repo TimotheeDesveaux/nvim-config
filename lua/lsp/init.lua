@@ -31,6 +31,7 @@ local servers = {
     emmet_ls = {},
     cssls = {},
     tailwindcss = {},
+    texlab = {},
     vuels = {},
     cmake = {},
     rust_analyzer = {},
