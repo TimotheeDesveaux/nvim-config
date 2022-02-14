@@ -55,10 +55,18 @@ formatter.setup({
         },
         rust = {
             function()
-                print("hello world")
                 return {
                     exe = "rustfmt",
                     args = { "--emit=stdout" },
+                    stdin = true,
+                }
+            end,
+        },
+        nix = {
+            function()
+                return {
+                    exe = "nixfmt",
+                    args = {},
                     stdin = true,
                 }
             end,
