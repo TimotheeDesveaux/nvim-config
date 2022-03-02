@@ -20,5 +20,6 @@ wk.register({
 
 vim.cmd([[
 autocmd FileType markdown nnoremap <buffer> <leader>mp :silent !pandoc % -o %:r.pdf<CR>
+autocmd FileType markdown nnoremap <buffer> <leader>ms :silent !marp --pdf --allow-local-files %<CR>
 autocmd FileType markdown nnoremap <buffer> <leader>mv :silent !zathura %:r.pdf &<CR>
 ]])
