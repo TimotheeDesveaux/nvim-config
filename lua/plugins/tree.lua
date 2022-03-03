@@ -1,7 +1,5 @@
 local wk = require("which-key")
 
-vim.g.nvim_tree_gitignore = 1
-vim.g.nvim_tree_quit_on_open = 1
 vim.g.nvim_tree_git_hl = 1
 vim.g.nvim_tree_show_icons = {
     git = 0,
@@ -20,6 +18,12 @@ require("nvim-tree").setup({
             hint = "",
             info = "",
         },
+    },
+    git = {
+        ignore = true,
+    },
+    open_file = {
+        quit_on_open = true,
     },
 })
 
