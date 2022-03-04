@@ -164,7 +164,13 @@ return require("packer").startup(function(use)
     })
 
     -- https://github.com/TimUntersberger/neogit
-    use({ "TimUntersberger/neogit", requires = "nvim-lua/plenary.nvim" })
+    use({
+        "TimUntersberger/neogit",
+        requires = "nvim-lua/plenary.nvim",
+        config = function()
+            require("plugins.git")
+        end,
+    })
 
     -- https://github.com/stevearc/dressing.nvim
     use({
