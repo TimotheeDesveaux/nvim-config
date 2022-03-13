@@ -6,7 +6,8 @@ require("nvim-treesitter.configs").setup({
     autotag = {
         enable = true,
     },
-    context_commentstring = {
+    playground = {
         enable = true,
+        updatetime = 25,
     },
 })
