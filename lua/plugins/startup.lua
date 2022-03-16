@@ -19,12 +19,9 @@ dashboard.section.buttons.val = {
     dashboard.button("f", "  > Find file", ":Telescope find_files<CR>"),
     dashboard.button("r", "  > Find word", ":Telescope live_grep<CR>"),
     dashboard.button("t", "פּ  > File explorer", ":NvimTreeOpen<CR>"),
-    dashboard.button(
-        "s",
-        "  > Settings",
-        ":e $MYVIMRC | :cd %:p:h | pwd<CR>"
-    ),
+    dashboard.button("s", "  > Settings", ":e $MYVIMRC | :cd %:p:h"),
     dashboard.button("u", "  > Update plugins", ":PackerUpdate<CR>"),
+    dashboard.button("g", "  > Neogit", ":Neogit<CR>"),
     dashboard.button("q", "  > Quit NVIM", ":qa<CR>"),
 }
 
