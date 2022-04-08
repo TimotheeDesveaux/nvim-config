@@ -13,6 +13,7 @@ wk.register({
     m = { "<cmd>Telescope marks<cr>", "bookmarks" },
     c = { "<cmd>Telescope colorscheme<cr>", "colorscheme" },
     h = { "<cmd>Telescope oldfiles<cr>", "history" },
+    s = { "<cmd>Telescope lsp_document_symbols<cr>", "LSP symbols" },
 }, {
     prefix = "<leader>f",
     noremap = true,
