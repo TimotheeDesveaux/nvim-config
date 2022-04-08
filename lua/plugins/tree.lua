@@ -9,7 +9,11 @@ vim.g.nvim_tree_show_icons = {
 }
 
 require("nvim-tree").setup({
-    auto_close = true,
+    actions = {
+        open_file = {
+            quit_on_open = true,
+        },
+    },
     diagnostics = {
         enable = false,
         icons = {
