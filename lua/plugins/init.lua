@@ -47,9 +47,6 @@ return require("packer").startup(function(use)
     -- https://github.com/kosayoda/nvim-lightbulb
     use("kosayoda/nvim-lightbulb")
 
-    -- https://github.com/ray-x/lsp_signature.nvim
-    use("ray-x/lsp_signature.nvim")
-
     -- https://github.com/L3MON4D3/LuaSnip
     use({
         "L3MON4D3/LuaSnip",
@@ -70,6 +67,7 @@ return require("packer").startup(function(use)
             "hrsh7th/cmp-buffer",
             "hrsh7th/cmp-calc",
             "hrsh7th/cmp-cmdline",
+            "hrsh7th/cmp-nvim-lsp-signature-help",
         },
         config = function()
             require("plugins.completion")

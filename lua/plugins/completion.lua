@@ -14,6 +14,7 @@ cmp.setup({
         { name = "luasnip" },
         { name = "buffer" },
         { name = "calc" },
+        { name = "nvim_lsp_signature_help" },
     },
     mapping = {
         ["<C-p>"] = cmp.mapping.select_prev_item(),

@@ -3,13 +3,6 @@ require("lsp.ui")
 local function on_attach(client, bufnr)
     require("lsp.mappings").setup(bufnr)
     require("lsp.highlight").setup(client)
-    require("lsp_signature").on_attach({
-        bind = true,
-        handler_opts = {
-            border = "rounded",
-        },
-        hint_enable = false,
-    }, bufnr)
 
     vim.cmd([[
     augroup nvim_lightbulb
