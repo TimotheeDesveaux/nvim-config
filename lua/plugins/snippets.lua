@@ -1,4 +1,5 @@
 local luasnip = require("luasnip")
+local util = require("utils")
 
 luasnip.config.set_config({
     history = true,
@@ -6,3 +7,17 @@ luasnip.config.set_config({
 })
 
 require("luasnip/loaders/from_vscode").load()
+
+util.smap("<C-j>", "<cmd>lua require('luasnip').jump(1)<CR>", { silent = true })
+util.imap("<C-j>", "<cmd>lua require('luasnip').jump(1)<CR>", { silent = true })
+
+util.smap(
+    "<C-k>",
+    "<cmd>lua require('luasnip').jump(-1)<CR>",
+    { silent = true }
+)
+util.imap(
+    "<C-k>",
+    "<cmd>lua require('luasnip').jump(-1)<CR>",
+    { silent = true }
+)
