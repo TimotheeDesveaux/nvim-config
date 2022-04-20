@@ -1,5 +1,3 @@
-local colors = require("tokyonight.colors").setup({ darkFloat = true })
-
 local signs = {
     DiagnosticSignError = "",
     DiagnosticSignWarn = "",
@@ -15,13 +13,6 @@ for hl, icon in pairs(signs) do
         numhl = hl,
     })
 end
-
-vim.cmd(
-    ("autocmd ColorScheme * highlight FloatBorder guifg=%s guibg=%s"):format(
-        colors.border_highlight,
-        colors.bg_float
-    )
-)
 
 local border = {
     { "╭", "FloatBorder" },

@@ -73,9 +73,8 @@ formatter.setup({
         },
     },
 })
-vim.cmd([[
-augroup FormatAutogroup
-  autocmd!
-  autocmd BufWritePost * silent! FormatWrite
-augroup END
-]])
+
+vim.api.nvim_create_autocmd("BufWritePost", {
+    pattern = "*",
+    command = "silent! FormatWrite",
+})

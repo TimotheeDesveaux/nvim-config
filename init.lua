@@ -2,7 +2,10 @@
 vim.opt.tabstop = 8
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
-vim.cmd("autocmd Filetype make setlocal noexpandtab shiftwidth=8")
+vim.api.nvim_create_autocmd(
+    "FileType",
+    { pattern = "make", command = "setlocal noexpandtab shiftwidth=8" }
+)
 
 -- Search --
 vim.opt.ignorecase = true
@@ -14,8 +17,14 @@ vim.opt.autowrite = true
 vim.opt.backup = false
 vim.opt.swapfile = false
 vim.opt.hidden = true
-vim.cmd("autocmd BufEnter *.ll set filetype=lex")
-vim.cmd("autocmd BufEnter local.am set filetype=automake")
+vim.api.nvim_create_autocmd(
+    "BufEnter",
+    { pattern = "*.ll", command = "set filetype=lex" }
+)
+vim.api.nvim_create_autocmd(
+    "BufEnter",
+    { pattern = "local.am", command = "set filetype=automake" }
+)
 
 -- Interface --
 vim.opt.termguicolors = true

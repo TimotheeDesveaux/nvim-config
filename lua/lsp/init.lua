@@ -4,12 +4,12 @@ local function on_attach(client, bufnr)
     require("lsp.mappings").setup(bufnr)
     require("lsp.highlight").setup(client)
 
-    vim.cmd([[
-    augroup nvim_lightbulb
-        autocmd! * <buffer>
-        autocmd CursorHold,CursorHoldI <buffer> lua require('nvim-lightbulb').update_lightbulb()
-    augroup END
-    ]])
+    local lightbulb_group = vim.api.nvim_create_augroup("lightbulb", {})
+    vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
+        callback = require("nvim-lightbulb").update_lightbulb,
+        group = lightbulb_group,
+        buffer = 0,
+    })
 end
 
 local sumneko_config = require("lsp.sumneko")

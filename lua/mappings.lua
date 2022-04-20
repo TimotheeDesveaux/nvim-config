@@ -18,8 +18,21 @@ wk.register({
     noremap = true,
 })
 
-vim.cmd([[
-autocmd FileType markdown nnoremap <buffer> <leader>mp :silent !pandoc % -o %:r.pdf<CR>
-autocmd FileType markdown nnoremap <buffer> <leader>ms :silent !marp --pdf --allow-local-files %<CR>
-autocmd FileType markdown nnoremap <buffer> <leader>mv :silent !zathura %:r.pdf &<CR>
-]])
+local function markdown_mappings()
+    wk.register({
+        name = "markdown",
+        p = { "<cmd>silent !pandoc % -o %:r.pdf<CR>", "to pdf" },
+        v = { "<cmd>silent !zathura %:r.pdf &<CR>", "visualize" },
+    }, {
+        prefix = "<leader>m",
+        noremap = true,
+        buffer = 0,
+    })
+end
+
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = "markdown",
+    callback = function()
+        vim.schedule(markdown_mappings)
+    end,
+})
