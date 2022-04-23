@@ -48,7 +48,7 @@ cmp.setup({
                 nvim_lua = "[api]",
                 path = "[path]",
                 luasnip = "[snip]",
-                gh_issues = "[calc]",
+                calc = "[calc]",
             },
         }),
     },
