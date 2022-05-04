@@ -3,7 +3,6 @@ local signs = {
     DiagnosticSignWarn = "",
     DiagnosticSignHint = "",
     DiagnosticSignInfo = "",
-    LightBulbSign = "",
 }
 
 for hl, icon in pairs(signs) do
