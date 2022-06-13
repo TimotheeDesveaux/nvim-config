@@ -6,8 +6,6 @@ luasnip.config.set_config({
     updateevents = "TextChanged,TextChangedI",
 })
 
-require("luasnip/loaders/from_vscode").load()
-
 util.smap("<C-j>", "<cmd>lua require('luasnip').jump(1)<CR>", { silent = true })
 util.imap("<C-j>", "<cmd>lua require('luasnip').jump(1)<CR>", { silent = true })
 

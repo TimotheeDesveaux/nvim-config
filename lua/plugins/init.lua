@@ -50,7 +50,6 @@ return require("packer").startup(function(use)
     -- https://github.com/L3MON4D3/LuaSnip
     use({
         "L3MON4D3/LuaSnip",
-        requires = "rafamadriz/friendly-snippets",
         config = function()
             require("plugins.snippets")
         end,
