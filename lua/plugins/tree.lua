@@ -1,13 +1,5 @@
 local wk = require("which-key")
 
-vim.g.nvim_tree_git_hl = 1
-vim.g.nvim_tree_show_icons = {
-    git = 0,
-    folders = 1,
-    files = 1,
-    folder_arrows = 1,
-}
-
 require("nvim-tree").setup({
     actions = {
         open_file = {
@@ -28,6 +20,17 @@ require("nvim-tree").setup({
     },
     open_file = {
         quit_on_open = true,
+    },
+    renderer = {
+        highlight_git = true,
+        icons = {
+            show = {
+                git = false,
+                folders = true,
+                files = true,
+                folder_arrows = true,
+            },
+        },
     },
 })
 
