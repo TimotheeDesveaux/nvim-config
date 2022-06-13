@@ -25,6 +25,7 @@ end
 
 formatter.setup({
     filetype = {
+        arduino = { clang_format },
         c = { clang_format },
         cpp = { clang_format },
         javascript = { prettier },
