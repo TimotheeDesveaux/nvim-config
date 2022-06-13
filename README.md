@@ -1,5 +1,27 @@
 # My Neovim config
 
+## Installation
+
+1. Clone config
+
+    ```bash
+    git clone https://github.com/TimotheeDesveaux/nvim-config.git\
+        ~/.config/nvim
+    ```
+
+2. Install [packer.nvim](https://github.com/wbthomason/packer.nvim):
+
+    ```bash
+    git clone --depth 1 https://github.com/wbthomason/packer.nvim\
+        ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+    ```
+
+3. Install plugins:
+
+    ```bash
+    nvim +PackerSync
+    ```
+
 ## Dependencies
 
 ### Plugin Manager
