@@ -74,6 +74,14 @@ return require("packer").startup(function(use)
         end,
     })
 
+    -- https://github.com/stevearc/dressing.nvim
+    use({
+        "stevearc/dressing.nvim",
+        config = function()
+            require("plugins.dressing")
+        end,
+    })
+
     -- https://github.com/windwp/nvim-autopairs
     use({
         "windwp/nvim-autopairs",
@@ -167,14 +175,6 @@ return require("packer").startup(function(use)
         requires = "nvim-lua/plenary.nvim",
         config = function()
             require("plugins.git")
-        end,
-    })
-
-    -- https://github.com/stevearc/dressing.nvim
-    use({
-        "stevearc/dressing.nvim",
-        config = function()
-            require("plugins.dressing")
         end,
     })
 end)
