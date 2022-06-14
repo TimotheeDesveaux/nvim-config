@@ -1,7 +1,9 @@
-local luasnip = require("luasnip")
+local ls = require("luasnip")
 local util = require("utils")
 
-luasnip.config.set_config({
+require("plugins.snippets.c")
+
+ls.config.set_config({
     history = true,
     updateevents = "TextChanged,TextChangedI",
 })
