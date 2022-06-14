@@ -49,7 +49,7 @@ formatter.setup({
             function()
                 return {
                     exe = "stylua",
-                    args = { "-" },
+                    args = { "--search-parent-directories", "-" },
                     stdin = true,
                 }
             end,
