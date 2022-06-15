@@ -11,3 +11,8 @@ require("nvim-treesitter.configs").setup({
         updatetime = 25,
     },
 })
+
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = "tiger",
+    command = "TSBufEnable indent",
+})
