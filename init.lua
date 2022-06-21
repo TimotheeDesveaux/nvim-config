@@ -35,6 +35,7 @@ vim.opt.termguicolors = true
 vim.opt.number = true
 vim.opt.colorcolumn = "80"
 vim.opt.showmode = false
+vim.opt.laststatus = 3
 vim.opt.cursorline = true
 vim.opt.scrolloff = 10
 vim.opt.list = true
