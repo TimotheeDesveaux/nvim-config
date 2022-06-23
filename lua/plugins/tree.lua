@@ -18,17 +18,14 @@ require("nvim-tree").setup({
     git = {
         ignore = true,
     },
-    open_file = {
-        quit_on_open = true,
-    },
     renderer = {
         highlight_git = true,
         icons = {
             show = {
                 git = false,
-                folders = true,
-                files = true,
-                folder_arrows = true,
+                folder = true,
+                file = true,
+                folder_arrow = true,
             },
         },
     },
