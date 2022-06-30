@@ -13,11 +13,11 @@ function M.setup(bufnr)
 
     local lsp_keys = {
         name = "lsp",
-        D = { "<Cmd>lua vim.lsp.buf.declaration()<CR>", "declaration" },
-        d = { "<Cmd>lua vim.lsp.buf.definition()<CR>", "definition" },
-        i = { "<Cmd>lua vim.lsp.buf.implementation()<CR>", "implementation" },
-        t = { "<Cmd>lua vim.lsp.buf.type_definition()<CR>", "type defintion" },
-        r = { "<cmd>lua vim.lsp.buf.references()<CR>", "references" },
+        D = { "<cmd>lua vim.lsp.buf.declaration()<CR>", "declaration" },
+        d = { "<cmd>Telescope lsp_definitions<CR>", "definition" },
+        i = { "<cmd>Telescope lsp_implementations<CR>", "implementation" },
+        t = { "<cmd>Telescope lsp_type_definitions<CR>", "type defintion" },
+        r = { "<cmd>Telescope lsp_references<CR>", "references" },
         n = { "<cmd>lua vim.lsp.buf.rename()<CR>", "rename" },
         a = { "<cmd>lua vim.lsp.buf.code_action()<CR>", "action" },
         k = {
@@ -33,6 +33,7 @@ function M.setup(bufnr)
             "<cmd>lua vim.diagnostic.open_float({ scope = 'line' })<CR>",
             "show line diagnostics",
         },
+        y = { "<cmd>Telescope lsp_document_symbols<CR>", "LSP symbols" },
     }
 
     opts.prefix = "<leader>l"
