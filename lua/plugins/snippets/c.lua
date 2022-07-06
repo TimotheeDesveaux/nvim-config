@@ -39,7 +39,7 @@ ls.add_snippets("c", {
         "for",
         fmt(
             [[
-                for ({type} {var} = 0; {rep_var} < {count}; {rep_var}++)
+                for ({type} {var} = {init}; {rep_var} < {count}; {rep_var}++)
                 {{
                     {code}
                 }}
@@ -47,6 +47,7 @@ ls.add_snippets("c", {
             {
                 type = i(1, "size_t"),
                 var = i(2, "i"),
+                init = i(2, "0"),
                 rep_var = rep(2),
                 count = i(3, "count"),
                 code = i(4),
@@ -70,6 +71,18 @@ ls.add_snippets("c", {
         fmt(
             [[
                 if ({})
+                {{
+                    {}
+                }}
+            ]],
+            { i(1), i(2) }
+        )
+    ),
+    s(
+        "elif",
+        fmt(
+            [[
+                else if ({})
                 {{
                     {}
                 }}
