@@ -1,15 +1,13 @@
 local M = {}
-local util = require("utils")
 local wk = require("which-key")
 
 function M.setup(bufnr)
     local opts = {
-        noremap = true,
         silent = true,
         buffer = bufnr,
     }
 
-    util.nmap("K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
+    vim.keymap.set("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
 
     local lsp_keys = {
         name = "lsp",

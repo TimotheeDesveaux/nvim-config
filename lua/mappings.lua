@@ -1,13 +1,12 @@
-local util = require("utils")
 local wk = require("which-key")
 
 vim.g.mapleader = " "
-util.vnoremap("J", ":m '>+1<CR>gv=gv")
-util.vnoremap("K", ":m '<-2<CR>gv=gv")
-util.nnoremap("<C-k>", "<C-w>k")
-util.nnoremap("<C-l>", "<C-w>l")
-util.nnoremap("<C-j>", "<C-w>j")
-util.nnoremap("<C-h>", "<C-w>h")
+vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
+vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+vim.keymap.set("n", "<C-k>", "<c-w>k")
+vim.keymap.set("n", "<C-l>", "<C-w>l")
+vim.keymap.set("n", "<C-j>", "<C-w>j")
+vim.keymap.set("n", "<C-h>", "<C-w>h")
 
 wk.register({
     ["<leader>"] = { ":e #<CR>", "previous file" },
