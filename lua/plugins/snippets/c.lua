@@ -47,10 +47,10 @@ ls.add_snippets("c", {
             {
                 type = i(1, "size_t"),
                 var = i(2, "i"),
-                init = i(2, "0"),
+                init = i(3, "0"),
                 rep_var = rep(2),
-                count = i(3, "count"),
-                code = i(4),
+                count = i(4, "count"),
+                code = i(5),
             }
         )
     ),
