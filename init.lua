@@ -22,6 +22,10 @@ vim.api.nvim_create_autocmd("BufEnter", {
     command = "set filetype=lex",
 })
 vim.api.nvim_create_autocmd("BufEnter", {
+    pattern = "*.h",
+    command = "set filetype=c",
+})
+vim.api.nvim_create_autocmd("BufEnter", {
     pattern = "local.am",
     command = "set filetype=automake",
 })
