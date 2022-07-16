@@ -27,7 +27,6 @@ return require("packer").startup(function(use)
     use({
         "nvim-telescope/telescope.nvim",
         requires = {
-            { "nvim-lua/popup.nvim" },
             { "nvim-lua/plenary.nvim" },
             { "nvim-telescope/telescope-fzf-native.nvim", run = "make" },
             { "kyazdani42/nvim-web-devicons" },
@@ -89,8 +88,13 @@ return require("packer").startup(function(use)
         end,
     })
 
-    -- https://github.com/tpope/vim-surround
-    use("tpope/vim-surround")
+    -- https://github.com/kylechui/nvim-surround
+    use({
+        "kylechui/nvim-surround",
+        config = function()
+            require("plugins.surround")
+        end,
+    })
 
     -- https://github.com/numToStr/Comment.nvim
     use({
