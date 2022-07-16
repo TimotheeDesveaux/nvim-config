@@ -139,4 +139,5 @@ ls.add_snippets("c", {
             }
         )
     ),
+    s("pint", fmt('printf("%d\\n", {});', { i(1) })),
 })
