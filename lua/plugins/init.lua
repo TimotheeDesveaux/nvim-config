@@ -113,14 +113,6 @@ return require("packer").startup(function(use)
         end,
     })
 
-    -- https://github.com/norcalli/nvim-colorizer.lua
-    use({
-        "norcalli/nvim-colorizer.lua",
-        config = function()
-            require("plugins.colorizer")
-        end,
-    })
-
     -- https://github.com/goolord/alpha-nvim
     use({
         "goolord/alpha-nvim",
