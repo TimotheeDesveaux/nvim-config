@@ -27,12 +27,7 @@ dashboard.section.buttons.val = {
 
 local function footer()
     local total_plugins = #vim.tbl_keys(packer_plugins)
-    local datetime = os.date("%d-%m-%Y  %H:%M:%S")
-    return "┌─ "
-        .. datetime
-        .. " ─┐\n└─  "
-        .. total_plugins
-        .. " plugins in total ─┘"
+    return total_plugins .. " plugins loaded"
 end
 
 dashboard.section.footer.val = footer()
