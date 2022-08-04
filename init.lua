@@ -17,21 +17,18 @@ vim.opt.autowrite = true
 vim.opt.backup = false
 vim.opt.swapfile = false
 vim.opt.hidden = true
-vim.api.nvim_create_autocmd("BufEnter", {
-    pattern = "*.ll",
-    command = "set filetype=lex",
-})
-vim.api.nvim_create_autocmd("BufEnter", {
-    pattern = "*.h",
-    command = "set filetype=c",
-})
-vim.api.nvim_create_autocmd("BufEnter", {
-    pattern = "local.am",
-    command = "set filetype=automake",
-})
-vim.api.nvim_create_autocmd("BufEnter", {
-    pattern = { "*.tig", "*.tih" },
-    command = "set filetype=tiger",
+vim.g.do_filetype_lua = 1
+vim.g.did_load_filetypes = 0
+vim.filetype.add({
+    extension = {
+        h = "c",
+        ll = "lex",
+        tig = "tiger",
+        tih = "tiger",
+    },
+    filename = {
+        ["local.am"] = "automake",
+    },
 })
 
 -- Interface --
