@@ -1,4 +1,6 @@
-vim.g.tokyonight_style = "storm"
-vim.g.tokyonight_sidebars = { "packer" }
+require("tokyonight").setup({
+    style = "storm",
+    sidebars = { "packer" },
+})
 
 vim.cmd("colorscheme tokyonight")
