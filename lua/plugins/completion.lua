@@ -32,9 +32,9 @@ cmp.setup({
     sources = cmp.config.sources({
         { name = "nvim_lua" },
     }, {
+        { name = "luasnip" },
         { name = "nvim_lsp" },
         { name = "path" },
-        { name = "luasnip" },
         { name = "calc" },
         { name = "nvim_lsp_signature_help" },
     }, {
