@@ -13,7 +13,7 @@ ls.add_snippets("c", {
         "main",
         fmt(
             [[
-                int main(int argc, char* argv[])
+                int main(int argc, char *argv[])
                 {{
                     {}
                     return 0;
@@ -67,6 +67,23 @@ ls.add_snippets("c", {
                 i(1, "s"),
                 rep(1),
                 i(2),
+            }
+        )
+    ),
+    s(
+        "fore",
+        fmt(
+            [[
+                for ({}; {}; {})
+                {{
+                    {}
+                }}
+            ]],
+            {
+                i(1),
+                i(2),
+                i(3),
+                i(4),
             }
         )
     ),
