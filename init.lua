@@ -17,8 +17,6 @@ vim.opt.autowrite = true
 vim.opt.backup = false
 vim.opt.swapfile = false
 vim.opt.hidden = true
-vim.g.do_filetype_lua = 1
-vim.g.did_load_filetypes = 0
 vim.filetype.add({
     extension = {
         h = "c",
