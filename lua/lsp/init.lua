@@ -2,7 +2,7 @@ require("lsp.ui")
 
 local function on_attach(client, bufnr)
     require("lsp.mappings").setup(bufnr)
-    require("lsp.highlight").setup(client)
+    require("lsp.highlight").setup(client, bufnr)
     require("lsp.lightbulb").setup(bufnr)
 end
 
