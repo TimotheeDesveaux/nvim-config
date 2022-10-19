@@ -56,6 +56,11 @@ vim.api.nvim_create_autocmd("FileType", {
     pattern = "markdown",
     command = "setlocal textwidth=80",
 })
+vim.api.nvim_create_user_command(
+    "Leodagan",
+    "!~/.scripts/leodagan/leodagan.py %",
+    {}
+)
 
 -- Plugins --
 require("plugins")
