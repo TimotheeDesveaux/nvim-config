@@ -1,3 +1,4 @@
+local wk = require("which-key")
 local formatter = require("formatter")
 
 local function prettier()
@@ -75,7 +76,30 @@ formatter.setup({
     },
 })
 
+local format_on_save = true
+
 vim.api.nvim_create_autocmd("BufWritePost", {
     pattern = "*",
-    command = "silent! FormatWrite",
+    callback = function()
+        if format_on_save then
+            vim.cmd("silent! FormatWrite")
+        end
+    end,
+})
+
+wk.register({
+    name = "formatter",
+    t = {
+        function()
+            format_on_save = not format_on_save
+        end,
+        "toggle",
+    },
+    f = {
+        "<cmd>silent! FormatWrite<CR>",
+        "format",
+    },
+}, {
+    prefix = "<leader>o",
+    noremap = true,
 })
