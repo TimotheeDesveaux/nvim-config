@@ -104,6 +104,14 @@ return require("packer").startup(function(use)
         end,
     })
 
+    -- https://github.com/jinh0/eyeliner.nvim
+    use({
+        "jinh0/eyeliner.nvim",
+        config = function()
+            require("plugins.eyeliner")
+        end,
+    })
+
     -- https://github.com/hoob3rt/lualine.nvim
     use({
         "hoob3rt/lualine.nvim",
