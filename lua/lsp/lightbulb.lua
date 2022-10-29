@@ -1,7 +1,9 @@
 local M = {}
 
+local lb = require("nvim-lightbulb")
+
 function M.setup(bufnr)
-    require("nvim-lightbulb").setup({
+    lb.setup({
         sign = {
             enabled = false,
         },
@@ -13,7 +15,7 @@ function M.setup(bufnr)
     })
 
     vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
-        callback = require("nvim-lightbulb").update_lightbulb,
+        callback = lb.update_lightbulb,
         buffer = bufnr,
     })
 end
