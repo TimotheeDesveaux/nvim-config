@@ -40,6 +40,9 @@ return require("packer").startup(function(use)
     -- https://github.com/neovim/nvim-lspconfig
     use("neovim/nvim-lspconfig")
 
+    -- https://github.com/simrat39/rust-tools.nvim
+    use("simrat39/rust-tools.nvim")
+
     -- https://github.com/onsails/lspkind-nvim
     use("onsails/lspkind-nvim")
 
