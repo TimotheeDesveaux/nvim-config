@@ -1,6 +1,7 @@
 local ls = require("luasnip")
 
 require("plugins.snippets.c")
+require("plugins.snippets.make")
 require("plugins.snippets.markdown")
 require("plugins.snippets.tiger")
 require("plugins.snippets.shell")
