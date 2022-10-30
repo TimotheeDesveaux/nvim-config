@@ -1,4 +1,5 @@
 local cmp = require("cmp")
+local lspkind = require("lspkind")
 
 cmp.setup({
     snippet = {
@@ -7,9 +8,10 @@ cmp.setup({
         end,
     },
     mapping = cmp.mapping.preset.insert({
-        ["<C-u>"] = cmp.mapping.scroll_docs(-4),
-        ["<C-d>"] = cmp.mapping.scroll_docs(4),
+        ["<C-b>"] = cmp.mapping.scroll_docs(-4),
+        ["<C-f>"] = cmp.mapping.scroll_docs(4),
         ["<C-Space>"] = cmp.mapping.complete(),
+        ["<C-e>"] = cmp.mapping.abort(),
         ["<Tab>"] = cmp.mapping(function(fallback)
             if cmp.visible() then
                 cmp.select_next_item()
@@ -24,24 +26,21 @@ cmp.setup({
                 fallback()
             end
         end, { "i", "s" }),
-        ["<CR>"] = cmp.mapping.confirm({
-            behavior = cmp.ConfirmBehavior.Replace,
-            select = false,
-        }),
+        ["<CR>"] = cmp.mapping.confirm({ select = false }),
     }),
     sources = cmp.config.sources({
         { name = "nvim_lua" },
     }, {
         { name = "luasnip" },
         { name = "nvim_lsp" },
-        { name = "path" },
-        { name = "calc" },
         { name = "nvim_lsp_signature_help" },
     }, {
+        { name = "path" },
+        { name = "calc" },
         { name = "buffer" },
     }),
     formatting = {
-        format = require("lspkind").cmp_format({
+        format = lspkind.cmp_format({
             with_text = true,
             menu = {
                 nvim_lua = "[api]",
@@ -56,7 +55,7 @@ cmp.setup({
     },
 })
 
-cmp.setup.cmdline("/", {
+cmp.setup.cmdline({ "/", "?" }, {
     mapping = cmp.mapping.preset.cmdline(),
     sources = {
         { name = "buffer" },
