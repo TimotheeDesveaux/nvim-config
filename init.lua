@@ -52,6 +52,7 @@ vim.opt.clipboard = "unnamedplus"
 vim.opt.updatetime = 300
 vim.opt.timeoutlen = 300
 vim.opt.shortmess:append({ c = true })
+vim.opt.tildeop = true
 vim.api.nvim_create_autocmd("FileType", {
     pattern = "markdown",
     command = "setlocal textwidth=80",
