@@ -29,7 +29,7 @@ return require("packer").startup(function(use)
         requires = {
             { "nvim-lua/plenary.nvim" },
             { "nvim-telescope/telescope-fzf-native.nvim", run = "make" },
-            { "kyazdani42/nvim-web-devicons" },
+            { "nvim-tree/nvim-web-devicons" },
         },
         config = function()
             require("plugins.telescope")
@@ -43,8 +43,8 @@ return require("packer").startup(function(use)
     -- https://github.com/simrat39/rust-tools.nvim
     use("simrat39/rust-tools.nvim")
 
-    -- https://github.com/onsails/lspkind-nvim
-    use("onsails/lspkind-nvim")
+    -- https://github.com/onsails/lspkind.nvim
+    use("onsails/lspkind.nvim")
 
     -- https://github.com/kosayoda/nvim-lightbulb
     use("kosayoda/nvim-lightbulb")
@@ -115,10 +115,10 @@ return require("packer").startup(function(use)
         end,
     })
 
-    -- https://github.com/hoob3rt/lualine.nvim
+    -- https://github.com/nvim-lualine/lualine.nvim
     use({
-        "hoob3rt/lualine.nvim",
-        requires = { "kyazdani42/nvim-web-devicons" },
+        "nvim-lualine/lualine.nvim",
+        requires = { "nvim-tree/nvim-web-devicons" },
         config = function()
             require("plugins.statusline")
         end,
@@ -148,10 +148,10 @@ return require("packer").startup(function(use)
         end,
     })
 
-    -- https://github.com/kyazdani42/nvim-tree.lua
+    -- https://github.com/nvim-tree/nvim-tree.lua
     use({
-        "kyazdani42/nvim-tree.lua",
-        requires = "kyazdani42/nvim-web-devicons",
+        "nvim-tree/nvim-tree.lua",
+        requires = "nvim-tree/nvim-web-devicons",
         config = function()
             require("plugins.tree")
         end,
