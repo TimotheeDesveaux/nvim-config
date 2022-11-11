@@ -49,6 +49,15 @@ return require("packer").startup(function(use)
     -- https://github.com/kosayoda/nvim-lightbulb
     use("kosayoda/nvim-lightbulb")
 
+    -- https://github.com/mfussenegger/nvim-dap
+    use({
+        "rcarriga/nvim-dap-ui",
+        requires = { "mfussenegger/nvim-dap" },
+        config = function()
+            require("plugins.dap")
+        end,
+    })
+
     -- https://github.com/L3MON4D3/LuaSnip
     use({
         "L3MON4D3/LuaSnip",
