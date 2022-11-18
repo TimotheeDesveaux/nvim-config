@@ -192,4 +192,15 @@ return require("packer").startup(function(use)
             require("plugins.git")
         end,
     })
+
+    -- https://github.com/glacambre/firenvim
+    use({
+        "glacambre/firenvim",
+        run = function()
+            vim.fn["firenvim#install"](0)
+        end,
+        config = function()
+            require("plugins.firenvim")
+        end,
+    })
 end)
