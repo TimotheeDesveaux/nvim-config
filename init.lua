@@ -3,7 +3,7 @@ vim.opt.tabstop = 8
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 vim.api.nvim_create_autocmd("FileType", {
-    pattern = "make",
+    pattern = { "make", "go" },
     command = "setlocal noexpandtab shiftwidth=8",
 })
 

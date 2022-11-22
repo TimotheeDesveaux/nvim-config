@@ -22,6 +22,7 @@ local servers = {
     -- vuels = {},
     -- cmake = {},
     -- rust_analyzer = {},
+    gopls = {},
 }
 
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
