@@ -32,6 +32,7 @@ vim.filetype.add({
 -- Interface --
 vim.opt.termguicolors = true
 vim.opt.number = true
+vim.opt.relativenumber = true
 vim.opt.colorcolumn = "80"
 vim.opt.showmode = false
 vim.opt.laststatus = 3
