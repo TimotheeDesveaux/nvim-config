@@ -5,6 +5,7 @@ require("plugins.snippets.make")
 require("plugins.snippets.markdown")
 require("plugins.snippets.tiger")
 require("plugins.snippets.shell")
+require("plugins.snippets.nix")
 
 ls.config.set_config({
     history = true,
