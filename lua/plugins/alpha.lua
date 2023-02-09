@@ -26,7 +26,7 @@ dashboard.section.buttons.val = {
 }
 
 local function footer()
-    local total_plugins = #vim.tbl_keys(packer_plugins)
+    local total_plugins = "TODO"
     return total_plugins .. " plugins loaded"
 end
 

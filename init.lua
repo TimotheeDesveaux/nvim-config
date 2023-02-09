@@ -48,6 +48,7 @@ vim.opt.completeopt = { "menu", "menuone", "noselect" }
 vim.opt.wrap = false
 
 -- Miscellaneous --
+vim.g.mapleader = " "
 vim.opt.mouse = "a"
 vim.opt.clipboard = "unnamedplus"
 vim.opt.updatetime = 300
@@ -64,8 +65,6 @@ vim.api.nvim_create_user_command(
     {}
 )
 
--- Plugins --
 require("plugins")
-
--- LSP --
+require("mappings")
 require("lsp")

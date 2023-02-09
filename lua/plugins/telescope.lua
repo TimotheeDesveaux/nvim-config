@@ -1,7 +1,7 @@
 local telescope = require("telescope")
 local wk = require("which-key")
 
-telescope.setup({})
+telescope.setup()
 telescope.load_extension("fzf")
 
 wk.register({

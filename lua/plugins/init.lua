@@ -1,75 +1,57 @@
-return require("packer").startup(function(use)
-    -- https://github.com/wbthomason/packer.nvim
-    use("wbthomason/packer.nvim")
-
-    -- https://github.com/nvim-treesitter/nvim-treesitter
-    use({
-        "nvim-treesitter/nvim-treesitter",
-        run = ":TSUpdate",
-        requires = {
-            { "nvim-treesitter/playground" },
-            { "windwp/nvim-ts-autotag" },
-        },
-        config = function()
-            require("plugins.treesitter")
-        end,
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+    vim.fn.system({
+        "git",
+        "clone",
+        "--filter=blob:none",
+        "https://github.com/folke/lazy.nvim.git",
+        "--branch=stable", -- latest stable release
+        lazypath,
     })
+end
+vim.opt.rtp:prepend(lazypath)
 
-    -- https://github.com/folke/tokyonight.nvim
-    use({
+require("lazy").setup({
+    {
         "folke/tokyonight.nvim",
+        lazy = false,
         config = function()
             require("plugins.colorscheme")
         end,
-    })
-
-    -- https://github.com/nvim-telescope/telescope.nvim
-    use({
+    },
+    {
+        "nvim-treesitter/nvim-treesitter",
+        build = ":TSUpdate",
+        dependencies = { "nvim-treesitter/playground" },
+        config = function()
+            require("plugins.treesitter")
+        end,
+    },
+    {
+        "folke/which-key.nvim",
+        lazy = true,
+    },
+    {
         "nvim-telescope/telescope.nvim",
-        requires = {
+        dependencies = {
             { "nvim-lua/plenary.nvim" },
-            { "nvim-telescope/telescope-fzf-native.nvim", run = "make" },
+            { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
             { "nvim-tree/nvim-web-devicons" },
         },
         config = function()
             require("plugins.telescope")
         end,
-        after = "which-key.nvim",
-    })
-
-    -- https://github.com/neovim/nvim-lspconfig
-    use("neovim/nvim-lspconfig")
-
-    -- https://github.com/simrat39/rust-tools.nvim
-    use("simrat39/rust-tools.nvim")
-
-    -- https://github.com/onsails/lspkind.nvim
-    use("onsails/lspkind.nvim")
-
-    -- https://github.com/kosayoda/nvim-lightbulb
-    use("kosayoda/nvim-lightbulb")
-
-    -- https://github.com/mfussenegger/nvim-dap
-    use({
-        "rcarriga/nvim-dap-ui",
-        requires = { "mfussenegger/nvim-dap" },
-        config = function()
-            require("plugins.dap")
-        end,
-    })
-
-    -- https://github.com/L3MON4D3/LuaSnip
-    use({
-        "L3MON4D3/LuaSnip",
-        config = function()
-            require("plugins.snippets")
-        end,
-    })
-
-    -- https://github.com/hrsh7th/nvim-cmp
-    use({
+    },
+    {
+        "neovim/nvim-lspconfig",
+        dependencies = {
+            "simrat39/rust-tools.nvim",
+            "kosayoda/nvim-lightbulb",
+        },
+    },
+    {
         "hrsh7th/nvim-cmp",
-        requires = {
+        dependencies = {
             "hrsh7th/cmp-nvim-lsp",
             "hrsh7th/cmp-nvim-lua",
             "hrsh7th/cmp-path",
@@ -78,129 +60,107 @@ return require("packer").startup(function(use)
             "hrsh7th/cmp-calc",
             "hrsh7th/cmp-cmdline",
             "hrsh7th/cmp-nvim-lsp-signature-help",
+            "onsails/lspkind.nvim",
         },
         config = function()
             require("plugins.completion")
         end,
-    })
-
-    -- https://github.com/stevearc/dressing.nvim
-    use({
+    },
+    {
         "stevearc/dressing.nvim",
         config = function()
             require("plugins.dressing")
         end,
-    })
-
-    -- https://github.com/windwp/nvim-autopairs
-    use({
+    },
+    {
+        "L3MON4D3/LuaSnip",
+        config = function()
+            require("plugins.snippets")
+        end,
+    },
+    {
+        "rcarriga/nvim-dap-ui",
+        dependencies = { "mfussenegger/nvim-dap" },
+        config = function()
+            require("plugins.dap")
+        end,
+    },
+    {
         "windwp/nvim-autopairs",
         config = function()
             require("plugins.autopairs")
         end,
-    })
-
-    -- https://github.com/kylechui/nvim-surround
-    use({
+    },
+    {
         "kylechui/nvim-surround",
         config = function()
             require("plugins.surround")
         end,
-    })
-
-    -- https://github.com/numToStr/Comment.nvim
-    use({
+    },
+    {
         "numToStr/Comment.nvim",
         config = function()
-            require("plugins.comments")
+            require("plugins.comment")
         end,
-    })
-
-    -- https://github.com/jinh0/eyeliner.nvim
-    use({
+    },
+    {
         "jinh0/eyeliner.nvim",
         config = function()
             require("plugins.eyeliner")
         end,
-    })
-
-    -- https://github.com/nvim-lualine/lualine.nvim
-    use({
-        "nvim-lualine/lualine.nvim",
-        requires = { "nvim-tree/nvim-web-devicons" },
-        config = function()
-            require("plugins.statusline")
-        end,
-    })
-
-    -- https://github.com/goolord/alpha-nvim
-    use({
-        "goolord/alpha-nvim",
-        config = function()
-            require("plugins.startup")
-        end,
-    })
-
-    -- https://github.com/folke/which-key.nvim
-    use({
-        "folke/which-key.nvim",
-        config = function()
-            require("mappings")
-        end,
-    })
-
-    -- https://github.com/lukas-reineke/indent-blankline.nvim
-    use({
+    },
+    {
         "lukas-reineke/indent-blankline.nvim",
         config = function()
             require("plugins.indent_blankline")
         end,
-    })
-
-    -- https://github.com/nvim-tree/nvim-tree.lua
-    use({
+    },
+    {
+        "nvim-lualine/lualine.nvim",
+        dependencies = { "nvim-tree/nvim-web-devicons" },
+        config = function()
+            require("plugins.statusline")
+        end,
+    },
+    {
+        "goolord/alpha-nvim",
+        config = function()
+            require("plugins.alpha")
+        end,
+    },
+    {
         "nvim-tree/nvim-tree.lua",
-        requires = "nvim-tree/nvim-web-devicons",
+        dependencies = { "nvim-tree/nvim-web-devicons" },
         config = function()
             require("plugins.tree")
         end,
-        after = "which-key.nvim",
-    })
-
-    -- https://github.com/windwp/nvim-projectconfig
-    use({
-        "windwp/nvim-projectconfig",
-        config = function()
-            require("plugins.projectconfig")
-        end,
-        after = "alpha-nvim",
-    })
-
-    -- https://github.com/mhartington/formatter.nvim
-    use({
+    },
+    {
         "mhartington/formatter.nvim",
         config = function()
             require("plugins.formatter")
         end,
-    })
-
-    -- https://github.com/TimUntersberger/neogit
-    use({
+    },
+    {
         "TimUntersberger/neogit",
-        requires = "nvim-lua/plenary.nvim",
+        requires = { "nvim-lua/plenary.nvim" },
         config = function()
-            require("plugins.git")
+            require("plugins.neogit")
         end,
-    })
-
-    -- https://github.com/glacambre/firenvim
-    use({
+    },
+    {
         "glacambre/firenvim",
-        run = function()
+        build = function()
             vim.fn["firenvim#install"](0)
         end,
         config = function()
             require("plugins.firenvim")
         end,
-    })
-end)
+    },
+    {
+        "windwp/nvim-projectconfig",
+        config = function()
+            require("plugins.projectconfig")
+        end,
+    },
+})

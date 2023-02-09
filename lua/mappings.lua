@@ -1,6 +1,5 @@
 local wk = require("which-key")
 
-vim.g.mapleader = " "
 vim.keymap.set("n", "<C-k>", "<c-w>k")
 vim.keymap.set("n", "<C-l>", "<C-w>l")
 vim.keymap.set("n", "<C-j>", "<C-w>j")
