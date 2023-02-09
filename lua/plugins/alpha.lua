@@ -20,14 +20,15 @@ dashboard.section.buttons.val = {
     dashboard.button("r", "  > Find word", ":Telescope live_grep<CR>"),
     dashboard.button("t", "פּ  > File explorer", ":NvimTreeOpen<CR>"),
     dashboard.button("s", "  > Settings", ":e $MYVIMRC | :cd %:p:h<CR>"),
-    dashboard.button("u", "  > Update plugins", ":PackerUpdate<CR>"),
+    dashboard.button("u", "  > Update plugins", ":Lazy update<CR>"),
     dashboard.button("g", "  > Neogit", ":Neogit<CR>"),
     dashboard.button("q", "  > Quit NVIM", ":qa<CR>"),
 }
 
 local function footer()
-    local total_plugins = "TODO"
-    return total_plugins .. " plugins loaded"
+    local checker = require("lazy.manage.checker")
+    local nb_updates = #checker.updated
+    return nb_updates .. " update(s) pending"
 end
 
 dashboard.section.footer.val = footer()
