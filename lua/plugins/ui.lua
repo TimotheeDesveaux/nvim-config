@@ -61,9 +61,9 @@ return {
             }
 
             local function footer()
-                local checker = require("lazy.manage.checker")
-                local nb_updates = #checker.updated
-                return nb_updates .. " update(s) pending"
+                local config = require("lazy.core.config")
+                local plugins = vim.tbl_values(config.plugins)
+                return #plugins .. " plugins total"
             end
 
             dashboard.section.footer.val = footer()
