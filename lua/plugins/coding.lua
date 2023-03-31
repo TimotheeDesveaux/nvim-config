@@ -7,7 +7,7 @@ return {
         dependencies = { "nvim-treesitter/playground" },
         event = { "BufReadPost", "BufNewFile" },
         opts = {
-            -- ensure_installed = "all",
+            ensure_installed = "all",
             highlight = { enable = true },
             playground = { enable = true, updatetime = 25 },
         },
