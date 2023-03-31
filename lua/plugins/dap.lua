@@ -38,6 +38,18 @@ return {
             desc = "toggle breakpoint",
         },
         {
+            "<leader>dn",
+            function()
+                vim.ui.input({ prompt = "Condition: " }, function(input)
+                    if input == nil then
+                        return
+                    end
+                    require("dap").set_breakpoint(input)
+                end)
+            end,
+            desc = "set conditional breakpoint",
+        },
+        {
             "<leader>dl",
             function()
                 require("dap").clear_breakpoints()
@@ -55,6 +67,11 @@ return {
     config = function()
         local dap = require("dap")
         local dapui = require("dapui")
+
+        local signs = { DapBreakpoint = "", DapBreakpointCondition = "", DapLogPoint = "" }
+        for hl, icon in pairs(signs) do
+            vim.fn.sign_define(hl, { text = icon })
+        end
 
         dapui.setup()
         dap.listeners.after.event_initialized["dapui_config"] = function()
