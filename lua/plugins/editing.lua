@@ -21,6 +21,6 @@ return {
             highlight_on_key = true,
             dim = true,
         },
-        keys = { "f", "t" },
+        keys = { "f", "F", "t", "T", "df", "dF", "dt", "dT", "yf", "yF", "yt", "yT" },
     },
 }
