@@ -3,7 +3,14 @@ return {
         "folke/tokyonight.nvim",
         lazy = false,
         priority = 1000, -- load before everything else
-        opts = { style = "storm" },
+        opts = {
+            style = "storm",
+            on_highlights = function(hl, colors)
+                hl.Winbar = {
+                    bg = colors.bg_statusline,
+                }
+            end,
+        },
         config = function(_, opts)
             local tokyonight = require("tokyonight")
             tokyonight.setup(opts)

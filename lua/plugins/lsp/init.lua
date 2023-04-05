@@ -14,14 +14,7 @@ return {
                     autocmd = { enabled = true },
                 },
             },
-            {
-                "SmiteshP/nvim-navic",
-                config = function()
-                    local colors = require("tokyonight.colors").setup()
-                    vim.api.nvim_set_hl(0, "Winbar", { bg = colors.bg_statusline })
-                    vim.opt.winbar = "%{%v:lua.require'nvim-navic'.get_location()%}"
-                end,
-            },
+            { "SmiteshP/nvim-navic" },
         },
         event = { "BufReadPre", "BufNewFile" },
         config = function()
@@ -49,7 +42,11 @@ return {
 
             local function on_attach(client, bufnr)
                 require("plugins.lsp.keymaps").attach(bufnr)
-                require("nvim-navic").attach(client, bufnr)
+
+                if client.server_capabilities.documentSymbolProvider then
+                    require("nvim-navic").attach(client, bufnr)
+                    vim.opt_local.winbar = "%{%v:lua.require('nvim-navic').get_location()%}"
+                end
 
                 -- Highlight references
                 if client.server_capabilities.documentHighlightProvider then
