@@ -23,3 +23,6 @@ vim.keymap.set("n", "<C-Right>", ":vertical resize +2<CR>")
 -- Move lines
 vim.keymap.set("v", "<C-j>", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "<C-k>", ":m '<-2<CR>gv=gv")
+
+-- Exit terminal mode
+vim.keymap.set("t", "<ESC>", "<C-\\><C-n>")
