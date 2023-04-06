@@ -64,14 +64,14 @@ return {
 
             -- Set menu
             dashboard.section.buttons.val = {
-                dashboard.button("e", "  > New file", ":ene<CR>"),
-                dashboard.button("f", "  > Find file", ":Telescope find_files<CR>"),
-                dashboard.button("r", "  > Find word", ":Telescope live_grep<CR>"),
-                dashboard.button("t", "פּ  > File explorer", ":NvimTreeOpen<CR>"),
-                dashboard.button("s", "  > Settings", ":e $MYVIMRC | :cd %:p:h<CR>"),
-                dashboard.button("u", "  > Update plugins", ":Lazy update<CR>"),
-                dashboard.button("g", "  > Neogit", ":Neogit<CR>"),
-                dashboard.button("q", "  > Quit NVIM", ":qa<CR>"),
+                dashboard.button("e", "  > New file", "<Cmd>ene<CR>"),
+                dashboard.button("f", "  > Find file", "<Cmd>Telescope find_files<CR>"),
+                dashboard.button("r", "  > Find word", "<Cmd>Telescope live_grep<CR>"),
+                dashboard.button("t", "פּ  > File explorer", "<Cmd>NvimTreeOpen<CR>"),
+                dashboard.button("s", "  > Settings", "<Cmd>e $MYVIMRC | cd %:p:h<CR>"),
+                dashboard.button("u", "  > Update plugins", "<Cmd>Lazy update<CR>"),
+                dashboard.button("g", "  > Neogit", "<Cmd>Neogit<CR>"),
+                dashboard.button("q", "  > Quit NVIM", "<Cmd>qa<CR>"),
             }
 
             local function footer()

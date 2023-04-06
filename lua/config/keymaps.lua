@@ -15,10 +15,10 @@ vim.keymap.set("n", "<C-j>", "<C-w>j")
 vim.keymap.set("n", "<C-h>", "<C-w>h")
 
 -- Resize window
-vim.keymap.set("n", "<C-Up>", ":resize +2<CR>")
-vim.keymap.set("n", "<C-Down>", ":resize -2<CR>")
-vim.keymap.set("n", "<C-Left>", ":vertical resize -2<CR>")
-vim.keymap.set("n", "<C-Right>", ":vertical resize +2<CR>")
+vim.keymap.set("n", "<C-Up>", "<Cmd>resize +2<CR>")
+vim.keymap.set("n", "<C-Down>", "<Cmd>resize -2<CR>")
+vim.keymap.set("n", "<C-Left>", "<Cmd>vertical resize -2<CR>")
+vim.keymap.set("n", "<C-Right>", "<Cmd>vertical resize +2<CR>")
 
 -- Move lines
 vim.keymap.set("v", "<C-j>", ":m '>+1<CR>gv=gv")

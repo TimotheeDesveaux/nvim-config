@@ -33,13 +33,13 @@ return {
         },
         cmd = "Telescope",
         keys = {
-            { "<leader>ff", ":Telescope find_files<CR>", desc = "files" },
-            { "<leader>fg", ":Telescope git_files<CR>", desc = "git files" },
-            { "<leader>fr", ":Telescope live_grep<CR>", desc = "grep" },
-            { "<leader>fb", ":Telescope buffers<CR>", desc = "buffers" },
-            { "<leader>fm", ":Telescope marks<CR>", desc = "bookmarks" },
-            { "<leader>fc", ":Telescope colorscheme<CR>", desc = "colorscheme" },
-            { "<leader>fh", ":Telescope oldfiles<CR>", desc = "history" },
+            { "<leader>ff", "<Cmd>Telescope find_files<CR>", desc = "files" },
+            { "<leader>fg", "<Cmd>Telescope git_files<CR>", desc = "git files" },
+            { "<leader>fr", "<Cmd>Telescope live_grep<CR>", desc = "grep" },
+            { "<leader>fb", "<Cmd>Telescope buffers<CR>", desc = "buffers" },
+            { "<leader>fm", "<Cmd>Telescope marks<CR>", desc = "bookmarks" },
+            { "<leader>fc", "<Cmd>Telescope colorscheme<CR>", desc = "colorscheme" },
+            { "<leader>fh", "<Cmd>Telescope oldfiles<CR>", desc = "history" },
         },
         config = function()
             local telescope = require("telescope")
@@ -78,10 +78,10 @@ return {
         },
         cmd = { "NvimTreeOpen", "NvimTreeToggle", "NvimTreeFocus", "NvimTreeFindFile" },
         keys = {
-            { "<leader>tt", ":NvimTreeToggle<CR>", desc = "toggle" },
-            { "<leader>tf", ":NvimTreeFocus<CR>", desc = "focus" },
-            { "<leader>tr", ":NvimTreeRefresh<CR>", desc = "refresh" },
-            { "<leader>to", ":NvimTreeFindFile<CR>", desc = "find opened file" },
+            { "<leader>tt", "<Cmd>NvimTreeToggle<CR>", desc = "toggle" },
+            { "<leader>tf", "<Cmd>NvimTreeFocus<CR>", desc = "focus" },
+            { "<leader>tr", "<Cmd>NvimTreeRefresh<CR>", desc = "refresh" },
+            { "<leader>to", "<Cmd>NvimTreeFindFile<CR>", desc = "find opened file" },
         },
     },
     {
@@ -92,7 +92,7 @@ return {
         },
         cmd = "Neogit",
         keys = {
-            { "<leader>g", ":Neogit<CR>", desc = "neogit" },
+            { "<leader>g", "<Cmd>Neogit<CR>", desc = "neogit" },
         },
     },
 }
