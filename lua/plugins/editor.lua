@@ -33,13 +33,13 @@ return {
         },
         cmd = "Telescope",
         keys = {
-            { "<leader>ff", ":Telescope find_files<cr>", desc = "files" },
-            { "<leader>fg", ":Telescope git_files<cr>", desc = "git files" },
-            { "<leader>fr", ":Telescope live_grep<cr>", desc = "grep" },
-            { "<leader>fb", ":Telescope buffers<cr>", desc = "buffers" },
-            { "<leader>fm", ":Telescope marks<cr>", desc = "bookmarks" },
-            { "<leader>fc", ":Telescope colorscheme<cr>", desc = "colorscheme" },
-            { "<leader>fh", ":Telescope oldfiles<cr>", desc = "history" },
+            { "<leader>ff", ":Telescope find_files<CR>", desc = "files" },
+            { "<leader>fg", ":Telescope git_files<CR>", desc = "git files" },
+            { "<leader>fr", ":Telescope live_grep<CR>", desc = "grep" },
+            { "<leader>fb", ":Telescope buffers<CR>", desc = "buffers" },
+            { "<leader>fm", ":Telescope marks<CR>", desc = "bookmarks" },
+            { "<leader>fc", ":Telescope colorscheme<CR>", desc = "colorscheme" },
+            { "<leader>fh", ":Telescope oldfiles<CR>", desc = "history" },
         },
         config = function()
             local telescope = require("telescope")
