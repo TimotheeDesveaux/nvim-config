@@ -87,6 +87,9 @@ return {
     {
         "TimUntersberger/neogit",
         requires = { "nvim-lua/plenary.nvim" },
+        opts = {
+            disable_builtin_notifications = true,
+        },
         cmd = "Neogit",
         keys = {
             { "<leader>g", ":Neogit<CR>", desc = "neogit" },
