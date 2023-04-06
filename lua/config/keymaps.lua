@@ -1,4 +1,4 @@
-vim.keymap.set("n", "<leader><leader>", ":e #<CR>", { desc = "previous file" })
+vim.keymap.set("n", "<leader><leader>", "<C-^>", { desc = "previous file" })
 vim.keymap.set("n", "<leader>j", "gT", { desc = "previous tab" })
 vim.keymap.set("n", "<leader>k", "gt", { desc = "next tab" })
 
