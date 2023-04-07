@@ -29,6 +29,8 @@ return {
         config = function()
             require("plugins.lsp.ui").setup()
 
+            vim.diagnostic.config({ severity_sort = true })
+
             local function on_attach(client, bufnr)
                 require("plugins.lsp.keymaps").attach(bufnr)
 
