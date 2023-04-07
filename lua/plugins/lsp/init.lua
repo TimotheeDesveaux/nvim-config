@@ -15,6 +15,15 @@ return {
                 },
             },
             { "SmiteshP/nvim-navic" },
+            {
+                "j-hui/fidget.nvim",
+                opts = {
+                    text = {
+                        spinner = "dots",
+                        done = "",
+                    },
+                },
+            },
         },
         event = { "BufReadPre", "BufNewFile" },
         config = function()
