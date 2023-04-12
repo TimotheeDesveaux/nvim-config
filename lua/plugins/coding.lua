@@ -32,9 +32,9 @@ return {
                 function()
                     format_on_save = not format_on_save
                 end,
-                { desc = "toggle" },
+                desc = "toggle",
             },
-            { "<leader>of", "<cmd>silent! Format<CR>", { desc = "format" } },
+            { "<leader>of", "<cmd>silent! Format<CR>", desc = "format" },
         },
         config = function()
             local formatter = require("formatter")
