@@ -37,7 +37,6 @@ return {
             { "<leader>fg", "<Cmd>Telescope git_files<CR>", desc = "git files" },
             { "<leader>fr", "<Cmd>Telescope live_grep<CR>", desc = "grep" },
             { "<leader>fb", "<Cmd>Telescope buffers<CR>", desc = "buffers" },
-            { "<leader>fm", "<Cmd>Telescope marks<CR>", desc = "bookmarks" },
             { "<leader>fc", "<Cmd>Telescope colorscheme<CR>", desc = "colorscheme" },
             { "<leader>fh", "<Cmd>Telescope oldfiles<CR>", desc = "history" },
         },
