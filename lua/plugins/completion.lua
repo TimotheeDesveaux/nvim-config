@@ -2,7 +2,6 @@ return {
     "hrsh7th/nvim-cmp",
     dependencies = {
         "hrsh7th/cmp-nvim-lsp",
-        "hrsh7th/cmp-nvim-lua",
         "hrsh7th/cmp-path",
         "saadparwaiz1/cmp_luasnip",
         "hrsh7th/cmp-buffer",
@@ -45,8 +44,6 @@ return {
                 ["<CR>"] = cmp.mapping.confirm({ select = false }),
             }),
             sources = cmp.config.sources({
-                { name = "nvim_lua" },
-            }, {
                 { name = "luasnip" },
                 { name = "nvim_lsp" },
                 { name = "nvim_lsp_signature_help" },
@@ -59,7 +56,6 @@ return {
                 format = lspkind.cmp_format({
                     with_text = true,
                     menu = {
-                        nvim_lua = "[api]",
                         nvim_lsp = "[LSP]",
                         path = "[path]",
                         luasnip = "[snip]",

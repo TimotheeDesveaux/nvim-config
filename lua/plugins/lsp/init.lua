@@ -4,6 +4,10 @@ return {
         dependencies = {
             { "hrsh7th/cmp-nvim-lsp" },
             {
+                "folke/neodev.nvim",
+                config = true,
+            },
+            {
                 "kosayoda/nvim-lightbulb",
                 opts = {
                     sign = { enabled = false },
@@ -66,13 +70,7 @@ return {
                     settings = {
                         Lua = {
                             runtime = { version = "LuaJIT" },
-                            diagnostics = {
-                                globals = { "vim" },
-                            },
-                            workspace = {
-                                library = vim.api.nvim_get_runtime_file("", true),
-                                checkThirdParty = false,
-                            },
+                            workspace = { checkThirdParty = false },
                             telemetry = { enable = false },
                         },
                     },
