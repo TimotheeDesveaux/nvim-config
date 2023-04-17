@@ -16,7 +16,7 @@ return {
                     ["gb"] = { name = "blockwise comment" },
                 },
                 {
-                    mode = { "v" },
+                    mode = { "x" },
                     ["gc"] = { desc = "linewise comment" },
                     ["gb"] = { desc = "blockwise comment" },
                 },
