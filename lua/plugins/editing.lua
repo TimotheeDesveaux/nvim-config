@@ -16,11 +16,16 @@ return {
         config = true,
     },
     {
-        "jinh0/eyeliner.nvim",
+        "TimotheeDesveaux/eyeliner.nvim",
         opts = {
             highlight_on_key = true,
             dim = true,
         },
-        keys = { "f", "F", "t", "T", "df", "dF", "dt", "dT", "yf", "yF", "yt", "yT" },
+        keys = {
+            { "f", mode = { "n", "x", "o" } },
+            { "F", mode = { "n", "x", "o" } },
+            { "t", mode = { "n", "x", "o" } },
+            { "T", mode = { "n", "x", "o" } },
+        },
     },
 }
