@@ -27,9 +27,9 @@ return {
 
         return {
             { "<leader>dc", dap("continue"), desc = "continue" },
-            { "<leader>di", dap("step_into"), desc = "step into" },
-            { "<leader>do", dap("step_over"), desc = "step over" },
-            { "<leader>dt", dap("step_out"), desc = "step out" },
+            { "<leader>ds", dap("step_into"), desc = "step into" },
+            { "<leader>dn", dap("step_over"), desc = "step over (next)" },
+            { "<leader>df", dap("step_out"), desc = "step out (finish)" },
             { "<leader>db", dap("toggle_breakpoint"), desc = "toggle breakpoint" },
             {
                 "<leader>do",
