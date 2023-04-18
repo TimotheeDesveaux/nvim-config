@@ -70,7 +70,7 @@ return {
 
         local signs = { DapBreakpoint = "", DapBreakpointCondition = "", DapLogPoint = "" }
         for hl, icon in pairs(signs) do
-            vim.fn.sign_define(hl, { text = icon })
+            vim.fn.sign_define(hl, { text = icon, texthl = "Error" })
         end
 
         dapui.setup()
