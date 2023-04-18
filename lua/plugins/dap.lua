@@ -1,87 +1,58 @@
 return {
     "mfussenegger/nvim-dap",
-    dependencies = { "rcarriga/nvim-dap-ui" },
-    keys = {
-        {
-            "<leader>dc",
-            function()
-                require("dap").continue()
-            end,
-            desc = "continue",
-        },
-        {
-            "<leader>di",
-            function()
-                require("dap").step_into()
-            end,
-            desc = "step into",
-        },
-        {
-            "<leader>do",
-            function()
-                require("dap").step_over()
-            end,
-            desc = "step over",
-        },
-        {
-            "<leader>dt",
-            function()
-                require("dap").step_out()
-            end,
-            desc = "step out",
-        },
-        {
-            "<leader>db",
-            function()
-                require("dap").toggle_breakpoint()
-            end,
-            desc = "toggle breakpoint",
-        },
-        {
-            "<leader>dn",
-            function()
-                vim.ui.input({ prompt = "Condition: " }, function(input)
-                    if input == nil then
-                        return
-                    end
-                    require("dap").set_breakpoint(input)
-                end)
-            end,
-            desc = "set conditional breakpoint",
-        },
-        {
-            "<leader>dl",
-            function()
-                require("dap").clear_breakpoints()
-            end,
-            desc = "clear breakpoints",
-        },
-        {
-            "<leader>dq",
-            function()
-                require("dap").terminate()
-            end,
-            desc = "quit",
-        },
+    dependencies = {
+        "rcarriga/nvim-dap-ui",
+        config = function()
+            local dap = require("dap")
+            local dapui = require("dapui")
+
+            dapui.setup()
+            dap.listeners.after.event_initialized["dapui_config"] = function()
+                dapui.open()
+            end
+            dap.listeners.before.event_terminated["dapui_config"] = function()
+                dapui.close()
+            end
+            dap.listeners.before.event_exited["dapui_config"] = function()
+                dapui.close()
+            end
+        end,
     },
+    keys = function()
+        local function dap(name)
+            return function()
+                require("dap")[name]()
+            end
+        end
+
+        return {
+            { "<leader>dc", dap("continue"), desc = "continue" },
+            { "<leader>di", dap("step_into"), desc = "step into" },
+            { "<leader>do", dap("step_over"), desc = "step over" },
+            { "<leader>dt", dap("step_out"), desc = "step out" },
+            { "<leader>db", dap("toggle_breakpoint"), desc = "toggle breakpoint" },
+            {
+                "<leader>do",
+                function()
+                    vim.ui.input({ prompt = "Condition: " }, function(input)
+                        if input == nil then
+                            return
+                        end
+                        require("dap").set_breakpoint(input)
+                    end)
+                end,
+                desc = "set conditional breakpoint",
+            },
+            { "<leader>dl", dap("clear_breakpoints"), desc = "clear breakpoints" },
+            { "<leader>dq", dap("terminate"), desc = "quit" },
+        }
+    end,
     config = function()
         local dap = require("dap")
-        local dapui = require("dapui")
 
         local signs = { DapBreakpoint = "", DapBreakpointCondition = "", DapLogPoint = "" }
         for hl, icon in pairs(signs) do
             vim.fn.sign_define(hl, { text = icon, texthl = "Error" })
-        end
-
-        dapui.setup()
-        dap.listeners.after.event_initialized["dapui_config"] = function()
-            dapui.open()
-        end
-        dap.listeners.before.event_terminated["dapui_config"] = function()
-            dapui.close()
-        end
-        dap.listeners.before.event_exited["dapui_config"] = function()
-            dapui.close()
         end
 
         dap.adapters.lldb = {
