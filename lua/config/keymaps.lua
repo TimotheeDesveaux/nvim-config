@@ -1,6 +1,4 @@
 vim.keymap.set("n", "<leader><leader>", "<C-^>", { desc = "previous file" })
-vim.keymap.set("n", "<leader>j", "gT", { desc = "previous tab" })
-vim.keymap.set("n", "<leader>k", "gt", { desc = "next tab" })
 
 -- Center after jumping
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
@@ -15,6 +13,10 @@ vim.keymap.set("n", "<C-k>", "<c-w>k")
 vim.keymap.set("n", "<C-l>", "<C-w>l")
 vim.keymap.set("n", "<C-j>", "<C-w>j")
 vim.keymap.set("n", "<C-h>", "<C-w>h")
+
+-- Move through tabs
+vim.keymap.set("n", "<S-h>", "<Cmd>tabprevious<CR>")
+vim.keymap.set("n", "<S-l>", "<Cmd>tabnext<CR>")
 
 -- Resize window
 vim.keymap.set("n", "<C-Up>", "<Cmd>resize +2<CR>")
