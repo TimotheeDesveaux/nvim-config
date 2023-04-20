@@ -32,14 +32,22 @@ return {
             { "nvim-tree/nvim-web-devicons" },
         },
         cmd = "Telescope",
-        keys = {
-            { "<leader>ff", "<Cmd>Telescope find_files<CR>", desc = "files" },
-            { "<leader>fg", "<Cmd>Telescope git_files<CR>", desc = "git files" },
-            { "<leader>fr", "<Cmd>Telescope live_grep<CR>", desc = "grep" },
-            { "<leader>fb", "<Cmd>Telescope buffers<CR>", desc = "buffers" },
-            { "<leader>fc", "<Cmd>Telescope colorscheme<CR>", desc = "colorscheme" },
-            { "<leader>fh", "<Cmd>Telescope oldfiles<CR>", desc = "history" },
-        },
+        keys = function()
+            local function telescope(builtin)
+                return function()
+                    require("telescope.builtin")[builtin]()
+                end
+            end
+
+            return {
+                { "<leader>ff", telescope("find_files"), desc = "files" },
+                { "<leader>fg", telescope("git_files"), desc = "git files" },
+                { "<leader>fr", telescope("live_grep"), desc = "grep" },
+                { "<leader>fb", telescope("buffers"), desc = "buffers" },
+                { "<leader>fc", telescope("colorscheme"), desc = "colorscheme" },
+                { "<leader>fh", telescope("oldfiles"), desc = "history" },
+            }
+        end,
         config = function()
             local telescope = require("telescope")
             telescope.setup()
