@@ -10,6 +10,18 @@ return {
             ensure_installed = "all",
             highlight = { enable = true },
             playground = { enable = true, updatetime = 25 },
+            incremental_selection = {
+                enable = true,
+                keymaps = {
+                    init_selection = "<leader>s",
+                    node_incremental = "<Tab>",
+                    scope_incremental = false,
+                    node_decremental = "<BS>",
+                },
+            },
+        },
+        keys = {
+            { "<leader>s", desc = "start incremental selection" },
         },
         config = function(_, opts)
             require("nvim-treesitter.configs").setup(opts)
