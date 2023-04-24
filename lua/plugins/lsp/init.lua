@@ -17,7 +17,10 @@ return {
                 autocmd = { enabled = true },
             },
         },
-        { "SmiteshP/nvim-navic" },
+        {
+            "SmiteshP/nvim-navic",
+            opts = { highlight = true },
+        },
         {
             "j-hui/fidget.nvim",
             opts = {
