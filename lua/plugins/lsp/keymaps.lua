@@ -1,6 +1,8 @@
 local M = {}
 
 function M.attach(bufnr)
+    local telescope = require("utils").telescope
+
     local function map(key, rhs, desc)
         vim.keymap.set("n", key, rhs, {
             silent = true,
@@ -9,27 +11,26 @@ function M.attach(bufnr)
         })
     end
 
-    map("K", "<Cmd>lua vim.lsp.buf.hover()<CR>", "")
-    map("<leader>lD", "<Cmd>lua vim.lsp.buf.declaration()<CR>", "declaration")
-    map("<leader>ld", "<Cmd>Telescope lsp_definitions<CR>", "definition")
-    map("<leader>li", "<Cmd>Telescope lsp_implementations<CR>", "implementation")
-    map("<leader>lt", "<Cmd>Telescope lsp_type_definitions<CR>", "type defintion")
-    map("<leader>lr", "<Cmd>Telescope lsp_references<CR>", "references")
-    map("<leader>ln", "<Cmd>lua vim.lsp.buf.rename()<CR>", "rename")
-    map("<leader>la", "<Cmd>lua vim.lsp.buf.code_action()<CR>", "action")
-    map("<leader>lk", "<Cmd>lua vim.diagnostic.goto_prev()<CR>", "previous diagnostic")
-    map("<leader>lj", "<Cmd>lua vim.diagnostic.goto_next()<CR>", "next diagnostic")
-    map(
-        "<leader>ls",
-        "<Cmd>lua vim.diagnostic.open_float({ scope = 'cursor' })<CR>",
-        "cursor diagnostic"
-    )
-    map(
-        "<leader>lS",
-        "<Cmd>lua vim.diagnostic.open_float({ scope = 'line' })<CR>",
-        "line diagnostics"
-    )
-    map("<leader>ly", "<Cmd>Telescope lsp_document_symbols<CR>", "LSP symbols")
+    map("K", vim.lsp.buf.hover, "")
+
+    map("<leader>lD", vim.lsp.buf.declaration, "declaration")
+    map("<leader>ld", telescope("lsp_definitions"), "definition")
+    map("<leader>li", telescope("lsp_implementations"), "implementation")
+    map("<leader>lt", telescope("lsp_type_definitions"), "type defintion")
+    map("<leader>lr", telescope("lsp_references"), "references")
+    map("<leader>ly", telescope("lsp_document_symbols"), "LSP symbols")
+
+    map("<leader>ln", vim.lsp.buf.rename, "rename")
+    map("<leader>la", vim.lsp.buf.code_action, "action")
+
+    map("<leader>lk", vim.diagnostic.goto_prev, "previous diagnostic")
+    map("<leader>lj", vim.diagnostic.goto_next, "next diagnostic")
+    map("<leader>ls", function()
+        vim.diagnostic.open_float({ scope = "cursor" })
+    end, "cursor diagnostic")
+    map("<leader>lS", function()
+        vim.diagnostic.open_float({ scope = "line" })
+    end, "line diagnostics")
 end
 
 return M
