@@ -85,7 +85,7 @@ vim.api.nvim_create_autocmd({ "BufLeave", "FocusLost", "InsertEnter", "WinLeave"
 
 vim.api.nvim_create_autocmd("FileType", {
     group = augroup("close_with_q"),
-    pattern = { "help", "lspinfo", "man", "notify", "tsplayground", "checkhealth" },
+    pattern = { "help", "lspinfo", "man", "notify", "checkhealth" },
     callback = function()
         vim.opt_local.buflisted = false
         vim.keymap.set("n", "q", "<Cmd>close<CR>", { buffer = 0 })

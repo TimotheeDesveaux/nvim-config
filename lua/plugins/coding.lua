@@ -4,12 +4,10 @@ return {
     {
         "nvim-treesitter/nvim-treesitter",
         build = ":TSUpdate",
-        dependencies = { "nvim-treesitter/playground" },
         event = { "BufReadPost", "BufNewFile" },
         opts = {
             ensure_installed = "all",
             highlight = { enable = true },
-            playground = { enable = true, updatetime = 25 },
             incremental_selection = {
                 enable = true,
                 keymaps = {
