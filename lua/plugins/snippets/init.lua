@@ -43,13 +43,11 @@ return {
         },
     },
     config = function(_, opts)
-        require("luasnip").setup(opts)
+        local ls = require("luasnip")
 
-        require("plugins.snippets.c")
-        require("plugins.snippets.make")
-        require("plugins.snippets.markdown")
-        require("plugins.snippets.tiger")
-        require("plugins.snippets.shell")
-        require("plugins.snippets.nix")
+        ls.setup(opts)
+        for _, lang in pairs({ "c", "make", "markdown", "tiger", "shell", "nix" }) do
+            ls.add_snippets(lang, require("plugins.snippets." .. lang))
+        end
     end,
 }

@@ -5,7 +5,7 @@ local i = ls.insert_node
 local fmt = require("luasnip.extras.fmt").fmt
 local rep = require("luasnip.extras").rep
 
-ls.add_snippets("make", {
+return {
     s(
         "cproj",
         fmt(
@@ -46,4 +46,4 @@ ls.add_snippets("make", {
             }
         )
     ),
-})
+}

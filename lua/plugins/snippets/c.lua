@@ -6,7 +6,7 @@ local f = ls.function_node
 local fmt = require("luasnip.extras.fmt").fmt
 local rep = require("luasnip.extras").rep
 
-ls.add_snippets("c", {
+return {
     s("inc", fmt('#include "{}"', { i(1) })),
     s("Inc", fmt("#include <{}>", { i(1) })),
     s(
@@ -173,4 +173,4 @@ ls.add_snippets("c", {
         )
     ),
     s("pint", fmt('printf("%d\\n", {});', { i(1) })),
-})
+}
