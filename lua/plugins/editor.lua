@@ -33,11 +33,7 @@ return {
         },
         cmd = "Telescope",
         keys = function()
-            local function telescope(builtin)
-                return function()
-                    require("telescope.builtin")[builtin]()
-                end
-            end
+            local telescope = require("utils").telescope
 
             return {
                 { "<leader>ff", telescope("find_files"), desc = "files" },
