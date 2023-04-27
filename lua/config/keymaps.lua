@@ -8,9 +8,9 @@ vim.keymap.set("n", "<C-b>", "<C-b>zz")
 vim.keymap.set("n", "n", "nzz")
 vim.keymap.set("n", "N", "Nzz")
 
--- Do not update jumplist
-vim.keymap.set("n", "{", "<Cmd>keepjumps normal! {<CR>")
-vim.keymap.set("n", "}", "<Cmd>keepjumps normal! }<CR>")
+-- Do not update jumplist and center
+vim.keymap.set("n", "{", "<Cmd>keepjumps normal! {zz<CR>")
+vim.keymap.set("n", "}", "<Cmd>keepjumps normal! }zz<CR>")
 
 -- Move to window
 vim.keymap.set("n", "<C-k>", "<c-w>k")
