@@ -1,6 +1,6 @@
 local M = {}
 
-function M.attach(bufnr)
+function M.on_attach(bufnr)
     local telescope = require("utils").telescope
 
     local function map(key, rhs, desc)
