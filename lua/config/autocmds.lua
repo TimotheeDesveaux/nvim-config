@@ -28,13 +28,13 @@ vim.api.nvim_create_autocmd("FileType", {
         vim.keymap.set(
             "n",
             "<leader>mp",
-            "<cmd>silent !pandoc % -o %:r.pdf<CR>",
+            "<Cmd>silent !pandoc % -o %:r.pdf<CR>",
             { desc = "to pdf", buffer = 0 }
         )
         vim.keymap.set(
             "n",
             "<leader>mv",
-            "<cmd>silent !zathura %:r.pdf &<CR>",
+            "<Cmd>silent !zathura %:r.pdf &<CR>",
             { desc = "visualize", buffer = 0 }
         )
     end,

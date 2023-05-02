@@ -44,7 +44,7 @@ return {
                 end,
                 desc = "toggle",
             },
-            { "<leader>of", "<cmd>silent! Format<CR>", desc = "format" },
+            { "<leader>of", "<Cmd>silent! Format<CR>", desc = "format" },
         },
         config = function()
             local formatter = require("formatter")
