@@ -12,6 +12,7 @@ return {
                     ["<leader>o"] = { name = "format" },
                     ["<leader>t"] = { name = "tree" },
                     ["<leader>d"] = { name = "debugger" },
+                    ["<leader>l"] = { name = "lsp" },
                     ["gc"] = { name = "linewise comment" },
                     ["gb"] = { name = "blockwise comment" },
                 },
