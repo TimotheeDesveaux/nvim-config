@@ -12,7 +12,7 @@ return {
                 enable = true,
                 keymaps = {
                     init_selection = "<leader>s",
-                    node_incremental = "<Tab>",
+                    node_incremental = "<Space>",
                     scope_incremental = false,
                     node_decremental = "<BS>",
                 },
