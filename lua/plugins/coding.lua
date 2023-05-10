@@ -6,7 +6,8 @@ return {
         build = ":TSUpdate",
         event = { "BufReadPost", "BufNewFile" },
         opts = {
-            ensure_installed = "all",
+            ensure_installed = { "c", "lua", "vim", "vimdoc" },
+            auto_install = true,
             highlight = { enable = true },
             incremental_selection = {
                 enable = true,
