@@ -28,7 +28,7 @@
 
 #### Formatters
 
-* Lua: [LuaFormatter](https://github.com/Koihik/LuaFormatter)
+* Lua: [StyLua](https://github.com/JohnnyMorganz/StyLua)
 * C/C++: [clang-format](https://clang.llvm.org/docs/ClangFormat.html)
 * Javascript/Typescript/JSON/YAML: [prettier](https://prettier.io/)
 * Python: [black](https://github.com/psf/black)
