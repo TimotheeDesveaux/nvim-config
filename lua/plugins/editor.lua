@@ -58,15 +58,6 @@ return {
             actions = {
                 open_file = { quit_on_open = true },
             },
-            diagnostics = {
-                enable = false,
-                icons = {
-                    error = "",
-                    warning = "",
-                    hint = "",
-                    info = "",
-                },
-            },
             git = { ignore = true },
             renderer = {
                 highlight_git = true,
