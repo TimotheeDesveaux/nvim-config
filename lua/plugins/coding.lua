@@ -42,6 +42,11 @@ return {
                 "<leader>ot",
                 function()
                     format_on_save = not format_on_save
+                    vim.notify(
+                        "Auto format " .. (format_on_save and "enabled" or "disabled"),
+                        vim.log.levels.INFO,
+                        { title = "Formatter" }
+                    )
                 end,
                 desc = "toggle",
             },
