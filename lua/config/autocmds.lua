@@ -68,7 +68,7 @@ vim.api.nvim_create_autocmd({ "BufEnter", "FocusGained", "InsertLeave", "WinEnte
             return
         end
 
-        vim.opt.relativenumber = vim.api.nvim_get_mode() ~= "i"
+        vim.opt.relativenumber = vim.api.nvim_get_mode().mode ~= "i"
     end,
 })
 
