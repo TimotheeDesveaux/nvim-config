@@ -38,7 +38,7 @@ return {
     },
     {
         "rcarriga/nvim-notify",
-        event = "VeryLazy",
+        lazy = true,
         keys = {
             {
                 "<leader>n",
@@ -48,8 +48,11 @@ return {
                 desc = "dismiss notifications",
             },
         },
-        config = function()
-            vim.notify = require("notify")
+        init = function()
+            vim.notify = function(...)
+                require("lazy").load({ plugins = { "nvim-notify" } })
+                return require("notify")(...)
+            end
         end,
     },
     {
