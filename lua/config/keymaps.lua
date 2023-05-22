@@ -3,6 +3,8 @@ vim.keymap.set("n", "<leader><leader>", "<C-^>", { desc = "previous file" })
 vim.keymap.set("x", "gp", '"_dP', { desc = "replace without updating registers" })
 vim.keymap.set({ "n", "x" }, "gd", '"_d', { desc = "delete without updating registers" })
 
+vim.keymap.set("n", "gs", ":%s/<C-r><C-w>//g<Left><Left>", { desc = "replace word under cursor" })
+
 -- Center after jumping
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
