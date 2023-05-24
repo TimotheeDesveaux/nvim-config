@@ -52,7 +52,7 @@ vim.api.nvim_create_autocmd({ "FocusGained", "TermClose", "TermLeave" }, {
     command = "checktime",
 })
 
-vim.api.nvim_create_autocmd({ "VimResized" }, {
+vim.api.nvim_create_autocmd("VimResized", {
     group = augroup("resize_splits"),
     callback = function()
         local current_tab = vim.api.nvim_get_current_tabpage()
@@ -67,7 +67,6 @@ vim.api.nvim_create_autocmd({ "BufEnter", "FocusGained", "InsertLeave", "WinEnte
         if not vim.opt.number:get() and not vim.opt.relativenumber:get() then
             return
         end
-
         vim.opt.relativenumber = vim.api.nvim_get_mode().mode ~= "i"
     end,
 })
@@ -76,7 +75,6 @@ vim.api.nvim_create_autocmd({ "BufLeave", "FocusLost", "InsertEnter", "WinLeave"
     group = augroup("disable_relative_number"),
     callback = function(ev)
         vim.opt.relativenumber = false
-
         if ev.event == "CmdlineEnter" then
             vim.cmd("redraw")
         end

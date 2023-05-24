@@ -89,7 +89,6 @@ return {
                 local plugins = vim.tbl_values(config.plugins)
                 return #plugins .. " plugins total"
             end
-
             dashboard.section.footer.val = footer()
 
             alpha.setup(dashboard.opts)
