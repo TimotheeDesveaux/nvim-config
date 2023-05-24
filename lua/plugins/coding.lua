@@ -1,5 +1,3 @@
-local format_on_save = true
-
 return {
     {
         "nvim-treesitter/nvim-treesitter",
@@ -41,9 +39,9 @@ return {
             {
                 "<leader>ot",
                 function()
-                    format_on_save = not format_on_save
+                    vim.g.format_on_save = not vim.g.format_on_save
                     vim.notify(
-                        "Auto format " .. (format_on_save and "enabled" or "disabled"),
+                        "Auto format " .. (vim.g.format_on_save and "enabled" or "disabled"),
                         vim.log.levels.INFO,
                         { title = "Formatter" }
                     )
@@ -53,8 +51,9 @@ return {
             { "<leader>of", "<Cmd>silent! Format<CR>", desc = "format" },
         },
         config = function()
-            local formatter = require("formatter")
+            vim.g.format_on_save = true
 
+            local formatter = require("formatter")
             formatter.setup({
                 filetype = {
                     lua = { require("formatter.filetypes.lua").stylua },
@@ -79,7 +78,7 @@ return {
                 group = vim.api.nvim_create_augroup("my_format_write", { clear = true }),
                 pattern = "*",
                 callback = function()
-                    if format_on_save then
+                    if vim.g.format_on_save then
                         vim.cmd("silent! FormatWrite")
                     end
                 end,
