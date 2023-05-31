@@ -9,6 +9,7 @@ vim.keymap.set(
     ":%s/\\<<C-r><C-w>\\>//g<Left><Left>",
     { desc = "replace word under cursor" }
 )
+vim.keymap.set("x", "gs", 'y:%s/\\V<C-r>"//g<Left><Left>', { desc = "replace selection" })
 
 -- Center after jumping
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
