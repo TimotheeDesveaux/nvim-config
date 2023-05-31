@@ -20,8 +20,8 @@ return {
     {
         "nvim-lualine/lualine.nvim",
         dependencies = { "nvim-tree/nvim-web-devicons" },
-        event = "VeryLazy",
         cond = not vim.g.started_by_firenvim,
+        event = "VeryLazy",
         opts = {
             options = {
                 theme = "tokyonight",

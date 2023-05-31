@@ -1,9 +1,5 @@
 return {
     "L3MON4D3/LuaSnip",
-    opts = {
-        history = true,
-        update_events = { "TextChanged", "TextChangedI" },
-    },
     keys = {
         {
             "<C-j>",
@@ -41,6 +37,10 @@ return {
             end,
             mode = { "i", "s" },
         },
+    },
+    opts = {
+        history = true,
+        update_events = { "TextChanged", "TextChangedI" },
     },
     config = function(_, opts)
         local ls = require("luasnip")

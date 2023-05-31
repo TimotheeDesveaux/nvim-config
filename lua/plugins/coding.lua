@@ -3,6 +3,9 @@ return {
         "nvim-treesitter/nvim-treesitter",
         build = ":TSUpdate",
         event = { "BufReadPost", "BufNewFile" },
+        keys = {
+            { "<leader>s", desc = "start incremental selection" },
+        },
         opts = {
             ensure_installed = { "c", "lua", "vim", "vimdoc" },
             auto_install = true,
@@ -16,9 +19,6 @@ return {
                     node_decremental = "<BS>",
                 },
             },
-        },
-        keys = {
-            { "<leader>s", desc = "start incremental selection" },
         },
         config = function(_, opts)
             require("nvim-treesitter.configs").setup(opts)

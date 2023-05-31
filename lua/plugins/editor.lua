@@ -54,6 +54,13 @@ return {
     {
         "nvim-tree/nvim-tree.lua",
         dependencies = { "nvim-tree/nvim-web-devicons" },
+        cmd = { "NvimTreeOpen", "NvimTreeToggle", "NvimTreeFocus", "NvimTreeFindFile" },
+        keys = {
+            { "<leader>tt", "<Cmd>NvimTreeToggle<CR>", desc = "toggle" },
+            { "<leader>tf", "<Cmd>NvimTreeFocus<CR>", desc = "focus" },
+            { "<leader>tr", "<Cmd>NvimTreeRefresh<CR>", desc = "refresh" },
+            { "<leader>to", "<Cmd>NvimTreeFindFile<CR>", desc = "find opened file" },
+        },
         opts = {
             actions = {
                 open_file = { quit_on_open = true },
@@ -71,23 +78,16 @@ return {
                 },
             },
         },
-        cmd = { "NvimTreeOpen", "NvimTreeToggle", "NvimTreeFocus", "NvimTreeFindFile" },
-        keys = {
-            { "<leader>tt", "<Cmd>NvimTreeToggle<CR>", desc = "toggle" },
-            { "<leader>tf", "<Cmd>NvimTreeFocus<CR>", desc = "focus" },
-            { "<leader>tr", "<Cmd>NvimTreeRefresh<CR>", desc = "refresh" },
-            { "<leader>to", "<Cmd>NvimTreeFindFile<CR>", desc = "find opened file" },
-        },
     },
     {
         "TimUntersberger/neogit",
         dependencies = { "nvim-lua/plenary.nvim" },
-        opts = {
-            disable_builtin_notifications = true,
-        },
         cmd = "Neogit",
         keys = {
             { "<leader>g", "<Cmd>Neogit<CR>", desc = "neogit" },
+        },
+        opts = {
+            disable_builtin_notifications = true,
         },
     },
 }
