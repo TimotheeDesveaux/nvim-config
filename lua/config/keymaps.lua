@@ -1,3 +1,5 @@
+vim.g.mapleader = " "
+
 vim.keymap.set("n", "<leader><leader>", "<C-^>", { desc = "previous file" })
 
 vim.keymap.set("x", "gp", '"_dP', { desc = "replace without updating registers" })
