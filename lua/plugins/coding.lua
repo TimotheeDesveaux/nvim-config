@@ -57,8 +57,8 @@ return {
             formatter.setup({
                 filetype = {
                     lua = { require("formatter.filetypes.lua").stylua },
-                    c = { require("formatter.filetypes.c").clang_format },
-                    cpp = { require("formatter.filetypes.cpp").clang_format },
+                    c = { require("formatter.filetypes.c").clangformat },
+                    cpp = { require("formatter.filetypes.cpp").clangformat },
                     javasctipt = {
                         require("formatter.filetypes.javascript").prettier,
                     },
