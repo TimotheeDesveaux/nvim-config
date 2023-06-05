@@ -39,19 +39,32 @@ return {
             {
                 "<leader>ot",
                 function()
-                    vim.g.format_on_save = not vim.g.format_on_save
+                    vim.g.autoformat = not vim.g.autoformat
                     vim.notify(
-                        "Auto format " .. (vim.g.format_on_save and "enabled" or "disabled"),
+                        "Auto format " .. (vim.g.autoformat and "enabled" or "disabled"),
                         vim.log.levels.INFO,
                         { title = "Formatter" }
                     )
                 end,
                 desc = "toggle",
             },
+            {
+                "<leader>ob",
+                function()
+                    local get_or_default = require("utils").get_or_default
+                    vim.b.autoformat = not get_or_default(vim.b.autoformat, vim.g.autoformat)
+                    vim.notify(
+                        "Buffer Auto format " .. (vim.b.autoformat and "enabled" or "disabled"),
+                        vim.log.levels.INFO,
+                        { title = "Formatter" }
+                    )
+                end,
+                desc = "buffer toggle",
+            },
             { "<leader>of", "<Cmd>silent! Format<CR>", desc = "format" },
         },
         config = function()
-            vim.g.format_on_save = true
+            vim.g.autoformat = true
 
             local formatter = require("formatter")
             formatter.setup({
@@ -78,7 +91,8 @@ return {
                 group = vim.api.nvim_create_augroup("my_format_write", { clear = true }),
                 pattern = "*",
                 callback = function()
-                    if vim.g.format_on_save then
+                    local get_or_default = require("utils").get_or_default
+                    if get_or_default(vim.b.autoformat, vim.g.autoformat) then
                         vim.cmd("silent! FormatWrite")
                     end
                 end,
