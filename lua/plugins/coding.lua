@@ -10,6 +10,7 @@ return {
             ensure_installed = { "c", "lua", "vim", "vimdoc" },
             auto_install = true,
             highlight = { enable = true },
+            indent = { enable = "python" },
             incremental_selection = {
                 enable = true,
                 keymaps = {
