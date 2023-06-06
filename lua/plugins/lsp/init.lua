@@ -52,7 +52,11 @@ return {
                     },
                 },
             },
-            clangd = {},
+            clangd = {
+                capabilities = {
+                    textDocument = { completion = { completionItem = { snippetSupport = false } } },
+                },
+            },
             pyright = {},
         }
 
