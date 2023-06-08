@@ -36,8 +36,9 @@ return {
         },
     },
     {
-        "alvarosevilla95/luatab.nvim",
+        "TimotheeDesveaux/luatab.nvim",
         dependencies = { "nvim-tree/nvim-web-devicons" },
+        event = "TabEnter",
         config = true,
     },
     {
