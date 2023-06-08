@@ -28,11 +28,6 @@ function M.setup()
 end
 
 function M.on_attach(client, bufnr)
-    if client.server_capabilities.documentSymbolProvider then
-        require("nvim-navic").attach(client, bufnr)
-        vim.opt_local.winbar = "%{%v:lua.require('nvim-navic').get_location()%}"
-    end
-
     -- Highlight references
     if client.server_capabilities.documentHighlightProvider then
         vim.api.nvim_create_augroup("lsp_document_highlight", {

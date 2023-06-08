@@ -17,10 +17,6 @@ return {
             },
         },
         {
-            "SmiteshP/nvim-navic",
-            opts = { highlight = true },
-        },
-        {
             "j-hui/fidget.nvim",
             opts = {
                 text = {

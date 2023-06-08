@@ -6,7 +6,6 @@ return {
         opts = {
             style = "storm",
             on_highlights = function(hl, colors)
-                hl.Winbar = { bg = colors.bg_statusline }
                 hl.TabLine = { bg = colors.bg_statusline, fg = colors.fg_gutter }
                 hl.TabLineSel = { bg = colors.bg_statusline, fg = colors.fg }
             end,
