@@ -11,7 +11,7 @@
   "cmp_luasnip": { "branch": "master", "commit": "18095520391186d634a0045dacaa346291096566" },
   "dressing.nvim": { "branch": "master", "commit": "f16d7586fcdd8b2e3850d0abb7e46f944125cc25" },
   "eyeliner.nvim": { "branch": "main", "commit": "fa3a0986cb072fe2ab29ef79e022514d2533f0db" },
-  "fidget.nvim": { "branch": "main", "commit": "f1c375ba68839eaa4a65efdf2aa078c0da0548fe" },
+  "fidget.nvim": { "branch": "main", "commit": "0ba1e16d07627532b6cae915cc992ecac249fb97" },
   "firenvim": { "branch": "master", "commit": "e2d5a0f97d1f41e03c8d2a3c71ee60b1a4a6bb83" },
   "formatter.nvim": { "branch": "master", "commit": "fa4f2729cc2909db599169f22d8e55632d4c8d59" },
   "indent-blankline.nvim": { "branch": "master", "commit": "7075d7861f7a6bbf0de0298c83f8a13195e6ec01" },
