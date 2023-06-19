@@ -55,7 +55,6 @@ return {
         },
         init = function()
             vim.notify = function(...)
-                require("lazy").load({ plugins = { "nvim-notify" } })
                 return require("notify")(...)
             end
         end,
