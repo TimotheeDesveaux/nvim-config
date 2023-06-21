@@ -73,12 +73,8 @@ return {
                     lua = { require("formatter.filetypes.lua").stylua },
                     c = { require("formatter.filetypes.c").clangformat },
                     cpp = { require("formatter.filetypes.cpp").clangformat },
-                    javasctipt = {
-                        require("formatter.filetypes.javascript").prettier,
-                    },
-                    typescript = {
-                        require("formatter.filetypes.typescript").prettier,
-                    },
+                    javasctipt = { require("formatter.filetypes.javascript").prettier },
+                    typescript = { require("formatter.filetypes.typescript").prettier },
                     json = { require("formatter.filetypes.json").prettier },
                     yaml = { require("formatter.filetypes.yaml").prettier },
                     python = { require("formatter.filetypes.python").black },
