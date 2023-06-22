@@ -1,5 +1,5 @@
 local function augroup(name)
-    return vim.api.nvim_create_augroup("my_" .. name, { clear = true })
+    return vim.api.nvim_create_augroup("my_" .. name, { clear = false })
 end
 
 vim.filetype.add({
@@ -62,7 +62,7 @@ vim.api.nvim_create_autocmd("VimResized", {
 })
 
 vim.api.nvim_create_autocmd({ "BufEnter", "FocusGained", "InsertLeave", "WinEnter", "CmdlineLeave" }, {
-    group = augroup("enable_relative_number"),
+    group = augroup("toggle_relative_number"),
     callback = function()
         if not vim.opt.number:get() and not vim.opt.relativenumber:get() then
             return
@@ -72,7 +72,7 @@ vim.api.nvim_create_autocmd({ "BufEnter", "FocusGained", "InsertLeave", "WinEnte
 })
 
 vim.api.nvim_create_autocmd({ "BufLeave", "FocusLost", "InsertEnter", "WinLeave", "CmdlineEnter" }, {
-    group = augroup("disable_relative_number"),
+    group = augroup("toggle_relative_number"),
     callback = function(ev)
         vim.opt.relativenumber = false
         if ev.event == "CmdlineEnter" then
