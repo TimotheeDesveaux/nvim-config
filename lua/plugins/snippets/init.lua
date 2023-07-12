@@ -48,5 +48,6 @@ return {
         for _, lang in pairs({ "c", "make", "markdown", "tiger", "shell", "nix" }) do
             ls.add_snippets(lang, require("plugins.snippets." .. lang))
         end
+        ls.add_snippets("cpp", require("plugins.snippets.c"))
     end,
 }
