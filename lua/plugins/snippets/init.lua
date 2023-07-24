@@ -45,7 +45,7 @@ return {
     config = function(_, opts)
         local ls = require("luasnip")
         ls.setup(opts)
-        for _, lang in pairs({ "c", "make", "markdown", "tiger", "shell", "nix" }) do
+        for _, lang in pairs({ "c", "make", "markdown", "tiger", "sh", "nix" }) do
             ls.add_snippets(lang, require("plugins.snippets." .. lang))
         end
         ls.add_snippets("cpp", require("plugins.snippets.c"))
