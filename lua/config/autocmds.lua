@@ -20,23 +20,30 @@ vim.api.nvim_create_autocmd("FileType", {
     command = "setlocal noexpandtab shiftwidth=8",
 })
 
+local function pdf_keymaps(cmd)
+    vim.keymap.set("n", "<leader>pt", cmd, { desc = "to pdf", buffer = 0 })
+    vim.keymap.set(
+        "n",
+        "<leader>pv",
+        "<Cmd>silent !zathura %:r.pdf &<CR>",
+        { desc = "visualize", buffer = 0 }
+    )
+end
+
 vim.api.nvim_create_autocmd("FileType", {
     group = augroup("markdown"),
     pattern = "markdown",
     callback = function()
         vim.opt_local.textwidth = 80
-        vim.keymap.set(
-            "n",
-            "<leader>mp",
-            "<Cmd>silent !pandoc % -o %:r.pdf<CR>",
-            { desc = "to pdf", buffer = 0 }
-        )
-        vim.keymap.set(
-            "n",
-            "<leader>mv",
-            "<Cmd>silent !zathura %:r.pdf &<CR>",
-            { desc = "visualize", buffer = 0 }
-        )
+        pdf_keymaps("<Cmd>silent !pandoc % -o %:r.pdf<CR>")
+    end,
+})
+
+vim.api.nvim_create_autocmd("FileType", {
+    group = augroup("tex"),
+    pattern = "tex",
+    callback = function()
+        pdf_keymaps("<Cmd>TexlabBuild<CR>")
     end,
 })
 
