@@ -21,32 +21,24 @@ vim.api.nvim_create_autocmd("FileType", {
     command = "setlocal noexpandtab shiftwidth=8",
 })
 
-local function pdf_keymaps(cmd)
-    vim.keymap.set("n", "<leader>pt", cmd, { desc = "to pdf", buffer = 0 })
-    vim.keymap.set(
-        "n",
-        "<leader>pv",
-        "<Cmd>silent !zathura %:r.pdf &<CR>",
-        { desc = "visualize", buffer = 0 }
-    )
+local function markup_language(ft, cmd)
+    vim.api.nvim_create_autocmd("FileType", {
+        group = augroup(ft),
+        pattern = ft,
+        callback = function()
+            vim.opt_local.textwidth = 80
+            vim.keymap.set("n", "<leader>pt", cmd, { desc = "to pdf", buffer = 0 })
+            vim.keymap.set(
+                "n",
+                "<leader>pv",
+                "<Cmd>silent !zathura %:r.pdf &<CR>",
+                { desc = "visualize", buffer = 0 }
+            )
+        end,
+    })
 end
-
-vim.api.nvim_create_autocmd("FileType", {
-    group = augroup("markdown"),
-    pattern = "markdown",
-    callback = function()
-        vim.opt_local.textwidth = 80
-        pdf_keymaps("<Cmd>silent !pandoc % -o %:r.pdf<CR>")
-    end,
-})
-
-vim.api.nvim_create_autocmd("FileType", {
-    group = augroup("tex"),
-    pattern = "tex",
-    callback = function()
-        pdf_keymaps("<Cmd>TexlabBuild<CR>")
-    end,
-})
+markup_language("markdown", "<Cmd>!pandoc % -o %:r.pdf<CR>")
+markup_language("tex", "<Cmd>TexlabBuild<CR>")
 
 vim.api.nvim_create_autocmd("TextYankPost", {
     group = augroup("highlight_yank"),
