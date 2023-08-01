@@ -8,6 +8,7 @@ vim.filetype.add({
         ll = "lex",
         tig = "tiger",
         tih = "tiger",
+        tex = "tex",
     },
     filename = {
         ["local.am"] = "automake",
