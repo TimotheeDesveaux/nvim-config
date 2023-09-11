@@ -20,11 +20,12 @@
 
 ### Optional
 
-#### Lsp Servers
+#### Language servers
 
 * Lua: [lua_ls](https://github.com/sumneko/lua-language-server)
 * C/C++: [clangd](https://clangd.llvm.org/)
 * Python: [pyright](https://github.com/microsoft/pyright)
+* LaTeX: [texlab](https://github.com/latex-lsp/texlab)
 
 #### Formatters
 
