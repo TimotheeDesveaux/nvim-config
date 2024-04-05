@@ -11,7 +11,7 @@ return {
                 sign = { enabled = false },
                 virtual_text = {
                     enabled = true,
-                    text = "",
+                    text = "󰌵",
                 },
                 autocmd = { enabled = true },
             },
