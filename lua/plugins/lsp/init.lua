@@ -26,6 +26,11 @@ return {
                 },
             },
         },
+        {
+            "williamboman/mason.nvim",
+            config = true,
+        },
+        "williamboman/mason-lspconfig.nvim",
     },
     event = { "BufReadPre", "BufNewFile" },
     config = function()
@@ -58,13 +63,17 @@ return {
         }
 
         local capabilities = require("cmp_nvim_lsp").default_capabilities()
-
         local lspconfig = require("lspconfig")
-        for server, config in pairs(servers) do
+        local function setup(server)
             lspconfig[server].setup(vim.tbl_deep_extend("force", {
                 on_attach = on_attach,
                 capabilities = vim.deepcopy(capabilities),
-            }, config))
+            }, servers[server]))
         end
+
+        require("mason-lspconfig").setup({
+            ensure_installed = vim.tbl_keys(servers),
+            handlers = { setup },
+        })
     end,
 }
