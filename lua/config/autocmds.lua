@@ -61,25 +61,31 @@ vim.api.nvim_create_autocmd("VimResized", {
     end,
 })
 
-vim.api.nvim_create_autocmd({ "BufEnter", "FocusGained", "InsertLeave", "WinEnter", "CmdlineLeave" }, {
-    group = augroup("toggle_relative_number"),
-    callback = function()
-        if not vim.opt.number:get() and not vim.opt.relativenumber:get() then
-            return
-        end
-        vim.opt.relativenumber = vim.api.nvim_get_mode().mode ~= "i"
-    end,
-})
+vim.api.nvim_create_autocmd(
+    { "BufEnter", "FocusGained", "InsertLeave", "WinEnter", "CmdlineLeave" },
+    {
+        group = augroup("toggle_relative_number"),
+        callback = function()
+            if not vim.opt.number:get() and not vim.opt.relativenumber:get() then
+                return
+            end
+            vim.opt.relativenumber = vim.api.nvim_get_mode().mode ~= "i"
+        end,
+    }
+)
 
-vim.api.nvim_create_autocmd({ "BufLeave", "FocusLost", "InsertEnter", "WinLeave", "CmdlineEnter" }, {
-    group = augroup("toggle_relative_number"),
-    callback = function(ev)
-        vim.opt.relativenumber = false
-        if ev.event == "CmdlineEnter" then
-            vim.cmd("redraw")
-        end
-    end,
-})
+vim.api.nvim_create_autocmd(
+    { "BufLeave", "FocusLost", "InsertEnter", "WinLeave", "CmdlineEnter" },
+    {
+        group = augroup("toggle_relative_number"),
+        callback = function(ev)
+            vim.opt.relativenumber = false
+            if ev.event == "CmdlineEnter" then
+                vim.cmd("redraw")
+            end
+        end,
+    }
+)
 
 vim.api.nvim_create_autocmd("FileType", {
     group = augroup("close_with_q"),
