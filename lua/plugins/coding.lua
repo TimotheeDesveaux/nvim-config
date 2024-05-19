@@ -26,14 +26,6 @@ return {
         end,
     },
     {
-        "numToStr/Comment.nvim",
-        keys = {
-            { "gc", mode = { "n", "x" } },
-            { "gb", mode = { "n", "x" } },
-        },
-        config = true,
-    },
-    {
         "mhartington/formatter.nvim",
         event = "BufWrite",
         keys = {

@@ -14,13 +14,6 @@ return {
                     ["<leader>d"] = { name = "debugger" },
                     ["<leader>l"] = { name = "lsp" },
                     ["<leader>p"] = { name = "pdf" },
-                    ["gc"] = { name = "linewise comment" },
-                    ["gb"] = { name = "blockwise comment" },
-                },
-                {
-                    mode = { "x" },
-                    ["gc"] = { desc = "linewise comment" },
-                    ["gb"] = { desc = "blockwise comment" },
                 },
             }
             wk.register(keymaps)
