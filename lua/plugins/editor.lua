@@ -46,32 +46,14 @@ return {
         end,
     },
     {
-        "nvim-tree/nvim-tree.lua",
+        "stevearc/oil.nvim",
         dependencies = { "nvim-tree/nvim-web-devicons" },
-        cmd = { "NvimTreeOpen", "NvimTreeToggle", "NvimTreeFocus", "NvimTreeFindFile" },
+        cmd = { "Oil" },
         keys = {
-            { "<leader>tt", "<Cmd>NvimTreeToggle<CR>", desc = "toggle" },
-            { "<leader>tf", "<Cmd>NvimTreeFocus<CR>", desc = "focus" },
-            { "<leader>tr", "<Cmd>NvimTreeRefresh<CR>", desc = "refresh" },
-            { "<leader>to", "<Cmd>NvimTreeFindFile<CR>", desc = "find opened file" },
+            { "<leader>tt", "<Cmd>Oil --float . getcwd()<CR>", desc = "root directory" },
+            { "<leader>to", "<Cmd>Oil --float<CR>", desc = "parent directory" },
         },
-        opts = {
-            actions = {
-                open_file = { quit_on_open = true },
-            },
-            git = { ignore = true },
-            renderer = {
-                highlight_git = true,
-                icons = {
-                    show = {
-                        git = false,
-                        folder = true,
-                        file = true,
-                        folder_arrow = true,
-                    },
-                },
-            },
-        },
+        config = true,
     },
     {
         "NeogitOrg/neogit",

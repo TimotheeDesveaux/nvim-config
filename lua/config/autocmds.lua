@@ -89,7 +89,7 @@ vim.api.nvim_create_autocmd(
 
 vim.api.nvim_create_autocmd("FileType", {
     group = augroup("close_with_q"),
-    pattern = { "help", "lspinfo", "man", "notify", "checkhealth", "query" },
+    pattern = { "help", "lspinfo", "man", "notify", "checkhealth", "query", "oil" },
     callback = function()
         vim.opt_local.buflisted = false
         vim.keymap.set("n", "q", "<Cmd>close<CR>", { buffer = 0 })
