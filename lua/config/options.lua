@@ -3,10 +3,11 @@ vim.opt.tabstop = 8
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 
--- Search --
+-- Search and Replace --
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
 vim.opt.hlsearch = false
+vim.opt.inccommand = "split"
 
 -- File --
 vim.opt.autowrite = true
