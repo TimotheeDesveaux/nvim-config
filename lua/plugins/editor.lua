@@ -53,7 +53,9 @@ return {
             { "<leader>tt", "<Cmd>Oil --float . getcwd()<CR>", desc = "root directory" },
             { "<leader>to", "<Cmd>Oil --float<CR>", desc = "parent directory" },
         },
-        config = true,
+        opts = {
+            float = { padding = 5 },
+        },
     },
     {
         "NeogitOrg/neogit",
