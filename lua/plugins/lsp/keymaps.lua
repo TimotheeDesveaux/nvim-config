@@ -31,6 +31,10 @@ function M.on_attach(bufnr)
     map("<leader>lS", function()
         vim.diagnostic.open_float({ scope = "line" })
     end, "line diagnostics")
+
+    map("<leader>lh", function()
+        vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
+    end, "toggle inlay hints")
 end
 
 return M
