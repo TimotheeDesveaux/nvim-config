@@ -5,20 +5,8 @@ end
 vim.filetype.add({
     extension = {
         h = "c",
-        ll = "lex",
-        tig = "tiger",
-        tih = "tiger",
         tex = "tex",
     },
-    filename = {
-        ["local.am"] = "automake",
-    },
-})
-
-vim.api.nvim_create_autocmd("FileType", {
-    group = augroup("use_tabs"),
-    pattern = { "make", "go" },
-    command = "setlocal noexpandtab shiftwidth=8",
 })
 
 local function markup_language(ft, cmd)
@@ -89,7 +77,7 @@ vim.api.nvim_create_autocmd(
 
 vim.api.nvim_create_autocmd("FileType", {
     group = augroup("close_with_q"),
-    pattern = { "help", "lspinfo", "man", "notify", "checkhealth", "query", "oil" },
+    pattern = { "help", "lspinfo", "man", "notify", "checkhealth", "query" },
     callback = function()
         vim.opt_local.buflisted = false
         vim.keymap.set("n", "q", "<Cmd>close<CR>", { buffer = 0 })
