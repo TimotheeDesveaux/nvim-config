@@ -1,7 +1,7 @@
 local M = {}
 
 function M.on_attach(bufnr)
-    local telescope = require("utils").telescope
+    local telescope = require("custom.utils").telescope
 
     local function map(key, rhs, desc)
         vim.keymap.set("n", key, rhs, {

@@ -44,7 +44,7 @@ return {
             {
                 "<leader>ob",
                 function()
-                    local get_or_default = require("utils").get_or_default
+                    local get_or_default = require("custom.utils").get_or_default
                     vim.b.autoformat = not get_or_default(vim.b.autoformat, vim.g.autoformat)
                     vim.notify(
                         "Buffer Auto format " .. (vim.b.autoformat and "enabled" or "disabled"),
@@ -80,7 +80,7 @@ return {
                 group = vim.api.nvim_create_augroup("my_format_write", { clear = true }),
                 pattern = "*",
                 callback = function()
-                    local get_or_default = require("utils").get_or_default
+                    local get_or_default = require("custom.utils").get_or_default
                     if get_or_default(vim.b.autoformat, vim.g.autoformat) then
                         vim.cmd("silent! FormatWrite")
                     end

@@ -29,13 +29,13 @@ return {
     },
     event = { "BufReadPre", "BufNewFile" },
     config = function()
-        require("plugins.lsp.ui").setup()
+        require("custom.plugins.lsp.ui").setup()
 
         vim.diagnostic.config({ severity_sort = true })
 
         local function on_attach(client, bufnr)
-            require("plugins.lsp.keymaps").on_attach(bufnr)
-            require("plugins.lsp.ui").on_attach(client, bufnr)
+            require("custom.plugins.lsp.keymaps").on_attach(bufnr)
+            require("custom.plugins.lsp.ui").on_attach(client, bufnr)
         end
 
         local servers = {

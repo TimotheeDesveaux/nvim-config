@@ -28,7 +28,7 @@ return {
         },
         cmd = "Telescope",
         keys = function()
-            local telescope = require("utils").telescope
+            local telescope = require("custom.utils").telescope
 
             return {
                 { "<leader>ff", telescope("find_files"), desc = "files" },

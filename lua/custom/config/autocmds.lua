@@ -1,5 +1,5 @@
 local function augroup(name)
-    return vim.api.nvim_create_augroup("my_" .. name, { clear = false })
+    return vim.api.nvim_create_augroup("custom_" .. name, { clear = false })
 end
 
 vim.filetype.add({
