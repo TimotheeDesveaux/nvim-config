@@ -5,18 +5,17 @@ return {
         config = function()
             local wk = require("which-key")
             wk.setup()
-            local keymaps = {
+            wk.add({
                 {
                     mode = { "n" },
-                    ["<leader>f"] = { name = "file/find" },
-                    ["<leader>o"] = { name = "format" },
-                    ["<leader>t"] = { name = "tree" },
-                    ["<leader>d"] = { name = "debugger" },
-                    ["<leader>l"] = { name = "lsp" },
-                    ["<leader>p"] = { name = "pdf" },
+                    { "<leader>f", group = "file/find" },
+                    { "<leader>o", group = "format" },
+                    { "<leader>t", group = "tree" },
+                    { "<leader>d", group = "debugger" },
+                    { "<leader>l", group = "lsp" },
+                    { "<leader>p", group = "pdf" },
                 },
-            }
-            wk.register(keymaps)
+            })
         end,
     },
     {
