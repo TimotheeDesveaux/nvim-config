@@ -1,5 +1,6 @@
-local function augroup(name)
-    return vim.api.nvim_create_augroup("custom_" .. name, { clear = false })
+local function augroup(name, clear)
+    clear = clear ~= false
+    return vim.api.nvim_create_augroup("custom_" .. name, { clear = clear })
 end
 
 vim.filetype.add({
@@ -46,7 +47,7 @@ vim.api.nvim_create_autocmd(
 vim.api.nvim_create_autocmd(
     { "BufLeave", "FocusLost", "InsertEnter", "WinLeave", "CmdlineEnter" },
     {
-        group = augroup("toggle_relative_number"),
+        group = augroup("toggle_relative_number", false),
         callback = function(ev)
             vim.opt.relativenumber = false
             if ev.event == "CmdlineEnter" then
