@@ -75,6 +75,7 @@ return {
                 rust = { "rustfmt" },
                 nix = { "nixpkgs_fmt" },
                 go = { "gofmt" },
+                haskell = { "ormolu" },
             },
             default_format_opts = {
                 lsp_format = "never",
