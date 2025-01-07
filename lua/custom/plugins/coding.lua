@@ -1,5 +1,15 @@
 return {
     {
+        "folke/lazydev.nvim",
+        ft = "lua",
+        opts = {
+            library = {
+                -- Load luvit types when the `vim.uv` word is found
+                { path = "${3rd}/luv/library", words = { "vim%.uv" } },
+            },
+        },
+    },
+    {
         "saghen/blink.cmp",
         dependencies = { "L3MON4D3/LuaSnip" },
         event = "InsertEnter",
@@ -16,7 +26,16 @@ return {
                 ["<Tab>"] = { "select_next", "fallback" },
                 ["<S-Tab>"] = { "select_prev", "fallback" },
             },
-            sources = { default = { "lsp", "path", "luasnip", "buffer" } },
+            sources = {
+                default = { "lazydev", "lsp", "path", "luasnip", "buffer" },
+                providers = {
+                    lazydev = {
+                        name = "LazyDev",
+                        module = "lazydev.integrations.blink",
+                        score_offset = 100,
+                    },
+                },
+            },
             appearance = { use_nvim_cmp_as_default = false },
             signature = { enabled = true },
             completion = {

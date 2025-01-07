@@ -3,10 +3,6 @@ return {
     dependencies = {
         { "saghen/blink.cmp" },
         {
-            "folke/neodev.nvim",
-            config = true,
-        },
-        {
             "kosayoda/nvim-lightbulb",
             opts = {
                 sign = { enabled = false },
