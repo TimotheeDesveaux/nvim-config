@@ -2,10 +2,8 @@ return {
     {
         "folke/which-key.nvim",
         event = "VeryLazy",
-        config = function()
-            local wk = require("which-key")
-            wk.setup()
-            wk.add({
+        opts = {
+            spec = {
                 {
                     mode = { "n" },
                     { "<leader>f", group = "file/find" },
@@ -15,8 +13,9 @@ return {
                     { "<leader>l", group = "lsp" },
                     { "<leader>p", group = "pdf" },
                 },
-            })
-        end,
+            },
+            icons = { mappings = false },
+        },
     },
     {
         "nvim-telescope/telescope.nvim",
