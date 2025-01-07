@@ -57,6 +57,7 @@ return {
             texlab = {},
             nil_ls = {},
             rust_analyzer = {},
+            hls = {},
         }
 
         local capabilities = require("cmp_nvim_lsp").default_capabilities()
