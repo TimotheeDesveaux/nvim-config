@@ -15,15 +15,16 @@ return {
             ["<Tab>"] = { "select_next", "fallback" },
             ["<S-Tab>"] = { "select_prev", "fallback" },
         },
-        sources = {
-            completion = { enabled_providers = { "lsp", "path", "luasnip", "buffer" } },
-        },
+        sources = { default = { "lsp", "path", "luasnip", "buffer" } },
         appearance = { use_nvim_cmp_as_default = false },
         signature = { enabled = true },
         completion = {
             list = { selection = "auto_insert" },
             accept = { auto_brackets = { enabled = true } },
-            documentation = { auto_show = true },
+            documentation = {
+                auto_show = true,
+                auto_show_delay_ms = 200,
+            },
         },
     },
 }
