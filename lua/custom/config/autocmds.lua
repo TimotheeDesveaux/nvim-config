@@ -9,25 +9,6 @@ vim.filetype.add({
     },
 })
 
-local function markup_language(ft, cmd)
-    vim.api.nvim_create_autocmd("FileType", {
-        group = augroup(ft),
-        pattern = ft,
-        callback = function()
-            vim.opt_local.textwidth = 80
-            vim.keymap.set("n", "<leader>pt", cmd, { desc = "to pdf", buffer = 0 })
-            vim.keymap.set(
-                "n",
-                "<leader>pv",
-                "<Cmd>silent !zathura %:r.pdf &<CR>",
-                { desc = "visualize", buffer = 0 }
-            )
-        end,
-    })
-end
-markup_language("markdown", "<Cmd>!pandoc % -o %:r.pdf<CR>")
-markup_language("tex", "<Cmd>TexlabBuild<CR>")
-
 vim.api.nvim_create_autocmd("TextYankPost", {
     group = augroup("highlight_yank"),
     callback = function()
