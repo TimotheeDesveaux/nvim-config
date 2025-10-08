@@ -118,6 +118,7 @@ return {
                 cpp = { "clang-format" },
                 javascript = { "prettier" },
                 typescript = { "prettier" },
+                typescriptreact = { "prettier" },
                 json = { "prettier" },
                 yaml = { "prettier" },
                 python = { "black" },

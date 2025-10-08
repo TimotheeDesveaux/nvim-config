@@ -56,6 +56,8 @@ return {
             nil_ls = {},
             rust_analyzer = {},
             hls = {},
+            vtsls = {},
+            tailwindcss = {},
         }
 
         for server, config in pairs(servers) do
