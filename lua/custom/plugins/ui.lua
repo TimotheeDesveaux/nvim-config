@@ -33,6 +33,11 @@ return {
                     right = "",
                 },
             },
+            sections = {
+                lualine_c = {
+                    { "filename", path = 1 },
+                },
+            },
         },
     },
     {
