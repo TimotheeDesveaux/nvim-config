@@ -15,11 +15,7 @@ return {
         event = "InsertEnter",
         version = "*",
         opts = {
-            snippets = {
-                expand = function(snippet)
-                    require("luasnip").lsp_expand(snippet)
-                end,
-            },
+            snippets = { preset = "luasnip" },
             keymap = {
                 preset = "enter",
                 ["<C-Space>"] = { "show" },
@@ -27,7 +23,7 @@ return {
                 ["<S-Tab>"] = { "select_prev", "fallback" },
             },
             sources = {
-                default = { "lazydev", "lsp", "path", "luasnip", "buffer" },
+                default = { "lazydev", "lsp", "path", "snippets", "buffer" },
                 providers = {
                     lazydev = {
                         name = "LazyDev",
@@ -39,8 +35,12 @@ return {
             appearance = { use_nvim_cmp_as_default = false },
             signature = { enabled = true },
             completion = {
-                list = { selection = "auto_insert" },
-                accept = { auto_brackets = { enabled = true } },
+                list = {
+                    selection = { preselect = false, auto_insert = true },
+                },
+                accept = {
+                    auto_brackets = { enabled = true },
+                },
                 documentation = {
                     auto_show = true,
                     auto_show_delay_ms = 200,
