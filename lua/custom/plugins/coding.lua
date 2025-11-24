@@ -129,7 +129,7 @@ return {
             default_format_opts = {
                 lsp_format = "never",
             },
-            format_on_save = function(bufnr)
+            format_on_save = function()
                 local get_or_default = require("custom.utils").get_or_default
                 if get_or_default(vim.b.autoformat, vim.g.autoformat) then
                     return { timeout_ms = 500 }
