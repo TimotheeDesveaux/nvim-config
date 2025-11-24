@@ -11,8 +11,6 @@ function M.on_attach(bufnr)
         })
     end
 
-    map("K", vim.lsp.buf.hover, "")
-
     map("<leader>lD", vim.lsp.buf.declaration, "declaration")
     map("<leader>ld", telescope("lsp_definitions"), "definition")
     map("<leader>li", telescope("lsp_implementations"), "implementation")
@@ -23,8 +21,12 @@ function M.on_attach(bufnr)
     map("<leader>ln", vim.lsp.buf.rename, "rename")
     map("<leader>la", vim.lsp.buf.code_action, "action")
 
-    map("<leader>lk", vim.diagnostic.goto_prev, "previous diagnostic")
-    map("<leader>lj", vim.diagnostic.goto_next, "next diagnostic")
+    map("<leader>lk", function()
+        vim.diagnostic.jump({ count = -1, float = true })
+    end, "previous diagnostic")
+    map("<leader>lj", function()
+        vim.diagnostic.jump({ count = 1, float = true })
+    end, "next diagnostic")
     map("<leader>ls", function()
         vim.diagnostic.open_float({ scope = "cursor" })
     end, "cursor diagnostic")
