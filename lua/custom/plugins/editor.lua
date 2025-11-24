@@ -56,6 +56,10 @@ return {
         },
         opts = {
             float = { padding = 5 },
+            keymaps = {
+                ["<C-v>"] = { "actions.select", opts = { vertical = true } },
+                ["<C-x>"] = { "actions.select", opts = { horizontal = true } },
+            },
         },
     },
     {
