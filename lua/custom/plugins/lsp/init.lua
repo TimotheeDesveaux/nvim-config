@@ -27,10 +27,14 @@ return {
             virtual_text = true,
         })
 
-        local function on_attach(client, bufnr)
-            require("custom.plugins.lsp.keymaps").on_attach(bufnr)
-            require("custom.plugins.lsp.ui").on_attach(client, bufnr)
-        end
+        vim.api.nvim_create_autocmd("LspAttach", {
+            group = vim.api.nvim_create_augroup("custom_lsp", {}),
+            callback = function(args)
+                local client = assert(vim.lsp.get_client_by_id(args.data.client_id))
+                require("custom.plugins.lsp.keymaps").on_attach(args.buf)
+                require("custom.plugins.lsp.ui").on_attach(client, args.buf)
+            end,
+        })
 
         local servers = {
             lua_ls = {
@@ -54,14 +58,9 @@ return {
             hls = {},
         }
 
-        local capabilities = require("blink.cmp").get_lsp_capabilities()
-
-        local lspconfig = require("lspconfig")
         for server, config in pairs(servers) do
-            lspconfig[server].setup(vim.tbl_deep_extend("force", {
-                on_attach = on_attach,
-                capabilities = vim.deepcopy(capabilities),
-            }, config))
+            vim.lsp.config(server, config)
+            vim.lsp.enable(server)
         end
     end,
 }
