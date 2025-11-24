@@ -19,7 +19,7 @@ vim.opt.hidden = true
 -- Interface --
 vim.opt.number = true
 vim.opt.relativenumber = true
-vim.opt.colorcolumn = "80"
+vim.opt.colorcolumn = "100"
 vim.opt.showmode = false
 vim.opt.laststatus = 3
 vim.opt.cursorline = true
