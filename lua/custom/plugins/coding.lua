@@ -54,27 +54,6 @@ return {
         "nvim-treesitter/nvim-treesitter",
         build = ":TSUpdate",
         lazy = false,
-        keys = {
-            { "<leader>s", desc = "start incremental selection" },
-        },
-        opts = {
-            ensure_installed = { "c", "lua", "vim", "vimdoc" },
-            auto_install = true,
-            highlight = { enable = true },
-            indent = { enable = true },
-            incremental_selection = {
-                enable = true,
-                keymaps = {
-                    init_selection = "<leader>s",
-                    node_incremental = "<Space>",
-                    scope_incremental = false,
-                    node_decremental = "<BS>",
-                },
-            },
-        },
-        config = function(_, opts)
-            require("nvim-treesitter.configs").setup(opts)
-        end,
     },
     {
         "stevearc/conform.nvim",
