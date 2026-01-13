@@ -54,6 +54,38 @@ return {
         "nvim-treesitter/nvim-treesitter",
         build = ":TSUpdate",
         lazy = false,
+        config = function()
+            local augroup = require("custom.utils").augroup
+
+            vim.api.nvim_create_autocmd("FileType", {
+                group = augroup("treesitter"),
+                pattern = { "*" },
+                callback = function(event)
+                    local lang = vim.treesitter.language.get_lang(event.match)
+                    local is_installed = vim.treesitter.language.add(lang)
+
+                    if not is_installed then
+                        local ts = require("nvim-treesitter")
+                        local available_langs = ts.get_available()
+
+                        if vim.tbl_contains(available_langs, lang) then
+                            vim.notify(
+                                "Installing treesitter parser for " .. lang,
+                                vim.log.levels.INFO
+                            )
+                            ts.install({ lang }):wait(30 * 1000)
+                        end
+                    end
+
+                    local ok = pcall(vim.treesitter.start, event.buf, lang)
+                    if not ok then
+                        return
+                    end
+
+                    vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+                end,
+            })
+        end,
     },
     {
         "stevearc/conform.nvim",
