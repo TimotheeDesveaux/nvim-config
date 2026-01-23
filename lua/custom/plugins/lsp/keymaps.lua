@@ -1,7 +1,7 @@
 local M = {}
 
 function M.on_attach(bufnr)
-    local telescope = require("custom.utils").telescope
+    local fzf = require("custom.utils").fzf
 
     local function map(key, rhs, desc)
         vim.keymap.set("n", key, rhs, {
@@ -12,11 +12,11 @@ function M.on_attach(bufnr)
     end
 
     map("<leader>lD", vim.lsp.buf.declaration, "declaration")
-    map("<leader>ld", telescope("lsp_definitions"), "definition")
-    map("<leader>li", telescope("lsp_implementations"), "implementation")
-    map("<leader>lt", telescope("lsp_type_definitions"), "type defintion")
-    map("<leader>lr", telescope("lsp_references"), "references")
-    map("<leader>ly", telescope("lsp_document_symbols"), "LSP symbols")
+    map("<leader>ld", fzf("lsp_definitions"), "definition")
+    map("<leader>li", fzf("lsp_implementations"), "implementation")
+    map("<leader>lt", fzf("lsp_typedefs"), "type defintion")
+    map("<leader>lr", fzf("lsp_references"), "references")
+    map("<leader>ly", fzf("lsp_document_symbols"), "LSP symbols")
 
     map("<leader>ln", vim.lsp.buf.rename, "rename")
     map("<leader>la", vim.lsp.buf.code_action, "action")

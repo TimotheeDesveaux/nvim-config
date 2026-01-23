@@ -18,33 +18,20 @@ return {
         },
     },
     {
-        "nvim-telescope/telescope.nvim",
-        dependencies = {
-            { "nvim-lua/plenary.nvim" },
-            {
-                "nvim-telescope/telescope-fzf-native.nvim",
-                build = "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release",
-            },
-            { "nvim-tree/nvim-web-devicons" },
-        },
-        cmd = "Telescope",
+        "ibhagwan/fzf-lua",
+        dependencies = { "nvim-tree/nvim-web-devicons" },
         keys = function()
-            local telescope = require("custom.utils").telescope
+            local fzf = require("custom.utils").fzf
 
             return {
-                { "<leader>ff", telescope("find_files"), desc = "files" },
-                { "<leader>fg", telescope("git_files"), desc = "git files" },
-                { "<leader>fr", telescope("live_grep"), desc = "grep" },
-                { "<leader>fb", telescope("buffers"), desc = "buffers" },
-                { "<leader>fc", telescope("colorscheme"), desc = "colorscheme" },
-                { "<leader>fh", telescope("oldfiles"), desc = "history" },
+                { "<leader>ff", fzf("files"), desc = "files" },
+                { "<leader>fg", fzf("git_files"), desc = "git files" },
+                { "<leader>fr", fzf("live_grep"), desc = "grep" },
+                { "<leader>fb", fzf("buffers"), desc = "buffers" },
+                { "<leader>fh", fzf("history"), desc = "history" },
             }
         end,
-        config = function()
-            local telescope = require("telescope")
-            telescope.setup()
-            telescope.load_extension("fzf")
-        end,
+        opts = {},
     },
     {
         "stevearc/oil.nvim",
@@ -58,7 +45,7 @@ return {
             float = { padding = 5 },
             keymaps = {
                 ["<C-v>"] = { "actions.select", opts = { vertical = true } },
-                ["<C-x>"] = { "actions.select", opts = { horizontal = true } },
+                ["<C-s>"] = { "actions.select", opts = { horizontal = true } },
             },
         },
     },

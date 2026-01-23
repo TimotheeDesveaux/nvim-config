@@ -5,9 +5,9 @@ function M.augroup(name, clear)
     return vim.api.nvim_create_augroup("custom_" .. name, { clear = clear })
 end
 
-function M.telescope(builtin)
+function M.fzf(command)
     return function()
-        require("telescope.builtin")[builtin]()
+        require("fzf-lua")[command]()
     end
 end
 
