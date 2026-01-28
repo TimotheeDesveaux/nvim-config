@@ -46,11 +46,7 @@ return {
                     },
                 },
             },
-            clangd = {
-                capabilities = {
-                    textDocument = { completion = { completionItem = { snippetSupport = false } } },
-                },
-            },
+            clangd = {},
             pyright = {},
             texlab = {},
             nil_ls = {},
