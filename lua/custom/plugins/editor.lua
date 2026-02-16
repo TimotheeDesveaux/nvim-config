@@ -31,7 +31,7 @@ return {
                 { "<leader>fh", fzf("history"), desc = "history" },
             }
         end,
-        opts = {},
+        opts = { "telescope" },
     },
     {
         "stevearc/oil.nvim",
