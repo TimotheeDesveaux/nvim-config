@@ -6,4 +6,5 @@ local fmt = require("luasnip.extras.fmt").fmt
 
 return {
     s("derive", fmt("#[derive({})]", { i(1) })),
+    s("sizeof", fmt("size_of::<{}>()", { i(1) })),
 }
