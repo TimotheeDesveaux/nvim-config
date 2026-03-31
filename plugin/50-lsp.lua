@@ -2,13 +2,9 @@ local utils = require("custom.utils")
 local gh = utils.github
 local augroup = utils.augroup
 
-vim.pack.add({
-    gh("kosayoda/nvim-lightbulb"),
-    gh("neovim/nvim-lspconfig"),
-    gh("j-hui/fidget.nvim"),
-})
-
 -- lightbulb
+vim.pack.add({ gh("kosayoda/nvim-lightbulb") })
+
 require("nvim-lightbulb").setup({
     sign = { enabled = false },
     virtual_text = {
@@ -19,9 +15,13 @@ require("nvim-lightbulb").setup({
 })
 
 -- fidget
+vim.pack.add({ gh("j-hui/fidget.nvim") })
+
 require("fidget").setup({})
 
 -- lspconfig
+vim.pack.add({ gh("neovim/nvim-lspconfig") })
+
 require("custom.lsp.ui").setup()
 
 vim.diagnostic.config({

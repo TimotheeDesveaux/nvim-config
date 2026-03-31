@@ -1,8 +1,8 @@
 local gh = require("custom.utils").github
 
+-- LuaSnip
 vim.pack.add({ gh("L3MON4D3/LuaSnip") })
 
--- LuaSnip
 local ls = require("luasnip")
 ls.setup({
     update_events = { "TextChanged", "TextChangedI" },

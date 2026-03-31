@@ -1,14 +1,8 @@
 local gh = require("custom.utils").github
 
-vim.pack.add({
-    gh("folke/which-key.nvim"),
-    gh("ibhagwan/fzf-lua"),
-    gh("stevearc/oil.nvim"),
-    gh("nvim-lua/plenary.nvim"), -- neogit dependency
-    gh("NeogitOrg/neogit"),
-})
-
 -- which-key
+vim.pack.add({ gh("folke/which-key.nvim") })
+
 require("which-key").setup({
     spec = {
         {
@@ -25,6 +19,8 @@ require("which-key").setup({
 })
 
 -- fzf-lua
+vim.pack.add({ gh("ibhagwan/fzf-lua") })
+
 local fzf = require("fzf-lua")
 fzf.setup("telescope")
 
@@ -35,6 +31,8 @@ vim.keymap.set("n", "<leader>fb", fzf.buffers, { desc = "buffers" })
 vim.keymap.set("n", "<leader>fh", fzf.history, { desc = "history" })
 
 -- oil
+vim.pack.add({ gh("stevearc/oil.nvim") })
+
 require("oil").setup({
     float = { padding = 5 },
     keymaps = {
@@ -47,6 +45,11 @@ vim.keymap.set("n", "<leader>tt", "<Cmd>Oil --float . getcwd()<CR>", { desc = "r
 vim.keymap.set("n", "<leader>to", "<Cmd>Oil --float<CR>", { desc = "parent directory" })
 
 -- neogit
+vim.pack.add({
+    gh("nvim-lua/plenary.nvim"), -- dependency
+    gh("NeogitOrg/neogit"),
+})
+
 require("neogit").setup({ disable_builtin_notifications = true })
 
 vim.keymap.set("n", "<leader>g", "<Cmd>Neogit<CR>", { desc = "neogit" })

@@ -3,14 +3,9 @@ local utils = require("custom.utils")
 local augroup = utils.augroup
 local gh = utils.github
 
-vim.pack.add({
-    gh("nvim-treesitter/nvim-treesitter"),
-    gh("folke/lazydev.nvim"),
-    { src = gh("saghen/blink.cmp"), version = vim.version.range("1.x") },
-    gh("stevearc/conform.nvim"),
-})
-
 -- treesitter
+vim.pack.add({ gh("nvim-treesitter/nvim-treesitter") })
+
 vim.api.nvim_create_autocmd("PackChanged", {
     group = augroup("packchanged"),
     callback = function(ev)
@@ -52,6 +47,8 @@ vim.api.nvim_create_autocmd("FileType", {
 })
 
 -- lazydev
+vim.pack.add({ gh("folke/lazydev.nvim") })
+
 require("lazydev").setup({
     library = {
         -- Load luvit types when the `vim.uv` word is found
@@ -60,6 +57,8 @@ require("lazydev").setup({
 })
 
 -- blink.cmp
+vim.pack.add({ { src = gh("saghen/blink.cmp"), version = vim.version.range("1.x") } })
+
 require("blink.cmp").setup({
     snippets = { preset = "luasnip" },
     keymap = {
@@ -95,6 +94,8 @@ require("blink.cmp").setup({
 })
 
 -- conform
+vim.pack.add({ gh("stevearc/conform.nvim") })
+
 vim.g.autoformat = true
 
 local conform = require("conform")
