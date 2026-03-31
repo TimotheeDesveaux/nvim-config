@@ -1,4 +1,4 @@
-local gh = require("custom.utils").github
+local gh = require("my.utils").github
 
 -- devicons (dependency for other plugins)
 vim.pack.add({ gh("nvim-tree/nvim-web-devicons") })

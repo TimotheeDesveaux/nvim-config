@@ -2,7 +2,7 @@ local M = {}
 
 function M.augroup(name, clear)
     clear = clear ~= false
-    return vim.api.nvim_create_augroup("custom_" .. name, { clear = clear })
+    return vim.api.nvim_create_augroup("my_" .. name, { clear = clear })
 end
 
 function M.get_or_default(value, default)

@@ -1,4 +1,4 @@
-local gh = require("custom.utils").github
+local gh = require("my.utils").github
 
 -- autopairs
 vim.pack.add({ gh("windwp/nvim-autopairs") })

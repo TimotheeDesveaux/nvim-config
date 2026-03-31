@@ -1,4 +1,4 @@
-local utils = require("custom.utils")
+local utils = require("my.utils")
 local gh = utils.github
 local augroup = utils.augroup
 
@@ -22,7 +22,7 @@ require("fidget").setup({})
 -- lspconfig
 vim.pack.add({ gh("neovim/nvim-lspconfig") })
 
-require("custom.lsp.ui").setup()
+require("my.lsp.ui").setup()
 
 vim.diagnostic.config({
     severity_sort = true,
@@ -33,8 +33,8 @@ vim.api.nvim_create_autocmd("LspAttach", {
     group = augroup("lsp"),
     callback = function(args)
         local client = assert(vim.lsp.get_client_by_id(args.data.client_id))
-        require("custom.lsp.keymaps").on_attach(args.buf)
-        require("custom.lsp.ui").on_attach(client, args.buf)
+        require("my.lsp.keymaps").on_attach(args.buf)
+        require("my.lsp.ui").on_attach(client, args.buf)
     end,
 })
 

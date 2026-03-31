@@ -1,4 +1,4 @@
-local gh = require("custom.utils").github
+local gh = require("my.utils").github
 
 -- which-key
 vim.pack.add({ gh("folke/which-key.nvim") })

@@ -1,9 +1,12 @@
-local augroup = require("custom.utils").augroup
+local augroup = require("my.utils").augroup
 
 vim.filetype.add({
     extension = {
         h = "c",
         tex = "tex",
+    },
+    filename = {
+        ["wscript"] = "python",
     },
 })
 

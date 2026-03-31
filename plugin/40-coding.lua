@@ -1,4 +1,4 @@
-local utils = require("custom.utils")
+local utils = require("my.utils")
 
 local augroup = utils.augroup
 local gh = utils.github

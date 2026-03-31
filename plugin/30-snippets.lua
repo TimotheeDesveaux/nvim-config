@@ -1,4 +1,4 @@
-local gh = require("custom.utils").github
+local gh = require("my.utils").github
 
 -- LuaSnip
 vim.pack.add({ gh("L3MON4D3/LuaSnip") })
@@ -27,6 +27,6 @@ vim.keymap.set({ "i", "s" }, "<C-h>", function()
 end, { silent = true })
 
 for _, lang in pairs({ "c", "make", "markdown", "sh", "nix", "rust" }) do
-    ls.add_snippets(lang, require("custom.snippets." .. lang))
+    ls.add_snippets(lang, require("my.snippets." .. lang))
 end
-ls.add_snippets("cpp", require("custom.snippets.c"))
+ls.add_snippets("cpp", require("my.snippets.c"))
