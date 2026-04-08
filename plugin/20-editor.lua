@@ -1,4 +1,6 @@
-local gh = require("my.utils").github
+local utils = require("my.utils")
+local augroup = utils.augroup
+local gh = utils.github
 
 -- which-key
 vim.pack.add({ gh("folke/which-key.nvim") })
@@ -12,7 +14,7 @@ require("which-key").setup({
             { "<leader>t", group = "tree" },
             { "<leader>d", group = "debugger" },
             { "<leader>l", group = "lsp" },
-            { "<leader>p", group = "pdf" },
+            { "<leader>m", group = "markup" },
         },
     },
     icons = { mappings = false },
@@ -53,3 +55,25 @@ vim.pack.add({
 require("neogit").setup({ disable_builtin_notifications = true })
 
 vim.keymap.set("n", "<leader>g", "<Cmd>Neogit<CR>", { desc = "neogit" })
+
+-- render-markdown
+vim.pack.add({ gh("MeanderingProgrammer/render-markdown.nvim") })
+
+require("render-markdown").setup({
+    enabled = false,
+    overrides = { preview = { enabled = true } },
+})
+
+vim.api.nvim_create_autocmd("FileType", {
+    group = augroup("markdown"),
+    pattern = "markdown",
+    callback = function()
+        local render_markdown = require("render-markdown")
+        vim.keymap.set(
+            "n",
+            "<leader>mp",
+            render_markdown.preview,
+            { desc = "sow rendered buffer to the side" }
+        )
+    end,
+})

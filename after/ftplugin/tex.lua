@@ -1,8 +1,8 @@
 vim.opt_local.textwidth = 80
-vim.keymap.set("n", "<leader>pt", "<Cmd>TexlabBuild<CR>", { desc = "to pdf", buffer = 0 })
+vim.keymap.set("n", "<leader>me", "<Cmd>TexlabBuild<CR>", { desc = "export to pdf", buffer = 0 })
 vim.keymap.set(
     "n",
-    "<leader>pv",
+    "<leader>mv",
     "<Cmd>silent !zathura %:r.pdf &<CR>",
     { desc = "visualize", buffer = 0 }
 )
