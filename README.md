@@ -22,20 +22,11 @@
 
 #### Language servers
 
-* Lua: [lua_ls](https://github.com/sumneko/lua-language-server)
-* C/C++: [clangd](https://clangd.llvm.org/)
-* Python: [pyright](https://github.com/microsoft/pyright)
-* LaTeX: [texlab](https://github.com/latex-lsp/texlab)
+See, [50-lsp.lua:41](./plugin/50-lsp.lua).
 
 #### Formatters
 
-* Lua: [StyLua](https://github.com/JohnnyMorganz/StyLua)
-* C/C++: [clang-format](https://clang.llvm.org/docs/ClangFormat.html)
-* Javascript/Typescript/JSON/YAML: [prettier](https://prettier.io/)
-* Python: [black](https://github.com/psf/black)
-* Rust: [rustfmt](https://github.com/rust-lang/rustfmt)
-* Nix: [nixpkgs-fmt](https://github.com/nix-community/nixpkgs-fmt)
-* Go: [gofmt](https://go.dev/)
+See, [40-coding.lua:103](./plugin/40-coding.lua).
 
 #### Other
 
