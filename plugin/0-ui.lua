@@ -68,13 +68,27 @@ dashboard.section.header.val = {
 }
 
 -- Set menu
+local function update_and_delete()
+    vim.pack.update()
+
+    local to_delete = vim.iter(vim.pack.get())
+        :filter(function(x)
+            return not x.active
+        end)
+        :map(function(x)
+            return x.spec.name
+        end)
+        :totable()
+    vim.pack.del(to_delete)
+end
+
 dashboard.section.buttons.val = {
     dashboard.button("e", "  > New file", "<Cmd>ene<CR>"),
     dashboard.button("f", "󰱼  > Find file", "<Cmd>lua require('fzf-lua').files()<CR>"),
     dashboard.button("r", "󰈬  > Find word", "<Cmd>lua require('fzf-lua').live_grep()<CR>"),
     dashboard.button("t", "󰙅  > File explorer", "<Cmd>Oil<CR>"),
     dashboard.button("s", "  > Settings", "<Cmd>e $MYVIMRC | cd %:p:h<CR>"),
-    dashboard.button("u", "  > Update plugins", "<Cmd>lua vim.pack.update()<CR>"),
+    dashboard.button("u", "  > Update plugins", update_and_delete),
     dashboard.button("g", "  > Neogit", "<Cmd>Neogit<CR>"),
     dashboard.button("q", "  > Quit NVIM", "<Cmd>qa<CR>"),
 }
